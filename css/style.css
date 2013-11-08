@@ -1,4 +1,208 @@
-/* Put your CSS here */
-html, body {
-    margin: 20px;
+/**
+ * Fullcalendar
+ * Polymer
+ * Ember.js
+ * localstorage
+ */
+
+body {
+    margin: 0px;
+}
+
+#wrapper {
+    height: 500px;
+}
+
+#controls {
+    height: 45px;
+    width: 1366px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#settings, #calendar, #main-lists, #todo-area {
+    float: left;
+    height: 100%;
+}
+
+.toolbar-button {
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background-color:#ededed;
+	border-top-left-radius:6px;
+	border-top-right-radius:6px;
+	border-bottom-right-radius:6px;
+	border-bottom-left-radius:6px;
+	text-indent:0;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color:#777777;
+	font-weight:bold;
+	font-style:normal;
+	padding: 2px 5px 2px 5px;
+	text-decoration:none;
+	text-align:center;
+}
+
+#settings {
+    width: 344px;
+    background-color: lightblue;
+}
+
+#calendar {
+    width: 1022px;
+    background-color: white;
+    overflow: hidden;
+    transition: all .4s;
+}
+
+#c1, #c2, #c3 {
+    float: left;
+    height: 100%;
+}
+
+#agenda-calendar {
+    height: 35%;
+    overflow: hidden;
+    border-bottom: thin solid black;
+    font-size: 9px;
+    text-align: center;
+}
+
+#agenda-calendar .mini-cal {
+    margin-left: 70px;
+}
+
+#agenda-wrapper {
+    width: 104%;
+    height: 65%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+#agenda-wrapper th, #agenda-wrapper td {
+    border-top: thin solid lightgrey;
+}
+
+#agenda-wrapper td {
+    height: 20px;
+}
+
+#agenda-wrapper th {
+    vertical-align: top;
+    text-align: right;
+    width: 45px;
+    height: 100%;
+}
+
+#agenda-wrapper table {
+    width: 322px;
+    background-collapse: collapse;
+    background-color: white;
+}
+
+#calendar-headers {
+    text-align: center;
+}
+
+#calendar-wrapper {
+    width: 104%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+#c1 table {
+    width: 1022px;
+    border-collapse: collapse;
+}
+
+#calendar-wrapper table tr {
+    height: 120px;
+}
+
+.day1 {
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.week1 {
+    border-top: 2px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.regular {
+    border: 1px solid black;
+}
+
+#c1 td {
+    width: 118px;
+    padding: 5px;
+    margin: 0px;
+    background-color: white;
+    vertical-align: top;
+}
+
+#main-lists {
+    width: 344px;
+    background-color: goldenrod;
+}
+
+#main-lists li {
+    margin: 2px;
+    background-color: white;
+    list-style: none;
+    height: 20px;
+}
+
+#main-lists li.sortable-placeholder {
+    border: 1px dashed #CCC;
+    background: none;
+}
+
+#agenda {
+    height: 100%;
+    width: 322px;
+    background-color: white;
+}
+
+#todo-area {
+/*    width: 1022px;*/
+    width: 700px;
+    background-color: grey;
+}
+
+#contextual-list {
+    height: 200px;
+    width: 90%;
+    margin: 10px;
+}
+
+#main-todos {
+    height: auto;
+    width: 90%;
+    margin: 10px;
+}
+
+#new-todo {
+    margin: 10px;
+}
+
+.gridster li {
+    background-color: white;
+    list-style: none;
+}
+
+.gridster li header {
+    background-color: lightgrey;
+    height: 15px;
+}
+
+.gridster li .content {
+    height: calc(100% - 15px);
+    width: 100%;
+    overflow: auto;
 }
