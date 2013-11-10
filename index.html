@@ -1,152 +1,135 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="content-type" content="text/html;charset=iso-8859-1" />
-    <title>Student Task Manager HCI Prototype</title>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Student Task Manager HCI Prototype</title>
 
-    <link href="css/smoothness/jquery-ui-1.10.3.custom.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" type="text/css" media="all" href="css/jquery.gridster.min.css" />
-  </head>
+	<link href="css/smoothness/jquery-ui-1.10.3.custom.css" rel="stylesheet" />
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" type="text/css" media="all" href="css/jquery.gridster.min.css" />
+</head>
 
 
-  <body>
-    <table id="controls">
-      <tbody>
-	<tr>
-	  <td><span id="left-button" class="toolbar-button">Options</span></td>
-	  <td style="text-align: right;"><span id="right-button" class="toolbar-button">Task lists</span></td>
-	</tr>
-      </tbody>
-    </table>
+<body>
+	<table id="controls">
+		<tbody>
+			<tr>
+				<td><span id="left-button" class="toolbar-button">Options</span></td>
+				<td style="text-align: right;"><span id="right-button" class="toolbar-button">Task lists</span></td>
+			</tr>
+		</tbody>
+	</table>
 
-    <div id="wrapper">
-      <div id="settings">
-	Settings
-      </div>
-      <div id="calendar">
-	<div id="c1">
-	  <table id="calendar-headers">
-	    <tr>
-	      <td>Sun</td>
-	      <td>Mon</td>
-	      <td>Tue</td>
-	      <td>Wed</td>
-	      <td>Thu</td>
-	      <td>Fri</td>
-	      <td>Sat</td>
-	    </tr>
-	  </table>
-	  <div id="calendar-wrapper">
-	    <table>
-	    </table>
-	  </div>
+	<div id="wrapper">
+		<div id="settings">
+			Settings
+		</div>
+		<div id="calendar">
+			<div id="c1">
+				<table id="calendar-headers">
+					<tr>
+						<td>Sun</td>
+						<td>Mon</td>
+						<td>Tue</td>
+						<td>Wed</td>
+						<td>Thu</td>
+						<td>Fri</td>
+						<td>Sat</td>
+					</tr>
+				</table>
+				<div id="calendar-wrapper">
+					<table>
+					</table>
+				</div>
+			</div>
+
+			<div id="c2">
+			</div>
+
+			<div id="c3">
+				<div id="agenda-calendar">
+					<div class="mini-cal">
+					</div>
+				</div>
+				<div id="agenda-wrapper">
+					<table>
+						<tr><th rowspan='2'>12am</th><td></td></tr>
+						<tr><td></td></tr>
+						<tr><th rowspan='2'>1am</th><td></td></tr>
+						<tr><td></td></tr>
+						<tr><th rowspan='2'>2am</th><td></td></tr>
+						<tr><td></td></tr>
+						<tr><th rowspan='2'>3am</th><td></td></tr>
+						<tr><td></td></tr>
+						<tr><th rowspan='2'>4am</th><td></td></tr>
+						<tr><td></td></tr>
+						<tr><th rowspan='2'>5am</th><td></td></tr>
+						<tr><td></td></tr>
+						<tr><th rowspan='2'>6am</th><td></td></tr>
+						<tr><td></td></tr>
+						<tr><th rowspan='2'>7am</th><td></td></tr>
+						<tr><td></td></tr>
+						<tr><th rowspan='2'>8am</th><td></td></tr>
+						<tr><td></td></tr>
+						<tr><th rowspan='2'>9am</th><td></td></tr>
+						<tr><td></td></tr>
+						<tr><th rowspan='2'>10am</th><td></td></tr>
+						<tr><td></td></tr>
+						<tr><th rowspan='2'>11am</th><td></td></tr>
+						<tr><td></td></tr>
+						<tr><th rowspan='2'>12pm</th><td></td></tr>
+						<tr><td></td></tr>
+						<tr><th rowspan='2'>1pm</th><td></td></tr>
+						<tr><td></td></tr>
+						<tr><th rowspan='2'>2pm</th><td></td></tr>
+						<tr><td></td></tr>
+						<tr><th rowspan='2'>3pm</th><td></td></tr>
+						<tr><td></td></tr>
+						<tr><th rowspan='2'>4pm</th><td></td></tr>
+						<tr><td></td></tr>
+						<tr><th rowspan='2'>5pm</th><td></td></tr>
+						<tr><td></td></tr>
+						<tr><th rowspan='2'>6pm</th><td></td></tr>
+						<tr><td></td></tr>
+						<tr><th rowspan='2'>7pm</th><td></td></tr>
+						<tr><td></td></tr>
+						<tr><th rowspan='2'>8pm</th><td></td></tr>
+						<tr><td></td></tr>
+						<tr><th rowspan='2'>9pm</th><td></td></tr>
+						<tr><td></td></tr>
+						<tr><th rowspan='2'>10pm</th><td></td></tr>
+						<tr><td></td></tr>
+						<tr><th rowspan='2'>11pm</th><td></td></tr>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<div id="main-lists">
+			<div id="list2" class="todolist sortable" color="255,255,255" type="text2"></div>
+		</div>
+
+		<div id="todo-area">
+			<div class="gridster">
+				<ul>
+					<li data-row="1" data-col="1" data-sizex="1" data-sizey="1"><header></header><div class="content" contenteditable></div></li>
+					<li data-row="2" data-col="1" data-sizex="1" data-sizey="1"><header></header><div class="content" contenteditable></div></li>
+					<li data-row="3" data-col="1" data-sizex="1" data-sizey="1"><header></header><div class="content" contenteditable></div></li>
+
+					<li data-row="1" data-col="2" data-sizex="1" data-sizey="1"><header></header><div class="content" contenteditable></div></li>
+					<li data-row="2" data-col="2" data-sizex="1" data-sizey="2"><header></header><div class="content" contenteditable></div></li>
+
+					<li data-row="1" data-col="3" data-sizex="1" data-sizey="3"><header></header><div class="content" contenteditable></div></li>
+
+					<li data-row="1" data-col="4" data-sizex="1" data-sizey="1"><header></header><div class="content" contenteditable></div></li>
+					<li data-row="2" data-col="4" data-sizex="1" data-sizey="1"><header></header><div class="content" contenteditable></div></li>
+					<li data-row="3" data-col="4" data-sizex="1" data-sizey="1"><header></header><div class="content" contenteditable></div></li>
+				</ul>
+			</div>
+		</div>
 	</div>
 
-	<div id="c2">
-	</div>
-
-	<div id="c3">
-	  <div id="agenda-calendar">
-	    <div class="mini-cal">
-	    </div>
-	  </div>
-	  <div id="agenda-wrapper">
-	    <table>
-	      <tr><th rowspan='2'>12am</th><td></td></tr>
-	      <tr><td></td></tr>
-	      <tr><th rowspan='2'>1am</th><td></td></tr>
-	      <tr><td></td></tr>
-	      <tr><th rowspan='2'>2am</th><td></td></tr>
-	      <tr><td></td></tr>
-	      <tr><th rowspan='2'>3am</th><td></td></tr>
-	      <tr><td></td></tr>
-	      <tr><th rowspan='2'>4am</th><td></td></tr>
-	      <tr><td></td></tr>
-	      <tr><th rowspan='2'>5am</th><td></td></tr>
-	      <tr><td></td></tr>
-	      <tr><th rowspan='2'>6am</th><td></td></tr>
-	      <tr><td></td></tr>
-	      <tr><th rowspan='2'>7am</th><td></td></tr>
-	      <tr><td></td></tr>
-	      <tr><th rowspan='2'>8am</th><td></td></tr>
-	      <tr><td></td></tr>
-	      <tr><th rowspan='2'>9am</th><td></td></tr>
-	      <tr><td></td></tr>
-	      <tr><th rowspan='2'>10am</th><td></td></tr>
-	      <tr><td></td></tr>
-	      <tr><th rowspan='2'>11am</th><td></td></tr>
-	      <tr><td></td></tr>
-	      <tr><th rowspan='2'>12pm</th><td></td></tr>
-	      <tr><td></td></tr>
-	      <tr><th rowspan='2'>1pm</th><td></td></tr>
-	      <tr><td></td></tr>
-	      <tr><th rowspan='2'>2pm</th><td></td></tr>
-	      <tr><td></td></tr>
-	      <tr><th rowspan='2'>3pm</th><td></td></tr>
-	      <tr><td></td></tr>
-	      <tr><th rowspan='2'>4pm</th><td></td></tr>
-	      <tr><td></td></tr>
-	      <tr><th rowspan='2'>5pm</th><td></td></tr>
-	      <tr><td></td></tr>
-	      <tr><th rowspan='2'>6pm</th><td></td></tr>
-	      <tr><td></td></tr>
-	      <tr><th rowspan='2'>7pm</th><td></td></tr>
-	      <tr><td></td></tr>
-	      <tr><th rowspan='2'>8pm</th><td></td></tr>
-	      <tr><td></td></tr>
-	      <tr><th rowspan='2'>9pm</th><td></td></tr>
-	      <tr><td></td></tr>
-	      <tr><th rowspan='2'>10pm</th><td></td></tr>
-	      <tr><td></td></tr>
-	      <tr><th rowspan='2'>11pm</th><td></td></tr>
-	    </table>
-	  </div>
-	</div>
-      </div>
-
-      <div id="main-lists">
-	Main lists
-	<div id="contextual-list">
-	  <ul>
-	    <li>Deadline 1</li>
-	    <li>Deadline 2</li>
-	    <li>Deadline 3</li>
-	  </ul>
-	</div>
-	<div id="main-todos">
-	  <ul>
-	    <li><span>::</span> TODO 1</li>
-	    <li><span>::</span> TODO 2</li>
-	    <li><span>::</span> TODO 3</li>
-	  </ul>
-	</div>
-	<div id="new-todo">
-	  Add a new item:
-	  <input type="text" />
-	</div>
-      </div>
-
-      <div id="todo-area">
-	<div class="gridster">
-	  <ul>
-	    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1"><header></header><div class="content" contenteditable></div></li>
-	    <li data-row="2" data-col="1" data-sizex="1" data-sizey="1"><header></header><div class="content" contenteditable></div></li>
-	    <li data-row="3" data-col="1" data-sizex="1" data-sizey="1"><header></header><div class="content" contenteditable></div></li>
-
-	    <li data-row="1" data-col="2" data-sizex="1" data-sizey="1"><header></header><div class="content" contenteditable></div></li>
-	    <li data-row="2" data-col="2" data-sizex="1" data-sizey="2"><header></header><div class="content" contenteditable></div></li>
-
-	    <li data-row="1" data-col="3" data-sizex="1" data-sizey="3"><header></header><div class="content" contenteditable></div></li>
-
-	    <li data-row="1" data-col="4" data-sizex="1" data-sizey="1"><header></header><div class="content" contenteditable></div></li>
-	    <li data-row="2" data-col="4" data-sizex="1" data-sizey="1"><header></header><div class="content" contenteditable></div></li>
-	    <li data-row="3" data-col="4" data-sizex="1" data-sizey="1"><header></header><div class="content" contenteditable></div></li>
-	  </ul>
-	</div>
-      </div>
-    </div>
 
 
 
@@ -159,131 +142,34 @@
 
 
 
+	<!-- All the JS -->
 
-    <!-- All the JS -->
+	<script src="js/libs/jquery-1.9.1.js"></script>
+	<script src="js/libs/jquery-2.0.0.min.js"></script>
+	<script src="js/libs/handlebars-1.0.0.js"></script>
+	<script src="js/libs/ember-1.1.2.js"></script>
+	<script type="text/javascript" language="javascript" src="js/libs/jquery.carouFredSel-6.2.1-packed.js"></script>
+	<script src="js/libs/jquery-ui-1.10.3.custom.min.js"></script>
 
-    <script src="js/libs/jquery-1.9.1.js"></script>
-    <script src="js/libs/handlebars-1.0.0.js"></script>
-    <script src="js/libs/ember-1.1.2.js"></script>
-    <script type="text/javascript" language="javascript" src="js/libs/jquery.carouFredSel-6.2.1-packed.js"></script>
-    <script src="js/libs/jquery-ui-1.10.3.custom.min.js"></script>
+	<!-- optionally include helper plugins -->
+	<script type="text/javascript" language="javascript" src="js/libs/helper-plugins/jquery.mousewheel.min.js"></script>
+	<script type="text/javascript" language="javascript" src="js/libs/helper-plugins/jquery.touchSwipe.min.js"></script>
+	<script type="text/javascript" language="javascript" src="js/libs/helper-plugins/jquery.transit.min.js"></script>
+	<script type="text/javascript" language="javascript" src="js/libs/helper-plugins/jquery.ba-throttle-debounce.min.js"></script>
 
-    <!-- optionally include helper plugins -->
-    <script type="text/javascript" language="javascript" src="js/libs/helper-plugins/jquery.mousewheel.min.js"></script>
-    <script type="text/javascript" language="javascript" src="js/libs/helper-plugins/jquery.touchSwipe.min.js"></script>
-    <script type="text/javascript" language="javascript" src="js/libs/helper-plugins/jquery.transit.min.js"></script>
-    <script type="text/javascript" language="javascript" src="js/libs/helper-plugins/jquery.ba-throttle-debounce.min.js"></script>
+	<!-- include gridster -->
+	<script type="text/javascript" language="javascript" src="js/libs/jquery.gridster.min.js"></script>
 
-    <!-- include gridster -->
-    <script type="text/javascript" language="javascript" src="js/libs/jquery.gridster.min.js"></script>
-    
-    <!-- include html5sortable -->
-    <script type="text/javascript" language="javascript" src="js/libs/jquery.sortable.min.js"></script>    
+	<!-- include html5sortable -->
+	<script type="text/javascript" language="javascript" src="js/libs/jquery.sortable.min.js"></script>    
 
-    <!-- Fire Ember.js -->
-    <script src="js/app.js"></script>
+	<!-- Fire Ember.js -->
+	<script src="js/app.js"></script>
 
+	<script src="js/auxiliary.js"></script>
+	<!-- fire plugins onDocumentReady -->
+	<script src="js/layout.js"></script>
+	<script src="js/rendering.js"></script>
 
-    <!-- fire plugins onDocumentReady -->
-    <script type="text/javascript" language="javascript">
-      $(function() {
-
-	  fill_calendar(50);  // 50 rows
-
-	  // Carousel configuration
-	  var carousel = $('#wrapper');
-	  carousel.carouFredSel({
-	      circular: false,
-	      infinite: false,
-	      auto: false,
-	      width: 1366,
-	      height: 'auto',
-	      items: {
-		  visible: 2,
-		  start: 1
-	      },
-	      scroll: {
-		  items: 1
-	      }
-	  });
-
-	  // Navigation
-	  var cc = $('#calendar-contents');
-	  var c1 = $('#c1');
-	  var c2 = $('#c2');
-	  var c3 = $('#c3');
-	  var lnav = $('#left-button');
-	  var rnav = $('#right-button');
-
-	  var nav_state = 1;
-
-	  c2.hide();
-	  c3.hide();
-
-	  lnav.click(function() {
-	      if (nav_state == 0) {
-		  carousel.trigger("next");
-		  nav_state++;
-	      } else if (nav_state == 1) {
-		  carousel.trigger("prev");
-		  nav_state--;
-	      } else { // nav_state == 2
-		  c3.fadeOut('fast', function() {
-		      $('#calendar').width(1022);
-		      c1.fadeIn();
-		  });
-		  nav_state--;
-		  lnav.html("Options");
-		  rnav.html("Task lists");
-		  carousel.trigger("configuration", ["items.visible", 2, false]);
-	      }
-	  });
-
-	  rnav.click(function() {
-	      if (nav_state == 0) {
-		  carousel.trigger("next");
-		  nav_state++;
-	      } else if (nav_state == 1) {
-		  carousel.trigger("configuration", ["items.visible", 3, false]);
-		  c1.fadeOut('fast', function() {
-		      $('#calendar').width(322);
-		      c3.fadeIn();
-		  });
-		  lnav.html("Calendar");
-		  rnav.html("Calendar");
-		  nav_state++;
-	      } else {  // nav_state == 2
-		  c3.fadeOut('fast', function() {
-		      c1.fadeIn();
-		  });
-		  $('#calendar').width(1022);
-		  nav_state--;
-		  lnav.html("Options");
-		  rnav.html("Task lists");
-		  carousel.trigger("configuration", ["items.visible", 2, false]);
-	      }
-	  });
-
-	  // TODO lists using gridster
-	  $(".gridster ul").gridster({
-	      widget_margins: [5, 5],
-	      widget_base_dimensions: [150, 150],
-	      draggable: {
-		  handle: 'header'
-	      }
-	  });
-
-	  $("#contextual-list ul").sortable();
-	  $("#main-todos ul").sortable({
-	      handle: 'span'
-	  });
-
-	  $('#agenda-calendar div').datepicker({
-	      changeMonth: true,
-	      changeYear: true
-	  });
-      });
-    </script>
-
-  </body>
+</body>
 </html>

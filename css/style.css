@@ -148,7 +148,6 @@ body {
 
 #main-lists {
     width: 344px;
-    background-color: goldenrod;
 }
 
 #main-lists li {
@@ -206,3 +205,186 @@ body {
     width: 100%;
     overflow: auto;
 }
+
+
+/*            ANTOINE               */
+
+body{
+    font-family: "Helvetica";
+    margin: 0;
+    background-image: url('wood2b.jpg');
+    color: #191919;
+}
+
+#header{
+    height:45px;
+    margin-bottom: 5px;
+    /*background-color: whitesmoke; */
+}
+
+.todolist{
+    display: inline-block;
+    vertical-align: top;
+    width:330px;
+    margin-right: 2px;
+    padding-bottom: 48px;
+
+    background-color: rgba(250,240,240,.3);
+
+    border-radius: 7px;
+    padding-top: 9px;
+    box-shadow: 1px 1px 6px 1px black;
+
+    font-size: 90%; 
+
+    /* the only use of this is to get the trashbin to display correctly */
+    position: relative;
+}
+
+.todolist .trashbin{
+    position: absolute;
+    right: 6px;
+    bottom: 6px;
+
+    visibility: hidden;
+}
+
+.item{  
+    cursor: pointer;
+    min-height: 23px;
+
+    /* the only use of this is to get the icons inside to display correctly */
+    position: relative;
+}
+
+.text2{
+    margin-bottom: 1px;
+}
+
+.rect1{
+    border-bottom: 1px solid RGBA(76,26,0,.5);
+    margin-bottom: 3px;
+}
+
+.rect2{
+    margin-bottom: 7px;
+    box-shadow: 1px 1px 5px 1px black;
+}
+
+.item .contenteditable{
+    cursor: text;
+    outline: 0px;
+
+/*  Can't do that, otherwise item size won't adjust ot amount of text
+    position: absolute;
+    top: 3px;
+    left: 22px;*/
+
+    max-width: 260px;
+
+    display: inline-block;
+    padding-top: 4px;
+    margin-left: 17px;
+    margin-right: 5px;
+
+    /* to facilitate editing item by clicking on it*/
+    padding-right: 10px;
+    min-width: 50px;
+    min-height: 19px;
+}
+
+.item .checkbox{
+    width: 17px;
+    height: 23px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.checkbox .square{
+    width: 8px;
+    height: 8px;
+    margin: 4px;
+    margin-top: 7px;
+    border: 1px solid #444444;
+}
+
+.checkbox .checkmark{
+    display: none;
+    margin-left: 4px;
+    margin-top: 4px;
+}
+
+.newItem{
+    color: #333333;
+    font-style: italic;
+    padding: 3px;
+    padding-left: 21px;
+    padding-top: 4px;
+}
+
+/* this is the only way I found to prevent a empty line
+in a newly created item */
+.contenteditable br{
+    display: none;
+}
+
+.item .pin{
+    position: absolute;
+    right: 4px;
+    top: 4px;
+}
+
+.item .dateTimeIcon{
+    position: absolute;
+    right: 26px;
+    top: 4px;
+}
+
+.item .hiddenIcon{
+    visibility: hidden;
+}
+
+.item .dialogueElement{
+    position: absolute;
+    right: 0;
+    width: 22px;
+    background-color: inherit;
+
+    z-index: 5;
+    visibility: hidden;
+
+    /* to display symbol in center of div */
+    text-align: center;
+    line-height: 24px;
+}
+
+.item .dialogue{
+    top: -24px;     /* will be animated to -24px */
+    height: 71px;   /* will be animated to 71px */
+}
+
+
+.item .setImportance{
+    top: 0px;      /* will be animated to -24px */
+    height: 24px;   /* will be animated to 24px */ 
+    box-shadow: -1px -1px 4px -1px gray;
+}
+
+.item .createSubtask{
+    top: 47px;
+    height: 24px;  /* will be animated to 24px */
+    box-shadow: -1px 1px 5px -1px gray;
+}
+
+.opacityButton{
+    opacity:.6;
+    /* z-index: 10;   dynamically modified */
+}
+
+.opacityButton:hover{
+    opacity:1;
+}
+
+
