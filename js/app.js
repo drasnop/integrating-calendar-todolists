@@ -19,7 +19,7 @@ colors = [
     "#FDDEEE", "#FBB6D1", "#F98CB6"
 ];
 
-todo-lists = [{
+todoLists = [{
     id:    1,
     posx:  1,
     posy:  1,
