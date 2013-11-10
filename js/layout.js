@@ -94,4 +94,10 @@
 	      changeMonth: true,
 	      changeYear: true
 	  });
+
+	  $("#lookatme").bind('inview', function(event, isInView, vX, vY) {
+	      if(isInView) {
+		  alert("Lookatme! " + vX + vY);
+	      }
+	  });
       });
