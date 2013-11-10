@@ -39,8 +39,8 @@ function generateItem(item, color,type){
 					<div class='square hiddenIcon'></div><div class='checkmark'>✔</div>  \
 				</div>	 \
 				<div class='contenteditable' contenteditable>"+item+"</div>  \
-				<img class='dateTimeIcon hiddenIcon opacityButton' src='calendar16.png' data-pinned='false' title='Set date/time'>  \
-				<img class='pin hiddenIcon opacityButton' src='pin16.png' data-pinned='false' data-dialogueExpanded='false' title='Pin item to main list'>    \
+				<img class='dateTimeIcon hiddenIcon opacityButton' src='img/calendar16.png' data-pinned='false' title='Set date/time'>  \
+				<img class='pin hiddenIcon opacityButton' src='img/pin16.png' data-pinned='false' data-dialogueExpanded='false' title='Pin item to main list'>    \
 				<div class='dialogueElement dialogue'> \
 					<div class='dialogueElement setImportance' title='Set importance level'>!</div>  \
 					<div class='dialogueElement createSubtask' title='Create subtask'>+</div>  \
@@ -156,7 +156,7 @@ function initializeItemsBehavior(){
 		{
 			$(this).data('pinned',true);
 
-			$(this).attr('src','pinned16.png');
+			$(this).attr('src','img/pinned16.png');
 			$(this).attr('title',"Unpin item from main list");
 			$(this).removeClass('hiddenIcon');
 		}
@@ -164,7 +164,7 @@ function initializeItemsBehavior(){
 		{
 			$(this).data('pinned',false);
 
-			$(this).attr('src','pin16.png');
+			$(this).attr('src','img/pin16.png');
 			$(this).attr('title',"Pin item to main list");
 			$(this).addClass('hiddenIcon');
 		}
@@ -204,7 +204,7 @@ $(document).ready(function(){
 		//$("#list4").append(generateItem(items[i],colors[i],"rect2"));
 	}
 	$('.todolist').append("<div class='newItem'>Add item...</div>");
-	$('.todolist').append("<img class='trashbin opacityButton' src='trashbin.png' title='Delete checked items'>");
+	$('.todolist').append("<img class='trashbin opacityButton' src='img/trashbin.png' title='Delete checked items'>");
 
 	// Initialize todo lists
 	//$(".todolist").css('height',wh-50-10);
