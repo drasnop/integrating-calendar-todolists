@@ -2,23 +2,23 @@
 
 	  fill_calendar(50);  // 50 rows
 
-	  $('#wrapper').css('height',$(window).height()-28);
+	  $('#wrapper').css('height',$(window).height()-33);
 
 	  // Carousel configuration
 	  var carousel = $('#wrapper');
 	  carousel.carouFredSel({
-	      circular: false,
-	      infinite: false,
-	      auto: false,
-	      width: 1366,
-	      height: $(window).height()-28,
-	      items: {
-		  visible: 2,
-		  start: 1
-	      },
-	      scroll: {
-		  items: 1
-	      }
+	  	circular: false,
+	  	infinite: false,
+	  	auto: false,
+	  	width: 1366,
+	  	height: $(window).height()-33,
+	  	items: {
+	  		visible: 2,
+	  		start: 1
+	  	},
+	  	scroll: {
+	  		items: 1
+	  	}
 	  });
 
 	  // Navigation
@@ -35,66 +35,81 @@
 	  c3.hide();
 
 	  lnav.click(function() {
-	      if (nav_state == 0) {
-		  carousel.trigger("next");
-		  nav_state++;
-	      } else if (nav_state == 1) {
-		  carousel.trigger("prev");
-		  nav_state--;
+	  	if (nav_state == 0) {
+	  		carousel.trigger("next");
+	  		nav_state++;
+	  	} else if (nav_state == 1) {
+	  		carousel.trigger("prev");
+	  		nav_state--;
 	      } else { // nav_state == 2
-		  c3.fadeOut('fast', function() {
-		      $('#calendar').width(1022);
-		      c1.fadeIn();
-		  });
-		  nav_state--;
-		  lnav.html("Options");
-		  rnav.html("Task lists");
-		  carousel.trigger("configuration", ["items.visible", 2, false]);
+	      	c3.fadeOut('fast', function() {
+	      		$('#calendar').width(1022);
+	      		c1.fadeIn();
+	      	});
+	      	nav_state--;
+	      	lnav.html("Options");
+	      	rnav.html("Task lists");
+	      	carousel.trigger("configuration", ["items.visible", 2, false]);
 	      }
 	  });
 
 	  rnav.click(function() {
-	      if (nav_state == 0) {
-		  carousel.trigger("next");
-		  nav_state++;
-	      } else if (nav_state == 1) {
-		  carousel.trigger("configuration", ["items.visible", 3, false]);
-		  c1.fadeOut('fast', function() {
-		      $('#calendar').width(322);
-		      c3.fadeIn();
-		  });
-		  lnav.html("Calendar");
-		  rnav.html("Calendar");
-		  nav_state++;
+	  	if (nav_state == 0) {
+	  		carousel.trigger("next");
+	  		nav_state++;
+	  	} else if (nav_state == 1) {
+	  		carousel.trigger("configuration", ["items.visible", 3, false]);
+	  		c1.fadeOut('fast', function() {
+	  			$('#calendar').width(322);
+	  			c3.fadeIn();
+	  		});
+	  		lnav.html("Calendar");
+	  		rnav.html("Calendar");
+	  		nav_state++;
 	      } else {  // nav_state == 2
-		  c3.fadeOut('fast', function() {
-		      c1.fadeIn();
-		  });
-		  $('#calendar').width(1022);
-		  nav_state--;
-		  lnav.html("Options");
-		  rnav.html("Task lists");
-		  carousel.trigger("configuration", ["items.visible", 2, false]);
+	      	c3.fadeOut('fast', function() {
+	      		c1.fadeIn();
+	      	});
+	      	$('#calendar').width(1022);
+	      	nav_state--;
+	      	lnav.html("Options");
+	      	rnav.html("Task lists");
+	      	carousel.trigger("configuration", ["items.visible", 2, false]);
 	      }
 	  });
 
 	  // TODO lists using gridster
 	  $(".gridster ul").gridster({
-	      widget_margins: [5, 5],
-	      widget_base_dimensions: [150, 150],
-	      draggable: {
-		  handle: 'header'
-	      }
+	  	widget_margins: [5, 5],
+	  	widget_base_dimensions: [150, 150],
+	  	draggable: {
+	  		handle: 'header'
+	  	}
 	  });
 
 	  $('#agenda-calendar div').datepicker({
-	      changeMonth: true,
-	      changeYear: true
+	  	changeMonth: true,
+	  	changeYear: true
 	  });
 
 	  $("#lookatme").bind('inview', function(event, isInView, vX, vY) {
-	      if(isInView) {
-		  alert("Lookatme! " + vX + vY);
-	      }
+	  	if(isInView) {
+	  		alert("Lookatme! " + vX + vY);
+	  	}
 	  });
-      });
+
+	  $(function() {
+	  	$('#todo-lists-area-wrapper').bind('mousewheel', function(event, delta) {
+	  		console.log("mousewheel");
+	  		var newTop=parseInt($('#todo-lists-area').css('top')) + (delta > 0 ? 40 : -40);
+	  		if(newTop > 3)
+	  			newTop=3;
+	  		$('#todo-lists-area').css('top', newTop);
+
+	  		return false;
+	  	});
+	  });
+
+	});
+
+//
