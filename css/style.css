@@ -185,22 +185,22 @@
 
 #todo-lists-area {
     width: 700px;
-    padding-left: 5px;
-    /*padding-top: 3px; */
+    padding-left: 8px;
     position: absolute;
-    top:3px;
+    top:3px;   /* to see the shadows casted by first lists */
 }
 
 .todo-lists-column{
+    width: 349px;
     display: inline-block;
-    width: 50%;
+    vertical-align: top;
 }
 
 #tasks-summary{
     /*overflow-x: hidden; */
 }
 
-#contextual-list {
+/*#contextual-list {
     height: 200px;
     width: 90%;
     margin: 10px;
@@ -214,7 +214,7 @@
 
 #new-todo {
     margin: 10px;
-}
+}*/
 
 
 
@@ -229,8 +229,8 @@
 .todolist{
     display: inline-block;
     vertical-align: top;
-    width:344px;
-    margin-right: 2px;
+    width:342px;
+    margin-bottom: 10px;
     padding-bottom: 48px;
 
     background-color: rgba(250,240,240,.3);
@@ -258,6 +258,14 @@
     visibility: hidden;
 }
 
+.todolist .listName{
+    text-align: center;
+    font-size: 125%;
+    color: #333333;
+
+    margin-bottom: 7px;
+}
+
 .item{  
     cursor: pointer;
     min-height: 23px;
@@ -280,9 +288,12 @@
     box-shadow: 1px 1px 5px 1px black;
 }
 
-.item .contenteditable{
+.contenteditable{
     cursor: text;
     outline: 0px;
+}
+
+.item .description{
 
 /*  Can't do that, otherwise item size won't adjust ot amount of text
     position: absolute;

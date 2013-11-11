@@ -38,7 +38,7 @@ function generateItem(item, color,type){
 				<div class='checkbox' data-checked='false'>  \
 					<div class='square hiddenIcon'></div><div class='checkmark'>✔</div>  \
 				</div>	 \
-				<div class='contenteditable' contenteditable>"+item+"</div>  \
+				<div class='description contenteditable' contenteditable>"+item+"</div>  \
 				<img class='dateTimeIcon hiddenIcon opacityButton' src='img/calendar16.png' data-pinned='false' title='Set date/time'>  \
 				<img class='pin hiddenIcon opacityButton' src='img/pin16.png' data-pinned='false' data-dialogueExpanded='false' title='Pin item to main list'>    \
 				<div class='dialogueElement dialogue'> \
@@ -66,8 +66,8 @@ function insertItem(after,_this){
 		_this.before(generateEmptyItem(color,type));
 		newItem=_this.prev()
 	}
-	newItem.children('.contenteditable').find('br').remove();  //has no effect!
-	newItem.children('.contenteditable').focus();
+	newItem.children('.description').find('br').remove();  //has no effect!
+	newItem.children('.description').focus();
 	
 	newItem.data('activated',false);
 	initializeItemsBehavior();
@@ -95,17 +95,17 @@ function initializeItemsBehavior(){
 	});
 
 	// keyboard events
-	item.children('.contenteditable').keydown(function(event){
+	item.children('.description').keydown(function(event){
 		// up
 		if(event.which==38){
-			$(this).parent('.item').prev().children('.contenteditable').focus();
+			$(this).parent('.item').prev().children('.description').focus();
 		}
 		// down
 		if(event.which==40){
-			$(this).parent('.item').next().children('.contenteditable').focus();
+			$(this).parent('.item').next().children('.description').focus();
 		}
 	});
-	item.children('.contenteditable').keypress(function(event){
+	item.children('.description').keypress(function(event){
 			if(event.which==13){
 				insertItem(true,$(this).parent('.item'));   // Don't put "item" here!!
 			}
@@ -122,7 +122,7 @@ function initializeItemsBehavior(){
 
 			// item, text and checkbox appearance
 			$(this).parent('.item').css('color','rgb('+colorToString(darkerColor)+')');
-			$(this).siblings('.contenteditable').css('text-decoration','line-through');
+			$(this).siblings('.description').css('text-decoration','line-through');
 			
 			$(this).children('.square').css('display','none');
 			$(this).children('.checkmark').css('display','block');
@@ -137,7 +137,7 @@ function initializeItemsBehavior(){
 
 			// item, text and checkbox appearance
 			$(this).parent('.item').css('color','#191919');
-			$(this).siblings('.contenteditable').css('text-decoration','none');
+			$(this).siblings('.description').css('text-decoration','none');
 			
 			$(this).children('.square').css('display','inline-block');
 			$(this).children('.checkmark').css('visibility','visible');
@@ -198,19 +198,18 @@ $(document).ready(function(){
 
 	// Content generation
 	for(var i=0; i<items.length; i++){
-		$("#list1").append(generateItem(items[i],colors[i],"text1"));
-		$("#list2").append(generateItem(items[i],colors[i],"text2"));
-		$("#list3").append(generateItem(items[i],colors[i],"rect1"));
-		//$("#list4").append(generateItem(items[i],colors[i],"rect2"));
+		$("#main-list").append(generateItem(items[i],colors[i],"text2"));
+		$("#list1").append(generateItem(items[i],colors[i],"rect1"));
+		//$("#list2").append(generateItem(items[i],"255,255,255","text2"));
+		//$("#list3").append(generateItem(items[i],colors[i],"rect1"));
 	}
 	$('.todolist').append("<div class='newItem'>Add item...</div>");
 	$('.todolist').append("<img class='trashbin opacityButton' src='img/trashbin.png' title='Delete checked items'>");
 
 	// Initialize todo lists
-	//$(".todolist").css('height',wh-50-10);
 	$(function() {
 		$('.sortable').sortable({
-			cancel: '.hiddenIcon,.newItem,.contenteditable,.trashbin',
+			cancel: '.listName,.hiddenIcon,.newItem,.description,.trashbin',
 			connectWith: '.sortable'});
 	});
 	$('.todolist').mouseenter(function(){
@@ -220,7 +219,7 @@ $(document).ready(function(){
 		$(this).find('.dialogueElement').css('visibility','hidden');
 	});
 	$('.todolist .trashbin').click(function(){
-		// flodUp the checked items and remove them
+		// foldUp the checked items and remove them
 		$(this).siblings('.item').filter(function() { 
   			return $(this).children('.checkbox').data("checked") == true; 
 		}).css('height',$(this).height()).css('min-height',0).slideUp(400, function(){

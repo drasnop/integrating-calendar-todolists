@@ -47,6 +47,7 @@ todoLists = [{
     startDate:  null,   // when event starts (left undefined for deadlines and tasks)
     endDate:    null,   // when event ends (left undefined for tasks)
     reminders:  null,   // list of dates
+    description:null    // string
 }
 */
 
