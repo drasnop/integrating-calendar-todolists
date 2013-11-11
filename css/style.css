@@ -30,40 +30,85 @@
 .toolbar-button {
     position: absolute;
     top: 13px;
-    width: 72px;  /* to prevent change when turns to calendat button */
-
+    
     text-align:center;
     color: #333333;
     font-size: 95%;
 
     padding: 3px 15px 3px 15px;
-    background-color: rgba(231,174,92,.8);
+    background-color: rgba(231,174,92,.75);
     border-radius: 5px;
-    border: 1px solid black;
+    box-shadow: 1px 1px 5px 0px black;
 
     font-weight: bold;
     cursor:pointer;
 }
 
 .toolbar-button:hover {
-    box-shadow: 1px 1px 5px 0px black;
-    background-color: rgba(231,174,92,.9);
+    box-shadow: 1px 1px 5px 1px black;
+    background-color: rgba(231,174,92,.95);
 }
 
 #left-button {
     left: 14px;
+    width: 72px;  /* to prevent change when turns to calendat button */
+}
+
+#calendar-buttons{
+    position: absolute;
+    left: 292px;
+    width: 688px;
+}
+
+#month-button, #week-button{
+    text-align: center;
+    width: 115px;
+    border-radius: 0;
+}
+
+#week-button{
+    left: 0px;
+}
+
+#month-button{
+    left: 146px;
+}
+
+#previous-period-button, #next-period-button{
+    padding-left: 9px;
+    padding-right: 9px;
+}
+
+#previous-period-button{
+    border-radius: 15px 0px 0px 15px;
+    right: 28px;
+}
+
+#next-period-button{
+    border-radius: 0px 15px 15px 0px;
+    right: 0;
+}
+
+#settings-button {
+    right: 142px;
+    height: 17px;
+    padding-top: 4px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 #right-button {
     right: 14px;
+    width: 72px;  /* to prevent change when turns to calendat button */
+    border-radius: 5px 15px 15px 5px;
 }
+
 
 
 #options, #calendar, #tasks-summary, #todo-lists-area {
     float: left;
     height: 100%;
 }
-
 
 
 #options {
@@ -86,7 +131,8 @@
     width: 1022px;
     background-color: white;
     overflow: hidden;
-    transition: all .4s;
+    transition: all .8s;
+    transition-timing-function: ease;
 }
 
 #c1, #c2, #c3 {
