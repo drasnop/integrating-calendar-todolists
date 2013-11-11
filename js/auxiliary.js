@@ -15,6 +15,9 @@ function fill_calendar(rows) {
 	row = "<tr>";
 	for (var i = 0; i < 7; i++) {
 	    row += "<td class='";
+
+	    if(i==0)	       row += "noLeftBorder ";
+	    if(i==6)	       row += "noRightBorder ";
 	    if (day == 1)      row += "day1";
 	    else if (day <= 7) row += "week1";
 	    else               row += "regular";
