@@ -2,7 +2,7 @@
 
 	  fill_calendar(50);  // 50 rows
 
-	  $('#wrapper').css('height',$(window).height()-30);
+	  $('#wrapper').css('height',$(window).height()-28);
 
 	  // Carousel configuration
 	  var carousel = $('#wrapper');
@@ -11,7 +11,7 @@
 	      infinite: false,
 	      auto: false,
 	      width: 1366,
-	      height: $(window).height()-30,
+	      height: $(window).height()-28,
 	      items: {
 		  visible: 2,
 		  start: 1

@@ -5,35 +5,62 @@
  * localstorage
  */
 
+
+ html{
+   height: 100%;
+ }
+
+ body{
+     font-family: "Helvetica";
+     margin: 0;
+     background-image: url('../img/wood2b.jpg');
+     color: #191919;
+     min-height: 100%;
+     text-align: center;
+ }
+
 #controls {
     height: 45px;
     width: 1366px;
-    padding-left: 15px;
-    padding-right: 15px;
+
+    /* the only use of this is to get the button to show properly */
+    position: relative;
 }
+
+.toolbar-button {
+    position: absolute;
+    top: 10px;
+    width: 72px;  /* to prevent change when turns to calendat button */
+
+    text-align:center;
+    color: #333333;
+    font-size: 95%;
+
+    padding: 3px 15px 3px 15px;
+    background-color: rgba(250,240,240,.6);
+    border-radius: 15px;
+}
+
+.toolbar-button:hover {
+    /*background-color: rgba(250,240,240,.45);*/
+    box-shadow: 0px 0px 5px 0px black;
+}
+
+#left-button {
+    left: 5px;
+}
+
+#right-button {
+    right: 5px;
+}
+
 
 #settings, #calendar, #tasks-summary, #todo-lists-area {
     float: left;
     height: 100%;
 }
 
-.toolbar-button {
-	box-shadow:inset 0px 1px 0px 0px #ffffff;
-	background-color:#ededed;
-	border-top-left-radius:6px;
-	border-top-right-radius:6px;
-	border-bottom-right-radius:6px;
-	border-bottom-left-radius:6px;
-	text-indent:0;
-	border:1px solid #dcdcdc;
-	display:inline-block;
-	color:#777777;
-	font-weight:bold;
-	font-style:normal;
-	padding: 2px 5px 2px 5px;
-	text-decoration:none;
-	text-align:center;
-}
+
 
 #settings {
     width: 344px;
@@ -138,24 +165,22 @@
     vertical-align: top;
 }
 
-#tasks-summary {
-    width: 344px;
-}
-
-
 #agenda {
     height: 100%;
     width: 322px;
     background-color: white;
 }
 
-#todo-lists-area {
-    width: 700px;
-}
 
 #todo-lists-area-wrapper {
     height: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
+}
+
+#todo-lists-area {
+    width: 700px;
+    padding-left: 5px;
+    padding-top: 3px;
 }
 
 .todo-lists-column{
@@ -163,6 +188,9 @@
     width: 50%;
 }
 
+#tasks-summary{
+    /*overflow-x: hidden; */
+}
 
 #contextual-list {
     height: 200px;
@@ -189,34 +217,11 @@
 
 
 
-html{
-  height: 100%;
-}
-
-
-body{
-    font-family: "Helvetica";
-    margin: 0;
-    background-image: url('../img/wood2b.jpg');
-    color: #191919;
-    min-height: 100%;
-    text-align: center;
-}
-
-#centerWrapper{
-    text-align: left;
-}
-
-#header{
-    height:45px;
-    margin-bottom: 5px;
-    /*background-color: whitesmoke; */
-}
 
 .todolist{
     display: inline-block;
     vertical-align: top;
-    width:330px;
+    width:344px;
     margin-right: 2px;
     padding-bottom: 48px;
 
@@ -230,6 +235,11 @@ body{
 
     /* the only use of this is to get the trashbin to display correctly */
     position: relative;
+}
+
+#tasks-summary .todolist{
+    border-radius: 0;
+    height: 100%;
 }
 
 .todolist .trashbin{
