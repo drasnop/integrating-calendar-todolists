@@ -5,14 +5,6 @@
  * localstorage
  */
 
-body {
-    margin: 0px;
-}
-
-#wrapper {
-    height: 500px;
-}
-
 #controls {
     height: 45px;
     width: 1366px;
@@ -20,7 +12,7 @@ body {
     padding-right: 15px;
 }
 
-#settings, #calendar, #main-lists, #todo-area {
+#settings, #calendar, #tasks-summary, #todo-lists-area {
     float: left;
     height: 100%;
 }
@@ -146,21 +138,10 @@ body {
     vertical-align: top;
 }
 
-#main-lists {
+#tasks-summary {
     width: 344px;
 }
 
-#main-lists li {
-    margin: 2px;
-    background-color: white;
-    list-style: none;
-    height: 20px;
-}
-
-#main-lists li.sortable-placeholder {
-    border: 1px dashed #CCC;
-    background: none;
-}
 
 #agenda {
     height: 100%;
@@ -168,11 +149,20 @@ body {
     background-color: white;
 }
 
-#todo-area {
-/*    width: 1022px;*/
+#todo-lists-area {
     width: 700px;
-    background-color: grey;
 }
+
+#todo-lists-area-wrapper {
+    height: 100%;
+    overflow: hidden;
+}
+
+.todo-lists-column{
+    display: inline-block;
+    width: 50%;
+}
+
 
 #contextual-list {
     height: 200px;
@@ -180,7 +170,7 @@ body {
     margin: 10px;
 }
 
-#main-todos {
+#main-list {
     height: auto;
     width: 90%;
     margin: 10px;
@@ -190,30 +180,31 @@ body {
     margin: 10px;
 }
 
-.gridster li {
-    background-color: white;
-    list-style: none;
-}
 
-.gridster li header {
-    background-color: lightgrey;
-    height: 15px;
-}
 
-.gridster li .content {
-    height: calc(100% - 15px);
-    width: 100%;
-    overflow: auto;
-}
 
 
 /*            ANTOINE               */
+
+
+
+
+html{
+  height: 100%;
+}
+
 
 body{
     font-family: "Helvetica";
     margin: 0;
     background-image: url('../img/wood2b.jpg');
     color: #191919;
+    min-height: 100%;
+    text-align: center;
+}
+
+#centerWrapper{
+    text-align: left;
 }
 
 #header{

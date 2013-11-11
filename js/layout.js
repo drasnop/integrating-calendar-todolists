@@ -2,6 +2,8 @@
 
 	  fill_calendar(50);  // 50 rows
 
+	  $('#wrapper').css('height',$(window).height()-30);
+
 	  // Carousel configuration
 	  var carousel = $('#wrapper');
 	  carousel.carouFredSel({
@@ -9,7 +11,7 @@
 	      infinite: false,
 	      auto: false,
 	      width: 1366,
-	      height: 'auto',
+	      height: $(window).height()-30,
 	      items: {
 		  visible: 2,
 		  start: 1
@@ -83,11 +85,6 @@
 	      draggable: {
 		  handle: 'header'
 	      }
-	  });
-
-	  $("#contextual-list ul").sortable();
-	  $("#main-todos ul").sortable({
-	      handle: 'span'
 	  });
 
 	  $('#agenda-calendar div').datepicker({

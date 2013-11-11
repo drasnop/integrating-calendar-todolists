@@ -16,7 +16,7 @@
 		<tbody>
 			<tr>
 				<td><span id="left-button" class="toolbar-button">Options</span></td>
-            	<td style="text-align: right;"><span id="right-button" class="toolbar-button">Task lists</span></td>
+				<td style="text-align: right;"><span id="right-button" class="toolbar-button">Task lists</span></td>
 			</tr>
 		</tbody>
 	</table>
@@ -106,60 +106,59 @@
 			</div>
 		</div>
 
-		<div id="main-lists">
+		<div id="tasks-summary">
 			<div id="list2" class="todolist sortable" color="255,255,255" type="text2"></div>
 		</div>
 
-		<div id="todo-area">
-			<div class="gridster">
-				<ul>
-					<li data-row="1" data-col="1" data-sizex="1" data-sizey="1"><header></header><div class="content" contenteditable></div></li>
-					<li data-row="2" data-col="1" data-sizex="1" data-sizey="1"><header></header><div class="content" contenteditable></div></li>
-					<li data-row="3" data-col="1" data-sizex="1" data-sizey="1"><header></header><div class="content" contenteditable></div></li>
-
-					<li data-row="1" data-col="2" data-sizex="1" data-sizey="1"><header></header><div class="content" contenteditable></div></li>
-					<li data-row="2" data-col="2" data-sizex="1" data-sizey="2"><header></header><div class="content" contenteditable></div></li>
-
-					<li data-row="1" data-col="3" data-sizex="1" data-sizey="3"><header></header><div class="content" contenteditable></div></li>
-
-					<li data-row="1" data-col="4" data-sizex="1" data-sizey="1"><header></header><div class="content" contenteditable></div></li>
-					<li data-row="2" data-col="4" data-sizex="1" data-sizey="1"><header></header><div class="content" contenteditable></div></li>
-					<li data-row="3" data-col="4" data-sizex="1" data-sizey="1"><header></header><div class="content" contenteditable></div></li>
-				</ul>
-			</div>
+		<div id="todo-lists-area-wrapper">
+			<div id="todo-lists-area"><!--
+			--><div class="todo-lists-column" id="todo-lists-area-left">
+				<div id="list3" class="todolist sortable" color="255,255,255" type="text2"></div>
+			</div><!--
+		 --><div class="todo-lists-column" id="todo-lists-area-right">
+				<div id="list4" class="todolist sortable" color="255,255,255" type="text2"></div>
+				</div><!--
+		 --></div>
 		</div>
-	</div>
+
+		<script type="text/javascript" charset="utf-8">
+			// get the width of the textarea minus scrollbar
+			var textareaWidth = document.getElementById("todo-lists-area").scrollWidth;
+
+			// width of our wrapper equals width of the inner part of the textarea
+			document.getElementById("todo-lists-area-wrapper").style.width = textareaWidth + 'px';
+		</script>
+</div>
 
 
 
 
 
+<!-- All the JS -->
 
-	<!-- All the JS -->
+<script src="js/libs/jquery-2.0.0.min.js"></script>
+<script src="js/libs/handlebars-1.0.0.js"></script>
+<script src="js/libs/ember-1.1.2.js"></script>
+<script type="text/javascript" language="javascript" src="js/libs/jquery.carouFredSel-6.2.1-packed.js"></script>
+<script src="js/libs/jquery-ui-1.10.3/ui/jquery-ui.js"></script>
 
-	<script src="js/libs/jquery-2.0.0.min.js"></script>
-	<script src="js/libs/handlebars-1.0.0.js"></script>
-	<script src="js/libs/ember-1.1.2.js"></script>
-	<script type="text/javascript" language="javascript" src="js/libs/jquery.carouFredSel-6.2.1-packed.js"></script>
-	<script src="js/libs/jquery-ui-1.10.3/ui/jquery-ui.js"></script>
+<!-- optionally include helper plugins -->
+<script type="text/javascript" language="javascript" src="js/libs/helper-plugins/jquery.mousewheel.min.js"></script>
+<script type="text/javascript" language="javascript" src="js/libs/helper-plugins/jquery.touchSwipe.min.js"></script>
+<script type="text/javascript" language="javascript" src="js/libs/helper-plugins/jquery.transit.min.js"></script>
+<script type="text/javascript" language="javascript" src="js/libs/helper-plugins/jquery.ba-throttle-debounce.min.js"></script>
 
-	<!-- optionally include helper plugins -->
-	<script type="text/javascript" language="javascript" src="js/libs/helper-plugins/jquery.mousewheel.min.js"></script>
-	<script type="text/javascript" language="javascript" src="js/libs/helper-plugins/jquery.touchSwipe.min.js"></script>
-	<script type="text/javascript" language="javascript" src="js/libs/helper-plugins/jquery.transit.min.js"></script>
-	<script type="text/javascript" language="javascript" src="js/libs/helper-plugins/jquery.ba-throttle-debounce.min.js"></script>
+<!-- include gridster -->
+<script type="text/javascript" language="javascript" src="js/libs/jquery.gridster.min.js"></script>
 
-	<!-- include gridster -->
-	<script type="text/javascript" language="javascript" src="js/libs/jquery.gridster.min.js"></script>
+<script type="text/javascript" language="javascript" src="js/libs/jquery.inview.min.js"></script>
 
-	<script type="text/javascript" language="javascript" src="js/libs/jquery.inview.min.js"></script>
-
-	<!-- Fire Ember.js -->
-	<script src="js/app.js"></script>
-	<script src="js/auxiliary.js"></script>
-	<!-- fire plugins onDocumentReady -->
-	<script src="js/layout.js"></script>
-	<script src="js/rendering.js"></script>
+<!-- Fire Ember.js -->
+<script src="js/app.js"></script>
+<script src="js/auxiliary.js"></script>
+<!-- fire plugins onDocumentReady -->
+<script src="js/layout.js"></script>
+<script src="js/rendering.js"></script>
 
 </body>
 </html>
