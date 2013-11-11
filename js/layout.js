@@ -31,6 +31,7 @@ $(function() {
 	var lnav = $('#left-button');
 	var rnav = $('#right-button');
 	var calb = $('#calendar-buttons');
+	var todob = $('#todolists-buttons');
 
 	var nav_state = 1;
 
@@ -38,7 +39,10 @@ $(function() {
 		c3.hide();
 		c1.fadeIn('slow');
 		$('#calendar').width(1022);
-		calb.fadeIn();
+		setTimeout(function(){
+			todob.fadeOut();
+			calb.fadeIn();
+		},100);
 		nav_state--;
 		lnav.html("Options");
 		lnav.css('border-radius','5px');
@@ -76,16 +80,15 @@ $(function() {
 
 			case 1:
 				carousel.trigger("configuration", ["items.visible", 3, false]);
-	/*			c1.fadeOut(800,function(){
-					c3.show();
-				});*/
 				setTimeout(function(){
-					//c1.fadeOut('slow');
 					c1.hide();
 					c3.fadeIn('fast');
 				},600);
 				$('#calendar').width(322);
-				calb.fadeOut();
+				setTimeout(function(){
+					calb.fadeOut();
+					todob.fadeIn();
+				},300);
 				lnav.html("Calendar");
 				lnav.css('border-radius','15px 5px 5px 15px');
 				rnav.html("Calendar");

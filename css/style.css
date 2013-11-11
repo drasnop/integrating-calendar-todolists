@@ -103,7 +103,32 @@
     border-radius: 5px 15px 15px 5px;
 }
 
+#todolists-buttons {
+    position: absolute;
+    left: 674px;
+    width: 451px;
 
+    display: none;
+}
+
+#search-box{
+    left: 0;
+    position: absolute;
+    width: 318px;
+    top: 13px;
+    padding: 3px 5px 4px 5px;
+    color: #333333;
+    text-align: left;
+    box-shadow: 1px 1px 5px 0px black;
+    background-color: rgba(231,174,92,.5);
+    font-style: italic;
+    font-size: 95%;
+}
+
+#newlist-button{
+    right: 0;
+    width: 72px;
+}
 
 #options, #calendar, #tasks-summary, #todo-lists-area {
     float: left;
@@ -296,7 +321,7 @@
     vertical-align: top;
     width:342px;
     margin-bottom: 10px;
-    padding-bottom: 48px;
+    padding-bottom: 40px;
 
     background-color: rgba(250,240,240,.3);
 

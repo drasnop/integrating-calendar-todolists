@@ -232,6 +232,10 @@ $(document).ready(function(){
 		insertItem(false,$(this));
 	});
 
+	$('#search-box').click(function(){
+		$(this).html("");
+	});
+
 	// Initialize items
 	initializeItemsBehavior();
 });
