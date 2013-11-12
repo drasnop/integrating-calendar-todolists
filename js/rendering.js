@@ -1,21 +1,5 @@
 var wh=$(window).height();
 
-var items=new Array(
-	"call back Amy",
-	"check emails",
-	"laundry",
-	"7pm restaurant",
-	"Tomorrow pay phone bill",
-	"Apply for Fair Pharmacare",
-	"Kick-Ass 2",
-	"call back Amy",
-	"check emails",
-	"laundry",
-	"7pm restaurant",
-	"Tomorrow pay phone bill",
-	"Apply for Fair Pharmacare",
-	"Kick-Ass 2");
-
 
 var colors=new Array(
 	[255,255,255],

@@ -5,7 +5,7 @@
 Ember.ItemView = Em.View.extend({
     tagName: 'div',
     attributeBindings: ['contenteditable'],
-    classNames: ['una'],
+    classNames: ['description', 'contenteditable'],
 
     // Variables:
     editable: false,
@@ -71,7 +71,37 @@ var myColors = [
     "#BFD5E8", "#94A8D0", "#7589BF",
     "#DDD4E8", "#C1B3D7", "#A589C1",
     "#FDDEEE", "#FBB6D1", "#F98CB6"
-],
+];
+
+var items=[{
+	text: "call back Amy"
+},{
+	text: "check emails"
+},{
+	text: "laundry"
+},{
+	text: "7pm restaurant"
+},{
+	text: "Tomorrow pay phone bill"
+},{
+	text: "Apply for Fair Pharmacare"
+},{
+	text: "Kick-Ass 2"
+},{
+	text: "call back Amy"
+},{
+	text: "check emails"
+},{
+	text: "laundry"
+},{
+	text: "7pm restaurant"
+},{
+	text: "Tomorrow pay phone bill"
+},{
+	text: "Apply for Fair Pharmacare"
+},{
+	text: "Kick-Ass 2"
+}];
 
 
 
@@ -80,6 +110,7 @@ App = Ember.Application.create();
 
 App.ApplicationController = Ember.Controller.extend({
     color: myColors[1],
+    items: items,
 
     actions: {
 	change: function() {
@@ -123,7 +154,7 @@ todoLists = [{
     description:null    // string
 }
 */
-
+/*
 items = [{
     id:        1,
     pinned:    false,
@@ -132,3 +163,4 @@ items = [{
     endDate:   null,
     listId:    1
 }];
+*/

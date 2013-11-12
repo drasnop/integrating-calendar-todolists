@@ -24,7 +24,7 @@
 		<div id="todolists-buttons">
 			<div id="search-box" class="contenteditable" contenteditable>Search...</div>
 			<div id="newlist-button" class="toolbar-button">New list</div>
-		</div>			
+		</div>
 		<div id="settings-button" class="toolbar-button" title='Settings'>
 			<img src='img/settings-16.png'></div>
 		<div id="right-button" class="toolbar-button">Task lists</div>
@@ -65,7 +65,7 @@
 						<tr><td></td></tr>
 						<tr><th rowspan='2'>2am</th><td></td></tr>
 						<tr><td></td></tr>
-						<tr><th rowspan='2'>3am</th><td><a {{action change}}>{{{color}}}</a></td></tr>
+						<tr><th rowspan='2'>3am</th><td><a {{action change}}>{{{items.[2].text}}}</a></td></tr>
 						<tr><td></td></tr>
 						<tr><th rowspan='2'>4am</th><td></td></tr>
 						<tr><td></td></tr>
@@ -133,13 +133,49 @@
 		</div>
 
 		<div id="tasks-summary">
-			<div id="main-list" class="todolist sortable" type="text2"><div class='listName'>Main list</div></div>
+			<div id="main-list" class="todolist sortable" color="255,255,255" type="text2"><div class='listName'>Main list</div>
+			  {{#each items}}
+			  <div class='item text2' style='background-color: rgba("255,255,255", .85)' data-color=["255,255,255"] data-activated='false'>
+			    <div class='checkbox' data-checked='false'>
+			      <div class='square hiddenIcon'></div><div class='checkmark'>✔</div>
+			    </div>
+			    {{view Ember.ItemView valueBinding="text" contenteditable="true"}}
+			    <div class='setDateTime'>
+			      <div class='contenteditable' contenteditable></div>
+			      <img class='hiddenIcon opacityButton' src='img/calendar16.png' title='Set date/time' />
+			    </div>
+			    <img class='pin hiddenIcon opacityButton' src='img/pin16.png' data-pinned='false' data-dialogueExpanded='false' title='Pin item to main list' />
+			    <div class='dialogueElement dialogue'>
+			      <div class='dialogueElement setImportance' title='Set importance level'>!</div>
+			      <div class='dialogueElement createSubtask' title='Create subtask'>+</div>
+			    </div>
+			  </div>
+			  {{/each}}
+			</div>
 		</div>
 
 		<div id="todo-lists-area-wrapper">
 			<div id="todo-lists-area"><!--
 			--><div class="todo-lists-column" id="todo-lists-area-left">
-				<div id="list-a0" class="todolist sortable" type="text2"><div class='listName contenteditable' contenteditable>Default</div></div>
+				<div id="list-a0" class="todolist sortable" type="text2"><div class='listName contenteditable' contenteditable>Default</div>
+				  {{#each items}}
+				  <div class='item text2' style='background-color: rgba("255,255,255", .85)' data-color=["255,255,255"] data-activated='false'>
+				    <div class='checkbox' data-checked='false'>
+				      <div class='square hiddenIcon'></div><div class='checkmark'>✔</div>
+				    </div>
+				    {{view Ember.ItemView valueBinding="text" contenteditable="true"}}
+				    <div class='setDateTime'>
+				      <div class='contenteditable' contenteditable></div>
+				      <img class='hiddenIcon opacityButton' src='img/calendar16.png' title='Set date/time' />
+				    </div>
+				    <img class='pin hiddenIcon opacityButton' src='img/pin16.png' data-pinned='false' data-dialogueExpanded='false' title='Pin item to main list' />
+				    <div class='dialogueElement dialogue'>
+				      <div class='dialogueElement setImportance' title='Set importance level'>!</div>
+				      <div class='dialogueElement createSubtask' title='Create subtask'>+</div>
+				    </div>
+				  </div>
+				  {{/each}}
+				</div>
 				<div id="list-a1" class="todolist sortable" type="text2"><div class='listName contenteditable' contenteditable>List A1</div></div>
 			</div><!--
 		 --><div class="todo-lists-column" id="todo-lists-area-right">
