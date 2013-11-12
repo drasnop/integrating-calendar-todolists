@@ -272,11 +272,12 @@ body{
 }
 
 #agenda-calendar .mini-cal {
-    margin-left: 70px;
+    margin-left: 30px;
+    margin-top: 26px;
 }
 
 #options-calendar {
-    height: 35%;
+    height: 40%;
     overflow: hidden;
     border-bottom: thin solid black;
     font-size: 10px;
@@ -284,12 +285,14 @@ body{
 }
 
 #options-calendar .mini-cal {
-    margin-left: 70px;
+    margin-left: 40px;
+    margin-top: 26px;
 }
 
 .ui-datepicker-inline{
     /* dirty fix to prevent it from spilling content */
     overflow: hidden;
+    width: 250px;
 }
 
 #agenda-wrapper {
