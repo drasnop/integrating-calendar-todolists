@@ -155,19 +155,19 @@ body{
 }
 
 
-#options {
+#options-content {
     width: 344px;
     background-color: rgba(250,240,240,.3);
     box-shadow:  1px 1px 8px -1px black;
     position: relative;  /* to get the shadow to display on calendar */
 }
 
-#options div, #options span, #options input{
+#options-content div, #options-content span, #options-content input{
     margin-left: 18px;
     margin-bottom: 20px;
 }
 
-#options input{
+#options-content input{
     margin-right: 10px;
 }
 
@@ -276,7 +276,22 @@ body{
     margin-top: 26px;
 }
 
-.ui-datepicker {
+#options-calendar {
+    height: 40%;
+    overflow: hidden;
+    border-bottom: thin solid black;
+    font-size: 10px;
+    text-align: center;
+}
+
+#options-calendar .mini-cal {
+    margin-left: 40px;
+    margin-top: 26px;
+}
+
+.ui-datepicker-inline{
+    /* dirty fix to prevent it from spilling content */
+    overflow: hidden;
     width: 250px;
 }
 

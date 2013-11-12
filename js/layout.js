@@ -113,7 +113,7 @@ $(function() {
 		}
 	});
 
-	$('#agenda-calendar div').datepicker({
+	$('.mini-cal').datepicker({
 		changeMonth: true,
 		changeYear: true
 	});
