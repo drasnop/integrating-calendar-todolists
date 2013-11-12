@@ -1,11 +1,65 @@
-App = Ember.Application.create();
+////////////////////////////// CUSTOM EMBER //////////////////////////////
 
+// Based on:
+// https://github.com/KasperTidemann/ember-contenteditable-view/blob/master/ember-contenteditable-view.js
+Ember.ItemView = Em.View.extend({
+    tagName: 'div',
+    attributeBindings: ['contenteditable'],
+    classNames: ['una'],
 
+    // Variables:
+    editable: false,
+    isUserTyping: false,
+    plaintext: false,
 
+    // Properties:
+    contenteditable: (function() {
+        var editable = this.get('editable');
 
+        return editable ? 'true' : undefined;
+    }).property('editable'),
 
-// JSON fixtures
-colors = [
+    // Observers:
+    valueObserver: (function() {
+        if (!this.get('isUserTyping') && this.get('value')) {
+            return this.setContent();
+        }
+    }).observes('value'),
+
+    // Events:
+    didInsertElement: function() {
+        return this.setContent();
+    },
+
+    focusOut: function() {
+        return this.set('isUserTyping', false);
+    },
+
+    keyDown: function(event) {
+	var o = this;
+        if (!event.metaKey) {
+            this.set('isUserTyping', true);
+        }
+        if (this.get('plaintext')) {
+            window.setTimeout( function() { o.set('value', o.$().text()); }, 1);
+	    return this;
+        } else {
+            window.setTimeout( function() { o.set('value', o.$().html()); }, 1);
+	    return this;
+        }
+    },
+
+    keyUp: function(event) {
+	return this;
+    },
+
+    setContent: function() {
+        return this.$().html(this.get('value'));
+    }
+});
+
+////////////////////////// FIXTURES ///////////////////////////
+var myColors = [
     "#FFFFFF",
     "#F0E8CD", "#DBD5B9", "#C0BA99",
     "#FEEBC9", "#FDCAA2", "#FCA985",
@@ -17,7 +71,26 @@ colors = [
     "#BFD5E8", "#94A8D0", "#7589BF",
     "#DDD4E8", "#C1B3D7", "#A589C1",
     "#FDDEEE", "#FBB6D1", "#F98CB6"
-];
+],
+
+
+
+////////////////////////////// EMBER APP //////////////////////////////
+App = Ember.Application.create();
+
+App.ApplicationController = Ember.Controller.extend({
+    color: myColors[1],
+
+    actions: {
+	change: function() {
+	    this.set('color', myColors[7]);
+	}
+    }
+});
+
+
+
+// JSON fixtures
 
 todoLists = [{
     id:    1,

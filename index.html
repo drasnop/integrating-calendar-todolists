@@ -12,6 +12,7 @@
 
 
 <body>
+  <script type="text/x-handlebars">
 	<div id="controls">
 		<div id="left-button" class="toolbar-button">Options</div>
 		<div id="calendar-buttons">
@@ -60,11 +61,11 @@
 					<table>
 						<tr><th rowspan='2'>12am</th><td></td></tr>
 						<tr><td></td></tr>
-						<tr><th rowspan='2'>1am</th><td></td></tr>
+						<tr><th rowspan='2'>{{view Ember.ItemView value=algo contenteditable="true"}}</th><td></td></tr>
 						<tr><td></td></tr>
 						<tr><th rowspan='2'>2am</th><td></td></tr>
 						<tr><td></td></tr>
-						<tr><th rowspan='2'>3am</th><td></td></tr>
+						<tr><th rowspan='2'>3am</th><td><a {{action change}}>{{{color}}}</a></td></tr>
 						<tr><td></td></tr>
 						<tr><th rowspan='2'>4am</th><td></td></tr>
 						<tr><td></td></tr>
@@ -157,7 +158,7 @@
 			document.getElementById("todo-lists-area-wrapper").style.width = textareaWidth + 'px';
 		</script>
 </div>
-
+</script>
 
 
 
