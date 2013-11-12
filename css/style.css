@@ -152,14 +152,15 @@ body{
 #options, #calendar, #tasks-summary, #todo-lists-area {
     float: left;
     height: 100%;
+    background-color: rgba(250,240,240,.3);
 }
-
 
 #options-content {
     width: 344px;
-    background-color: rgba(250,240,240,.3);
-    box-shadow:  1px 1px 8px -1px black;
-    position: relative;  /* to get the shadow to display on calendar */
+    /*box-shadow:  1px 1px 8px -1px black;
+    to get the shadow to display on calendar
+    position: relative;  
+    */
 }
 
 #options-content div, #options-content span, #options-content input{
@@ -169,6 +170,18 @@ body{
 
 #options-content input{
     margin-right: 10px;
+}
+
+#options-calendar {
+    height: 43%;
+    overflow: hidden;
+    font-size: 10px;
+    text-align: center;
+}
+
+#options-calendar .mini-cal {
+    margin-left: 40px;
+    margin-top: 32px;
 }
 
 
@@ -273,19 +286,6 @@ body{
 
 #agenda-calendar .mini-cal {
     margin-left: 30px;
-    margin-top: 26px;
-}
-
-#options-calendar {
-    height: 40%;
-    overflow: hidden;
-    border-bottom: thin solid black;
-    font-size: 10px;
-    text-align: center;
-}
-
-#options-calendar .mini-cal {
-    margin-left: 40px;
     margin-top: 26px;
 }
 
