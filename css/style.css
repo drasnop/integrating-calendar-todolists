@@ -272,12 +272,12 @@ body{
 }
 
 #agenda-calendar .mini-cal {
-    margin-left: 70px;
+    margin-left: 30px;
+    margin-top: 26px;
 }
 
-.ui-datepicker-inline{
-    /* dirty fix to prevent it from spilling content */
-    overflow: hidden;
+.ui-datepicker {
+    width: 250px;
 }
 
 #agenda-wrapper {
