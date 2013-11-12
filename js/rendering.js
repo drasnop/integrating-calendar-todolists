@@ -209,17 +209,28 @@ function invisible(){
 
 $(document).ready(function(){
 
+	var white="255,255,255";
+	var green="176,229,124";
+	var lightblue="180,216,231";
+	var yellow="255,236,148";
+
 	// Content generation
 	for(var i=0; i<items.length; i++){
 		$("#main-list").append(generateItem(items[i],colors[i],"text2"));
-		$("#list1").append(generateItem(items[i],colors[i],"text2"));
-		//$("#list2").append(generateItem(items[i],"255,255,255","text2"));
-		//$("#list3").append(generateItem(items[i],colors[i],"rect1"));
+		$("#list-a1").append(generateItem(items[i],lightblue,"text2"));
+		$("#list-b0").append(generateItem(items[i],green,"text2"));
+	}
+	for(var i=0; i<items.length/2; i++){
+		$("#list-a0").append(generateItem(items[i],white,"text2"));
+	}
+	for(var i=items.length/2; i<items.length; i++){
+		$("#list-b1").append(generateItem(items[i],yellow,"text2"));
 	}
 	$('.todolist').append("<div class='newItem'>Add item...</div>");
 	$('.todolist').append("<img class='trashbin opacityButton' src='img/trashbin.png' title='Delete checked items'>");
 
 	// Initialize todo lists
+	$('.todolist').css('background-color',"rgba("+$(this).data('color')+",.9)");
 	$(function() {
 		$('.sortable').sortable({
 			cancel: '.listName,.hiddenIcon,.newItem,.description,.setDateTime,.trashbin',
