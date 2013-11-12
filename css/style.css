@@ -428,6 +428,10 @@ body{
     margin-bottom: 1px;
 }
 
+.todo-lists-column .todolist .text2{
+    margin-bottom: 0;
+}
+
 .rect1{
     border-bottom: 1px solid RGBA(76,26,0,.5);
     margin-bottom: 3px;

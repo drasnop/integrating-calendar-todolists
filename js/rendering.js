@@ -58,7 +58,7 @@ function generateEmptyItem(color,type){
 
 // this can be either an item or the newItem button
 function insertItem(after,_this){
-	var color=_this.parent('.todolist').attr('color');
+	var color=_this.parent('.todolist').data('color');
 	var type=_this.parent('.todolist').attr('type');
 	var newItem;
 
@@ -213,6 +213,14 @@ $(document).ready(function(){
 	var green="176,229,124";
 	var lightblue="180,216,231";
 	var yellow="255,236,148";
+	var pink="255,174,174";
+
+	$("#main-list").data('color',white);
+	$("#list-a0").data('color',white);
+	$("#list-a1").data('color',lightblue);
+	$("#list-b0").data('color',green);
+	$("#list-b1").data('color',yellow);
+	$("#list-b2").data('color',pink);
 
 	// Content generation
 	for(var i=0; i<items.length; i++){
@@ -222,6 +230,7 @@ $(document).ready(function(){
 	}
 	for(var i=0; i<items.length/2; i++){
 		$("#list-a0").append(generateItem(items[i],white,"text2"));
+		$("#list-b2").append(generateItem(items[i],pink,"text2"));
 	}
 	for(var i=items.length/2; i<items.length; i++){
 		$("#list-b1").append(generateItem(items[i],yellow,"text2"));
@@ -230,12 +239,17 @@ $(document).ready(function(){
 	$('.todolist').append("<img class='trashbin opacityButton' src='img/trashbin.png' title='Delete checked items'>");
 
 	// Initialize todo lists
-	$('.todolist').css('background-color',"rgba("+$(this).data('color')+",.9)");
-	$(function() {
-		$('.sortable').sortable({
-			cancel: '.listName,.hiddenIcon,.newItem,.description,.setDateTime,.trashbin',
-			connectWith: '.sortable'});
-	});
+	function colorBackground(){
+		var color=$(this).data('color');
+		$(this).css('background-color',"rgba("+color+",.5)");
+	}
+	$('.todolist').filter(function(){
+		return !$(this).is("#main-list");
+	}).each(colorBackground);
+
+	$('.sortable').sortable({
+		cancel: '.listName,.hiddenIcon,.newItem,.description,.setDateTime,.trashbin',
+		connectWith: '.sortable'});
 	$('.todolist').mouseenter(function(){
 		$(this).children('.hoverable').css('visibility','visible');
 	});
