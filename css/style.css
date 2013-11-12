@@ -114,15 +114,27 @@
 #search-box{
     left: 0;
     position: absolute;
-    width: 318px;
+    width: 326px;
     top: 13px;
     padding: 3px 5px 4px 5px;
-    color: #333333;
     text-align: left;
-    box-shadow: 1px 1px 5px 0px black;
-    background-color: rgba(231,174,92,.5);
     font-style: italic;
     font-size: 95%;
+    
+    color: #333333;
+/*    box-shadow: 1px 1px 5px 0px black;
+    background-color: rgba(231,174,92,.5);*/
+/*
+    color: #4C4C4C;
+    background-color: rgba(255,240,240,.3);
+    border: 1px solid rgba(20,0,0,.35); */
+
+    background-color: rgba(255,255,255,.9);
+}
+
+#search-box:hover{
+    box-shadow: 1px 1px 5px 0px black;
+   /* background-color: rgba(231,174,92,.65);  */
 }
 
 #newlist-button{
@@ -447,10 +459,17 @@ in a newly created item */
     top: 4px;
 }
 
-.item .dateTimeIcon{
+.item .setDateTime{
     position: absolute;
     right: 26px;
     top: 4px;
+    font-style: italic;
+}
+
+.item .setDateTime .contenteditable{
+    display: none;
+    min-width: 16px;
+    max-width: 100px;
 }
 
 .item .hiddenIcon{

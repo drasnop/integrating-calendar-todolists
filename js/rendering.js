@@ -39,7 +39,10 @@ function generateItem(item, color,type){
 					<div class='square hiddenIcon'></div><div class='checkmark'>✔</div>  \
 				</div>	 \
 				<div class='description contenteditable' contenteditable>"+item+"</div>  \
-				<img class='dateTimeIcon hiddenIcon opacityButton' src='img/calendar16.png' data-pinned='false' title='Set date/time'>  \
+				<div class='setDateTime'>    \
+					<div class='contenteditable' contenteditable></div>    \
+					<img class='hiddenIcon opacityButton' src='img/calendar16.png' title='Set date/time'>  \
+				</div>    \
 				<img class='pin hiddenIcon opacityButton' src='img/pin16.png' data-pinned='false' data-dialogueExpanded='false' title='Pin item to main list'>    \
 				<div class='dialogueElement dialogue'> \
 					<div class='dialogueElement setImportance' title='Set importance level'>!</div>  \
@@ -187,6 +190,16 @@ function initializeItemsBehavior(){
 			$(this).parent('.item').find('.dialogueElement').invisible();
 		}
 	});
+
+
+	// Set time/date
+	var field;
+	item.children('.setDateTime').click(function(){
+		field=$(this);
+		$(this).children('.hiddenIcon').hide();
+		$(this).children('.contenteditable').show();
+		$(this).children('.contenteditable').focus();
+	});
 }
 
 function invisible(){
@@ -209,7 +222,7 @@ $(document).ready(function(){
 	// Initialize todo lists
 	$(function() {
 		$('.sortable').sortable({
-			cancel: '.listName,.hiddenIcon,.newItem,.description,.trashbin',
+			cancel: '.listName,.hiddenIcon,.newItem,.description,.setDateTime,.trashbin',
 			connectWith: '.sortable'});
 	});
 	$('.todolist').mouseenter(function(){
