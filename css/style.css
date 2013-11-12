@@ -162,7 +162,7 @@ body{
     position: relative;  /* to get the shadow to display on calendar */
 }
 
-#options div,span,input{
+#options div, #options span, #options input{
     margin-left: 18px;
     margin-bottom: 20px;
 }
