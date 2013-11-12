@@ -212,7 +212,7 @@ $(document).ready(function(){
 	// Content generation
 	for(var i=0; i<items.length; i++){
 		$("#main-list").append(generateItem(items[i],colors[i],"text2"));
-		$("#list1").append(generateItem(items[i],colors[i],"rect1"));
+		$("#list1").append(generateItem(items[i],colors[i],"text2"));
 		//$("#list2").append(generateItem(items[i],"255,255,255","text2"));
 		//$("#list3").append(generateItem(items[i],colors[i],"rect1"));
 	}

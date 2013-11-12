@@ -37,7 +37,8 @@ $(function() {
 
 	function backToCalendarView(){
 		c3.hide();
-		c1.fadeIn('slow');
+		//c1.fadeIn('slow');
+		c1.show();
 		$('#calendar').width(1022);
 		setTimeout(function(){
 			todob.fadeOut();
@@ -82,7 +83,8 @@ $(function() {
 				carousel.trigger("configuration", ["items.visible", 3, false]);
 				setTimeout(function(){
 					c1.hide();
-					c3.fadeIn('fast');
+					//c3.fadeIn('fast');
+					c3.show();
 				},600);
 				$('#calendar').width(322);
 				setTimeout(function(){
