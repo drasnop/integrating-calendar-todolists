@@ -193,12 +193,6 @@ function invisible(){
 
 $(document).ready(function(){
 
-	var white="255,255,255";
-	var green="176,229,124";
-	var lightblue="180,216,231";
-	var yellow="255,236,148";
-	var pink="255,174,174";
-
 	$("#main-list").data('color',white);
 	$("#list-a0").data('color',white);
 	$("#list-a1").data('color',lightblue);

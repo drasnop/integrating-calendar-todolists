@@ -59,19 +59,11 @@ Ember.ItemView = Em.View.extend({
 });
 
 ////////////////////////// FIXTURES ///////////////////////////
-var myColors = [
-    "#FFFFFF",
-    "#F0E8CD", "#DBD5B9", "#C0BA99",
-    "#FEEBC9", "#FDCAA2", "#FCA985",
-    "#FFFFB0", "#FFFA81", "#FFED51",
-    "#E0F3B0", "#BFE476", "#85CA5D",
-    "#CFECCF", "#B5E1AE", "#91D290",
-    "#B3E2DD", "#86CFBE", "#48B5A3",
-    "#CCECEF", "#9ACEDF", "#6FB7D6",
-    "#BFD5E8", "#94A8D0", "#7589BF",
-    "#DDD4E8", "#C1B3D7", "#A589C1",
-    "#FDDEEE", "#FBB6D1", "#F98CB6"
-];
+var white="255,255,255";
+var green="176,229,124";
+var lightblue="180,216,231";
+var yellow="255,236,148";
+var pink="255,174,174";
 
 var items=[{
 	text: "call back Amy"
@@ -108,15 +100,34 @@ var items=[{
 ////////////////////////////// EMBER APP //////////////////////////////
 App = Ember.Application.create();
 
+App.Store = DS.Store.extend({
+    adapter:  DS.FixtureAdapter.create()
+});
+
+App.TodoList = DS.Model.extend({
+    column: DS.attr('number'),
+    title:  DS.attr('string'),
+    color:  DS.attr('string')
+});
+
+App.TodoList.FIXTURES = [
+    { id: 1, column: 1, title: 'Default', color: white },
+    { id: 2, column: 1, title: 'List A1', color: lightblue },
+    { id: 3, column: 2, title: 'List B0', color: green },
+    { id: 4, column: 2, title: 'List B1', color: yellow },
+    { id: 5, column: 2, title: 'List B2', color: pink }
+];
+
 App.ApplicationController = Ember.Controller.extend({
-    color: myColors[1],
     items: items,
 
-    actions: {
-	change: function() {
-	    this.set('color', myColors[7]);
-	}
-    }
+//    listColumn1: function() {
+//	return this.get('store').filterProperty('column', 1);
+//	console.log(this.get('store').filter('todo-lsit', { column: "1" }, function(list) { return list.get('column') === 1 }));
+//	return this.get('store').filter('todo-list', { column: 1 }, function(list) { return list.get('column') === 1 });//.then(function(lists) {
+//	    console.log('encontrada');
+//	});
+//    }.property()
 });
 
 
