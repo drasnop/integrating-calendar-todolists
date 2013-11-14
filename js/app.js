@@ -100,9 +100,7 @@ var items=[{
 ////////////////////////////// EMBER APP //////////////////////////////
 App = Ember.Application.create();
 
-App.Store = DS.Store.extend({
-    adapter:  DS.FixtureAdapter.create()
-});
+App.ApplicationAdapter = DS.FixtureAdapter.extend();
 
 App.TodoList = DS.Model.extend({
     column: DS.attr('number'),
@@ -119,15 +117,29 @@ App.TodoList.FIXTURES = [
 ];
 
 App.ApplicationController = Ember.Controller.extend({
-    items: items,
+    listColumn1: function() {
+	var found = [];
+	this.store.findAll('todo-list').then(function(todoLists) {
+	    todoLists.forEach(function(todoList) {
+		if (todoList.get('column') === 1) {
+		    found.pushObject(todoList);
+		}
+	    });
+	});
+	return found;
+    }.property(),
 
-//    listColumn1: function() {
-//	return this.get('store').filterProperty('column', 1);
-//	console.log(this.get('store').filter('todo-lsit', { column: "1" }, function(list) { return list.get('column') === 1 }));
-//	return this.get('store').filter('todo-list', { column: 1 }, function(list) { return list.get('column') === 1 });//.then(function(lists) {
-//	    console.log('encontrada');
-//	});
-//    }.property()
+    listColumn2: function () {
+	var found = [];
+	this.store.findAll('todo-list').then(function(todoLists) {
+	    todoLists.forEach(function(todoList) {
+		if (todoList.get('column') === 2) {
+		    found.pushObject(todoList);
+		}
+	    });
+	});
+	return found;
+    }.property()
 });
 
 
