@@ -157,8 +157,12 @@
 		<div id="todo-lists-area-wrapper">
 			<div id="todo-lists-area"><!--
 			--><div class="todo-lists-column" id="todo-lists-area-left">
-			  {{#each list in listColumnOne }}
-			  {{{ list.title }}}
+			  {{#each list in listColumn1 }}
+			  <div class="todolist sortable" type="text2" {{bind-attr style=list.style}}><div class='listName contenteditable' contenteditable>{{{ list.title }}}</div>
+			    {{#each item in list.items}}
+			    {{{item.description}}}
+			    {{/each}}
+			  </div>
 			  {{/each}}
 				<div id="list-a0" class="todolist sortable" type="text2"><div class='listName contenteditable' contenteditable>Default</div>
 				  {{#each items}}
@@ -182,6 +186,9 @@
 				<div id="list-a1" class="todolist sortable" type="text2"><div class='listName contenteditable' contenteditable>List A1</div></div>
 			</div><!--
 		 --><div class="todo-lists-column" id="todo-lists-area-right">
+			  {{#each list in listColumn2 }}
+			  <div class="todolist sortable" type="text2" {{bind-attr style=list.style}}><div class='listName contenteditable' contenteditable>{{{ list.title }}}</div></div>
+			  {{/each}}
 				<div id="list-b0" class="todolist sortable" type="text2"><div class='listName contenteditable' contenteditable>List B0</div></div>
 				<div id="list-b1" class="todolist sortable" type="text2"><div class='listName contenteditable' contenteditable>List B1</div></div>
 				<div id="list-b2" class="todolist sortable" type="text2"><div class='listName contenteditable' contenteditable>List B1</div></div>
