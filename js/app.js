@@ -16,7 +16,7 @@ Ember.View.reopen({
 // https://github.com/KasperTidemann/ember-contenteditable-view/blob/master/ember-contenteditable-view.js
 Ember.ItemView = Em.View.extend({
     tagName: 'div',
-    attributeBindings: ['contenteditable'],
+    attributeBindings: ['contenteditable', 'style'],
     classNames: ['description', 'contenteditable'],
 
     // Variables:
@@ -30,6 +30,13 @@ Ember.ItemView = Em.View.extend({
 
         return editable ? 'true' : undefined;
     }).property('editable'),
+
+    style: function() {
+	if (this.content.get('checked'))
+	    return "text-decoration: line-through";
+	else
+	    return "text-decoration: none";
+    }.property('content.checked'),
 
     // Observers:
     valueObserver: (function() {
@@ -158,8 +165,15 @@ App.Item = DS.Model.extend({
     description: DS.attr('string'),         // string
 
     style: function() {
-	return "background-color: rgba(" + this.get('list.color') + ", 0.85)";
-    }.property('list.color')
+	var listColor = this.get('list.color');
+	var darkerColor = changeColor(listColor.split(',').map(Number),-60);
+	var res = "background-color: rgba(" + listColor + ", 0.85); ";
+	if (this.get('checked')) {
+	    return res + "color: rgb(" + colorToString(darkerColor) + ")";
+	} else {
+	    return res + "color: #191919";
+	}
+    }.property('list.color', 'checked')
 });
 
 App.Item.FIXTURES = [
@@ -239,7 +253,11 @@ App.ApplicationController = Ember.Controller.extend({
     actions: {
 	pinSwitch: function(item) {
 	    item.set('pinned', !item.get('pinned'));
-	}
+	},
+
+	checkSwitch: function(item) {
+	    item.set('checked', !item.get('checked'));
+	},
     }
 });
 
@@ -331,6 +349,20 @@ App.RenderItemView = Ember.View.extend({
 	    return "img/pin16.png";
     }.property('content.pinned'),
 
+    squareStyle: function() {
+	if (this.content.get('checked'))
+	    return "display: none";
+	else
+	    return "display: inline-block";
+    }.property('content.checked'),
+
+    checkmarkStyle: function() {
+	if (this.content.get('checked'))
+	    return "display: block; visibility: visible"
+	else
+	    return "visibility: visible; display: none"
+    }.property('content.checked'),
+
     afterRenderEvent: function () {
 	var item = this.$();
 	item.data('activated', true);
@@ -358,36 +390,6 @@ App.RenderItemView = Ember.View.extend({
 	item.children('.description').keypress(function(event){
 	    if(event.which==13){
 		insertItem(true,$(this).parent('.item'));   // Don't put "item" here!!
-	    }
-	});
-
-	// cross items out
-	item.children('.checkbox').click(function(){
-	    var color=$(this).parent('.item').data('color');
-	    var darkerColor=changeColor(color,-60);
-
-	    if(!$(this).data('checked'))
-	    {
-		$(this).data('checked',true);
-
-		// item, text and checkbox appearance
-		$(this).parent('.item').css('color','rgb('+colorToString(darkerColor)+')');
-		$(this).siblings('.description').css('text-decoration','line-through');
-		
-		$(this).children('.square').css('display','none');
-		$(this).children('.checkmark').css('display','block');
-		$(this).children('.checkmark').css('visibility','visible');
-	    }
-	    else{
-		$(this).data('checked',false);
-
-		// item, text and checkbox appearance
-		$(this).parent('.item').css('color','#191919');
-		$(this).siblings('.description').css('text-decoration','none');
-		
-		$(this).children('.square').css('display','inline-block');
-		$(this).children('.checkmark').css('visibility','visible');
-		$(this).children('.checkmark').css('display','none');
 	    }
 	});
 

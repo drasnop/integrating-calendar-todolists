@@ -224,10 +224,10 @@
 </script>
 
 <script type="text/x-handlebars" data-template-name="item">
-  <div class='checkbox' data-checked='false'>
-    <div class='square hiddenIcon'></div><div class='checkmark'>✔</div>
+  <div class='checkbox' {{action "checkSwitch" view.content}}>
+    <div class='square hiddenIcon' {{bind-attr style=view.squareStyle}}></div><div class='checkmark' {{bind-attr style=view.checkmarkStyle}}>✔</div>
   </div>
-  {{view Ember.ItemView value=view.content.description contenteditable="true"}}
+  {{view Ember.ItemView value=view.content.description content=view.content contenteditable="true"}}
   <div class='setDateTime'>
     <div class='contenteditable' contenteditable></div>
     <img class='hiddenIcon opacityButton' src='img/calendar16.png' title='Set date/time' />
