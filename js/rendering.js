@@ -198,35 +198,40 @@ function invisible(){
 
 
 function initializeCalendar() {
-    $('#d20130901').append("<div class='cal-event'>9:30am CS544 Lecture</div>");
-    $('#d20130903').append("<div class='cal-event'>9:30am CS544 Lecture</div>");
-    $('#d20130908').append("<div class='cal-event'>9:30am CS544 Lecture</div>");
-    $('#d20130910').append("<div class='cal-event'>9:30am CS544 Lecture</div>");
-    $('#d20130915').append("<div class='cal-event'>9:30am CS544 Lecture</div>");
-    $('#d20130917').append("<div class='cal-event'>9:30am CS544 Lecture</div>");
-    $('#d20130922').append("<div class='cal-event'>9:30am CS544 Lecture</div>");
-    $('#d20130924').append("<div class='cal-event'>9:30am CS544 Lecture</div>");
-    $('#d20130929').append("<div class='cal-event'>9:30am CS544 Lecture</div>");
-    $('#d20130931').append("<div class='cal-event'>9:30am CS544 Lecture</div>");
-    $('#d20131005').append("<div class='cal-event'>9:30am CS544 Lecture</div>");
-    $('#d20131007').append("<div class='cal-event'>9:30am CS544 Lecture</div>");
-    $('#d20131012').append("<div class='cal-event'>9:30am CS544 Lecture</div>");
-    $('#d20131014').append("<div class='cal-event'>9:30am CS544 Lecture</div>");
+    $('#d20130901').append("<div class='cal-event'>9:30am Lecture</div>");
+    $('#d20130903').append("<div class='cal-deadline'>9am Stage 1</div>");
+    $('#d20130903').append("<div class='cal-event'>9:30am Lecture</div>");
+    $('#d20130903').append("<div class='cal-deadline'>5pm S1 Hardcopy</div>");
+    $('#d20130908').append("<div class='cal-event'>9:30am Lecture</div>");
+    $('#d20130910').append("<div class='cal-event'>9:30am Lecture</div>");
+    $('#d20130915').append("<div class='cal-event'>9:30am Lecture</div>");
+    $('#d20130917').append("<div class='cal-event'>9:30am Lecture</div>");
+    $('#d20130922').append("<div class='cal-event'>9:30am Lecture</div>");
+    $('#d20130924').append("<div class='cal-event'>9:30am Lecture</div>");
+    $('#d20130929').append("<div class='cal-event'>9:30am Lecture</div>");
+    $('#d20130931').append("<div class='cal-event'>9:30am Lecture</div>");
+    $('#d20131005').append("<div class='cal-event'>9:30am Lecture</div>");
+    $('#d20131007').append("<div class='cal-event'>9:30am Lecture</div>");
+    $('#d20131012').append("<div class='cal-event'>9:30am Lecture</div>");
+    $('#d20131014').append("<div class='cal-event'>9:30am Lecture</div>");
 
-    $('#d20130902').append("<div class='cal-event'>1pm CS544 Lab</div>");
-    $('#d20130904').append("<div class='cal-event'>1pm CS544 Lab</div>");
-    $('#d20130909').append("<div class='cal-event'>1pm CS544 Lab</div>");
-    $('#d20130911').append("<div class='cal-event'>1pm CS544 Lab</div>");
-    $('#d20130916').append("<div class='cal-event'>1pm CS544 Lab</div>");
-    $('#d20130918').append("<div class='cal-event'>1pm CS544 Lab</div>");
-    $('#d20130923').append("<div class='cal-event'>1pm CS544 Lab</div>");
-    $('#d20130925').append("<div class='cal-event'>1pm CS544 Lab</div>");
-    $('#d20130930').append("<div class='cal-event'>1pm CS544 Lab</div>");
-    $('#d20131001').append("<div class='cal-event'>1pm CS544 Lab</div>");
-    $('#d20131006').append("<div class='cal-event'>1pm CS544 Lab</div>");
-    $('#d20131008').append("<div class='cal-event'>1pm CS544 Lab</div>");
-    $('#d20131013').append("<div class='cal-event'>1pm CS544 Lab</div>");
-    $('#d20131015').append("<div class='cal-event'>1pm CS544 Lab</div>");
+
+
+    $('#d20130902').append("<div class='cal-event'>1pm Lab</div>");
+    $('#d20130904').append("<div class='cal-event'>1pm Lab</div>");
+    $('#d20130909').append("<div class='cal-event'>1pm Lab</div>");
+    $('#d20130911').append("<div class='cal-event'>1pm Lab</div>");
+    $('#d20130916').append("<div class='cal-event'>1pm Lab</div>");
+    $('#d20130918').append("<div class='cal-event'>1pm Lab</div>");
+    $('#d20130923').append("<div class='cal-event'>1pm Lab</div>");
+    $('#d20130925').append("<div class='cal-event'>1pm Lab</div>");
+    $('#d20130930').append("<div class='cal-event'>1pm Lab</div>");
+    $('#d20131001').append("<div class='cal-event'>1pm Lab</div>");
+    $('#d20131006').append("<div class='cal-event'>1pm Lab</div>");
+    $('#d20131008').append("<div class='cal-event'>1pm Lab</div>");
+    $('#d20131013').append("<div class='cal-event'>1pm Lab</div>");
+    $('#d20131015').append("<div class='cal-event'>1pm Lab</div>");
+
 }
 
 
