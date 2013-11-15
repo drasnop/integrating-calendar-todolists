@@ -236,11 +236,12 @@ body{
     background-color: rgba(180,216,231,.3);
     font-size: 12px;
     margin-top: 5px;
+    padding-left: 15px;
 }
 
 .cal-deadline {
     font-size: 12px;
-    margin-top: 5px;
+    margin-top: 3px;
     border-bottom: 2px solid red;
     position: relative;
     padding-left: 15px;
