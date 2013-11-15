@@ -4,7 +4,7 @@ $(function() {
 
 	fill_calendar(50);  // 50 rows
 
-	$('#wrapper').css('height',$(window).height()-33);
+	$('#wrapper').css('height',$(window).height()-50);
 
 	// Carousel configuration
 	var carousel = $('#wrapper');
@@ -13,7 +13,7 @@ $(function() {
 		infinite: false,
 		auto: false,
 		width: 1366,
-		height: $(window).height()-33,
+		height: $(window).height()-50,
 		items: {
 			visible: 2,
 			start: 1
@@ -125,11 +125,26 @@ $(function() {
 	// });
 
 	$('#todo-lists-area-wrapper').bind('mousewheel', function(event, delta) {
-		console.log("mousewheel");
 		var newTop=parseInt($('#todo-lists-area').css('top')) + (delta > 0 ? 40 : -40);
+		var height=$('#todo-lists-area').height();
 		if(newTop > 3)
 			newTop=3;
+
+		/* It would be nice to prevent the user to scroll "too far" at the bottom; 
+		however, this would require to know the total height of the todo-lists-are,
+		which is complicated to get (it's not just .height()).
+		if(newTop < -height-10)
+			newTop=-height-10;*/
 		$('#todo-lists-area').css('top', newTop);
+
+		return false;
+	});
+
+	$('#main-list-wrapper').bind('mousewheel', function(event, delta) {
+		var newTop=parseInt($('#main-list').css('top')) + (delta > 0 ? 40 : -40);
+		if(newTop > 0)
+			newTop=0;
+		$('#main-list').css('top', newTop);
 
 		return false;
 	});

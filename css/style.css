@@ -152,15 +152,17 @@ body{
 #options, #calendar, #tasks-summary, #todo-lists-area {
     float: left;
     height: 100%;
+}
+
+#options{
     background-color: rgba(250,240,240,.3);
+    box-shadow:  1px 1px 8px -1px black;
+    /*to get the shadow to display on calendar*/
+    position: relative;  
 }
 
 #options-content {
     width: 344px;
-    /*box-shadow:  1px 1px 8px -1px black;
-    to get the shadow to display on calendar
-    position: relative;  
-    */
 }
 
 #options-content div, #options-content span, #options-content input{
@@ -209,7 +211,7 @@ body{
 
     /* just to see the shadow */
     position: relative;
-    z-index: 10;
+    z-index: 2;
 }
 
 #calendar-wrapper {
@@ -323,12 +325,93 @@ body{
 }
 
 
+/*  /////////////  Task summary  ///////// */
+
+
+#tasks-summary{
+    overflow-y: hidden;
+    box-shadow:  1px 1px 8px -1px black;
+
+    /* Just to get the shadow to be displayed on the calendar */
+    position: relative;
+    z-index: 5;
+}
+
+#next-up{
+    text-align: center;
+    box-shadow: -1px 1px 5px 0px black;
+    background-color: rgba(255,255,255,.9);
+    height: 29px;
+    line-height: 29px;
+
+    position: relative;
+    z-index: 5;
+}
+
+#contextual-list {
+    height: 200px;
+    /*margin-bottom: 10px;*/
+    background-color: rgba(255,255,255,.5);
+
+    /* just to get the controls to display properly */
+    position: relative;
+} 
+
+#switch-ordering-button{
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+
+    width: 16px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#remaining-items{
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    text-align: right;
+    font-size: 90%;
+    font-style: italic;
+
+    cursor: help;
+}
+
+#resize-bar {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+    text-align: center;
+    height: 3px;
+    border-top: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    background-color: rgba(255,255,255,.5);
+}
+
+#main-list-wrapper {
+   height: 100%;
+   overflow-y: hidden;
+
+   background-color: rgba(250,240,240,.3);
+
+   /* just to get the main-list to display properly */
+   position: relative;
+}
+
+#main-list {
+    position: absolute;
+    top:0px;
+    box-shadow: none;
+}
+
 /*////////////////       todo-lists         /////////////*/
 
 
 #todo-lists-area-wrapper {
-    height: 100%;
-   /* overflow-x: hidden; */
+   height: 100%;
+   overflow-y: hidden;
    float: left;
    position: relative;
 }
@@ -346,27 +429,6 @@ body{
     vertical-align: top;
 }
 
-#tasks-summary{
-    /*overflow-x: hidden; */
-}
-
-/*#contextual-list {
-    height: 200px;
-    width: 90%;
-    margin: 10px;
-}
-
-#main-list {
-    height: auto;
-    width: 90%;
-    margin: 10px;
-}
-
-#new-todo {
-    margin: 10px;
-}*/
-
-
 
 
 
@@ -383,8 +445,6 @@ body{
     margin-bottom: 10px;
     padding-bottom: 40px;
 
-    background-color: rgba(250,240,240,.3);
-
     border-radius: 7px;
     padding-top: 9px;
     box-shadow:  1px 1px 8px -1px black;
@@ -393,11 +453,6 @@ body{
 
     /* the only use of this is to get the trashbin to display correctly */
     position: relative;
-}
-
-#tasks-summary .todolist{
-    border-radius: 0;
-    height: 100%;
 }
 
 .todolist .trashbin{
@@ -552,16 +607,19 @@ in a newly created item */
     top: 0px;      /* will be animated to -24px */
     height: 24px;   /* will be animated to 24px */ 
     box-shadow: -1px -1px 4px -1px gray;
+    font-weight: bold;
 }
 
 .item .createSubtask{
     top: 47px;
     height: 24px;  /* will be animated to 24px */
     box-shadow: -1px 1px 5px -1px gray;
+    font-weight: bold;
 }
 
 .opacityButton{
     opacity:.6;
+    cursor: pointer;
     /* z-index: 10;   dynamically modified */
 }
 

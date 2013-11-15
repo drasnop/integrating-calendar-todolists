@@ -214,6 +214,18 @@ $(document).ready(function(){
 	$('.sortable').sortable({
 		cancel: '.listName,.hiddenIcon,.newItem,.description,.setDateTime,.trashbin',
 		connectWith: '.sortable'});
+	$('#contextual-list').resizable({
+		containment:'#tasks-summary',
+		handles:'s',
+		minHeight:200,
+		maxHeight:800,
+		stop: function(){
+			$('#contextual-list').animate({
+				'height':'200px'
+			},400);
+		}
+	});
+
 	$('.todolist').mouseenter(function(){
 		$(this).children('.hoverable').css('visibility','visible');
 	});

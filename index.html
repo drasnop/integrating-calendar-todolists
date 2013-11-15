@@ -133,24 +133,32 @@
 		</div>
 
 		<div id="tasks-summary">
-			<div id="main-list" class="todolist sortable" color="255,255,255" type="text2"><div class='listName'>Main list</div>
-			  {{#each items}}
-			  <div class='item text2' style='background-color: rgba("255,255,255", .85)' data-color=["255,255,255"] data-activated='false'>
-			    <div class='checkbox' data-checked='false'>
-			      <div class='square hiddenIcon'></div><div class='checkmark'>✔</div>
-			    </div>
-			    {{view Ember.ItemView valueBinding="text" contenteditable="true"}}
-			    <div class='setDateTime'>
-			      <div class='contenteditable' contenteditable></div>
-			      <img class='hiddenIcon opacityButton' src='img/calendar16.png' title='Set date/time' />
-			    </div>
-			    <img class='pin hiddenIcon opacityButton' src='img/pin16.png' data-pinned='false' data-dialogueExpanded='false' title='Pin item to main list' />
-			    <div class='dialogueElement dialogue'>
-			      <div class='dialogueElement setImportance' title='Set importance level'>!</div>
-			      <div class='dialogueElement createSubtask' title='Create subtask'>+</div>
-			    </div>
-			  </div>
-			  {{/each}}
+			<div id="next-up"> Next meeting </div>
+			<div id="contextual-list" title="Show more items">
+				<div id='switch-ordering-button' class='opacityButton' title='Order by priority'>!</div>
+				<div id='remaining-items' title='items not displayed'>+ 6 normal items</div>
+				<div id="resize-bar"><img src='img/3dots.png'></div>
+			</div>
+			<div id="main-list-wrapper">
+				<div id="main-list" class="todolist sortable" color="0,0,0" type="text2"><div class='listName'>Main list</div>
+				  {{#each items}}
+				  <div class='item text2' style='background-color: rgba("255,255,255", .85)' data-color=["255,255,255"] data-activated='false'>
+				    <div class='checkbox' data-checked='false'>
+				      <div class='square hiddenIcon'></div><div class='checkmark'>✔</div>
+				    </div>
+				    {{view Ember.ItemView valueBinding="text" contenteditable="true"}}
+				    <div class='setDateTime'>
+				      <div class='contenteditable' contenteditable></div>
+				      <img class='hiddenIcon opacityButton' src='img/calendar16.png' title='Set date/time' />
+				    </div>
+				    <img class='pin hiddenIcon opacityButton' src='img/pin16.png' data-pinned='false' data-dialogueExpanded='false' title='Pin item to main list' />
+				    <div class='dialogueElement dialogue'>
+				      <div class='dialogueElement setImportance' title='Set importance level'>!</div>
+				      <div class='dialogueElement createSubtask' title='Create subtask'>+</div>
+				    </div>
+				  </div>
+				  {{/each}}
+				</div>
 			</div>
 		</div>
 
@@ -198,6 +206,9 @@
 
 			// width of our wrapper equals width of the inner part of the textarea
 			document.getElementById("todo-lists-area-wrapper").style.width = textareaWidth + 'px';
+
+			textareaWidth = document.getElementById("main-list").scrollWidth;
+			document.getElementById("main-list-wrapper").style.width = textareaWidth + 'px';
 		</script>
 </div>
 </script>
