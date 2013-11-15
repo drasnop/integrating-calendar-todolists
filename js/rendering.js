@@ -37,8 +37,8 @@ function generateItem(item, color,type){
 
 function generateDeadline(description,time,color){
 	return "<div class='deadline'> "+description+"     \
-				<div class='dot' style='background-color:"+color+"'></div>  \
-				<div class='contenteditable' contenteditable>"+time+"</div>    \
+				<div class='dot' style='background-color:rgba("+color+",1)'></div>  \
+				<div class='contenteditable dateTimeField' contenteditable>"+time+"</div>    \
 			</div>";
 }
 
@@ -217,21 +217,22 @@ $(document).ready(function(){
 	$('.todolist').append("<div class='newItem'>Add item...</div>");
 	$('.todolist').append("<img class='trashbin opacityButton' src='img/trashbin.png' title='Delete checked items'>");
 
-	for(var i=0;i<5;i++){
+/*	for(var i=0;i<5;i++){
 		$('#contextual-list').append(generateDeadline(items[i]),"Fr 11/15 1pm",colors[i]);
-	}
+	}*/
 
 	$('.sortable').sortable({
 		cancel: '.listName,.hiddenIcon,.newItem,.description,.setDateTime,.trashbin',
 		connectWith: '.sortable'});
+	var CLheight=150;
 	$('#contextual-list').resizable({
 		containment:'#tasks-summary',
 		handles:'s',
-		minHeight:200,
-		maxHeight:800,
+		minHeight:CLheight,
+		maxHeight:CLheight*3,
 		stop: function(){
 			$('#contextual-list').animate({
-				'height':'200px'
+				'height':CLheight+'px'
 			},400);
 		}
 	});

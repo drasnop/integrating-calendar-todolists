@@ -353,8 +353,8 @@ body{
 }
 
 #contextual-list {
-    height: 200px;
-    /*margin-bottom: 10px;*/
+    height: 150px;
+    padding-top: 5px;
     background-color: rgba(255,255,255,.5);
 
     /* just to get the controls to display properly */
@@ -363,6 +363,8 @@ body{
 
 .deadline{
     min-height: 23px;
+    font-size: 90%;
+    margin-bottom: 1px;
 
     /* the only use of this is to get the icons inside to display correctly */
     position: relative;
@@ -372,6 +374,26 @@ body{
     width: 10px;
     height: 10px;
     border-radius: 50%;
+    border: 1px solid #333333;
+
+    position: absolute;
+    left: 4px;
+    top: 7px;
+}
+
+.deadline .description{
+    max-width: 260px;
+    display: inline-block;
+    padding-top: 4px;
+    margin-left: 19px;
+    margin-right: 5px;
+    padding-right: 10px;
+    min-width: 50px;
+    min-height: 19px;
+}
+
+.deadline .dateTimeField{
+    right: 9px;
 }
 
 #switch-ordering-button{
@@ -594,11 +616,14 @@ in a newly created item */
     right: 26px;
     top: 4px;
 
-    display: none;
     min-width: 16px;
     max-width: 100px;
 
     font-style: italic;
+}
+
+.item dateTimeField{
+    display: none;
 }
 
 .item .hiddenIcon{
