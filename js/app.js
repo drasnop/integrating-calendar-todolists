@@ -234,10 +234,12 @@ App.Item.FIXTURES = [
     { id: 46, parentId: null, list: 5, order: 4,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "7pm restaurant" },
     { id: 47, parentId: null, list: 5, order: 5,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "Tomorrow pay phone bill" },
     { id: 48, parentId: null, list: 5, order: 6,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "Apply for Fair Pharmacare" },
-    { id: 49, parentId: null, list: 5, order: 7,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "Kick-Ass 2" }
+    { id: 49, parentId: null, list: 5, order: 7,  importance: 1, priority: 0, pinned: true, checked: false, startDate: null, endDate: null, reminders: [], description: "Kick-Ass 2" }
 ];
 
 App.ApplicationController = Ember.Controller.extend({
+    items: [],
+
     listColumn1: function() {
 	return this.store.filter('todo-list', function(itm, index, enumerable) {
 	    return itm.get('column') === 1;
@@ -249,6 +251,20 @@ App.ApplicationController = Ember.Controller.extend({
 	    return itm.get('column') === 2;
 	});
     }.property(),
+
+    pinnedItems: function() {
+	alert(this.get('items'));
+	return this.items.filterProperty('pinned');
+    }.property('items.@each.pinned', 'items.[]'),
+
+    init: function() {
+	this._super();
+	this.store.find('item').then(function(v) {
+	    v.forEach(function(i) {
+		items.push(i);
+	    });
+	});
+    },
 
     actions: {
 	pinSwitch: function(item) {

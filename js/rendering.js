@@ -270,19 +270,6 @@ $(document).ready(function(){
 
 	$("#main-list").data('color',white);
 
-	// Content generation
-	for(var i=0; i<items.length; i++){
-		$("#main-list").append(generateItem(items[i].text,colors[i],"text2"));
-		$("#list-a1").append(generateItem(items[i].text,lightblue,"text2"));
-		$("#list-b0").append(generateItem(items[i].text,green,"text2"));
-	}
-	for(var i=0; i<items.length/2; i++){
-		$("#list-a0").append(generateItem(items[i].text,white,"text2"));
-		$("#list-b2").append(generateItem(items[i].text,pink,"text2"));
-	}
-	for(var i=items.length/2; i<items.length; i++){
-		$("#list-b1").append(generateItem(items[i].text,yellow,"text2"));
-	}
 	$('.todolist').append("<div class='newItem'>Add item...</div>");
 	$('.todolist').append("<img class='trashbin opacityButton' src='img/trashbin.png' title='Delete checked items'>");
 

@@ -192,22 +192,8 @@
 			</div>
 			<div id="main-list-wrapper">
 				<div id="main-list" class="todolist sortable" color="0,0,0" type="text2"><div class='listName'>Main list</div>
-				  {{#each items}}
-				  <div class='item text2' style='background-color: rgba("255,255,255", .85)' data-color=["255,255,255"] data-activated='false'>
-				    <div class='checkbox' data-checked='false'>
-				      <div class='square hiddenIcon'></div><div class='checkmark'>✔</div>
-				    </div>
-				    {{view Ember.ItemView valueBinding="text" contenteditable="true"}}
-				    <div class='setDateTime'>
-				      <div class='contenteditable' contenteditable></div>
-				      <img class='hiddenIcon opacityButton' src='img/calendar16.png' title='Set date/time' />
-				    </div>
-				    <img class='pin hiddenIcon opacityButton' src='img/pin16.png' data-pinned='false' data-dialogueExpanded='false' title='Pin item to main list' />
-				    <div class='dialogueElement dialogue'>
-				      <div class='dialogueElement setImportance' title='Set importance level'>!</div>
-				      <div class='dialogueElement createSubtask' title='Create subtask'>+</div>
-				    </div>
-				  </div>
+				  {{#each item in pinnedItems}}
+				  {{view App.RenderItemView class='item text2' content=item}}
 				  {{/each}}
 				</div>
 			</div>
@@ -224,8 +210,8 @@
 			  {{#each list in listColumn2 }}
 			  {{view App.RenderTodoListView class="todolist sortable" content=list}}
 			  {{/each}}
-			</div><!--
-	 --></div>
+				</div><!--
+		 --></div>
 		</div>
 
 		<script type="text/javascript" charset="utf-8">
