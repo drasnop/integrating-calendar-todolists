@@ -7,6 +7,7 @@ $(function() {
 	$('#wrapper').css('height',$(window).height()-50);
 
 	// Carousel configuration
+	/* WARNING: body must be overflow:hidden */
 	var carousel = $('#wrapper');
 	carousel.carouFredSel({
 		circular: false,

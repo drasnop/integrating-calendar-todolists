@@ -24,7 +24,7 @@ function generateItem(item, color,type){
 				</div>	 \
 				<div class='description contenteditable' contenteditable>"+item+"</div>  \
 				<div class='setDateTime'>    \
-					<div class='contenteditable' contenteditable></div>    \
+					<div class='contenteditable dateTimeField' contenteditable></div>    \
 					<img class='hiddenIcon opacityButton' src='img/calendar16.png' title='Set date/time'>  \
 				</div>    \
 				<img class='pin hiddenIcon opacityButton' src='img/pin16.png' data-pinned='false' data-dialogueExpanded='false' title='Pin item to main list'>    \
@@ -35,6 +35,12 @@ function generateItem(item, color,type){
 			</div>";
 }
 
+function generateDeadline(description,time,color){
+	return "<div class='deadline'> "+description+"     \
+				<div class='dot' style='background-color:"+color+"'></div>  \
+				<div class='contenteditable' contenteditable>"+time+"</div>    \
+			</div>";
+}
 
 function generateEmptyItem(color,type){
 	return generateItem("",color,type);
@@ -210,6 +216,10 @@ $(document).ready(function(){
 	}
 	$('.todolist').append("<div class='newItem'>Add item...</div>");
 	$('.todolist').append("<img class='trashbin opacityButton' src='img/trashbin.png' title='Delete checked items'>");
+
+	for(var i=0;i<5;i++){
+		$('#contextual-list').append(generateDeadline(items[i]),"Fr 11/15 1pm",colors[i]);
+	}
 
 	$('.sortable').sortable({
 		cancel: '.listName,.hiddenIcon,.newItem,.description,.setDateTime,.trashbin',

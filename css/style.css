@@ -17,6 +17,10 @@ body{
      color: #191919;
      min-height: 100%;
      text-align: center;
+
+     /* necessary to prevent scrollbars to appear,
+     otherwise it will mess up the layout */
+     overflow: hidden;
 }
 
 
@@ -357,6 +361,19 @@ body{
     position: relative;
 } 
 
+.deadline{
+    min-height: 23px;
+
+    /* the only use of this is to get the icons inside to display correctly */
+    position: relative;
+}
+
+.deadline .dot{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
 #switch-ordering-button{
     position: absolute;
     bottom: 5px;
@@ -570,13 +587,18 @@ in a newly created item */
     position: absolute;
     right: 26px;
     top: 4px;
-    font-style: italic;
 }
 
-.item .setDateTime .contenteditable{
+.dateTimeField{
+    position: absolute;
+    right: 26px;
+    top: 4px;
+
     display: none;
     min-width: 16px;
     max-width: 100px;
+
+    font-style: italic;
 }
 
 .item .hiddenIcon{
