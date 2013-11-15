@@ -1,5 +1,9 @@
 ///////////////////////////  helper functions //////////////////////////
 
+function format_date(year, month, day) {
+    return "" + year + ("0"+month).slice(-2) + ("0"+day).slice(-2);
+};
+
 
 function fill_calendar(rows) {
     var month_strings = new Array("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec");
@@ -14,10 +18,10 @@ function fill_calendar(rows) {
     while (rows > 0) {
 	row = "<tr>";
 	for (var i = 0; i < 7; i++) {
-	    row += "<td class='";
+	    row += "<td id='d" + format_date(year,month,day) + "' class='";
 
-	    if(i==0)	       row += "noLeftBorder ";
-	    if(i==6)	       row += "noRightBorder ";
+	    if(i==0)	       row += "noLeftBorder weekend ";
+	    if(i==6)	       row += "noRightBorder weekend ";
 	    if (day == 1)      row += "day1";
 	    else if (day <= 7) row += "week1";
 	    else               row += "regular";

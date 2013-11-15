@@ -228,6 +228,17 @@ body{
     margin-top: -1px;   /* looks better */
 }
 
+.weekend {
+    background-color: rgba(225,225,225,.9);
+}
+
+.cal-event {
+    background-color: rgba(180,216,231,.3);
+    font-size: 12px;
+    font-weight: bold;
+    padding: 1px;
+}
+
 #c1 table {
     width: 1022px;
     border-collapse: collapse;
