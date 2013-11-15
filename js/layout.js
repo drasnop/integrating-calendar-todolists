@@ -118,11 +118,11 @@ $(function() {
 		changeYear: true
 	});
 
-	$("#lookatme").bind('inview', function(event, isInView, vX, vY) {
-		if(isInView) {
-			alert("Lookatme! " + vX + vY);
-		}
-	});
+	// $("#lookatme").bind('inview', function(event, isInView, vX, vY) {
+	// 	if(isInView) {
+	// 		alert("Lookatme! " + vX + vY);
+	// 	}
+	// });
 
 	$('#todo-lists-area-wrapper').bind('mousewheel', function(event, delta) {
 		console.log("mousewheel");
