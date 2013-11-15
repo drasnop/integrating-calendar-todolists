@@ -199,20 +199,24 @@ function invisible(){
 
 function initializeCalendar() {
     $('#d20130901').append("<div class='cal-event'>9:30am Lecture</div>");
-    $('#d20130903').append("<div class='cal-deadline'>9am Stage 1</div>");
+    $('#d20130903').append("<div class='cal-deadline'><div class='dot' style='background-color:rgba(180,216,231,1)'></div> 9am Stage 1</div>");
     $('#d20130903').append("<div class='cal-event'>9:30am Lecture</div>");
-    $('#d20130903').append("<div class='cal-deadline'>5pm S1 Hardcopy</div>");
+    $('#d20130903').append("<div class='cal-deadline'><div class='dot' style='background-color:rgba(180,216,231,1)'></div> 5pm S1 Hardcopy</div>");
     $('#d20130908').append("<div class='cal-event'>9:30am Lecture</div>");
     $('#d20130910').append("<div class='cal-event'>9:30am Lecture</div>");
     $('#d20130915').append("<div class='cal-event'>9:30am Lecture</div>");
     $('#d20130917').append("<div class='cal-event'>9:30am Lecture</div>");
+    $('#d20130922').append("<div class='cal-deadline'><div class='dot' style='background-color:rgba(180,216,231,1)'></div> 9am Stage 2</div>");
     $('#d20130922').append("<div class='cal-event'>9:30am Lecture</div>");
+    $('#d20130922').append("<div class='cal-deadline'><div class='dot' style='background-color:rgba(180,216,231,1)'></div> 5pm S2 Hardcopy</div>");
     $('#d20130924').append("<div class='cal-event'>9:30am Lecture</div>");
     $('#d20130929').append("<div class='cal-event'>9:30am Lecture</div>");
     $('#d20130931').append("<div class='cal-event'>9:30am Lecture</div>");
     $('#d20131005').append("<div class='cal-event'>9:30am Lecture</div>");
     $('#d20131007').append("<div class='cal-event'>9:30am Lecture</div>");
+    $('#d20131012').append("<div class='cal-deadline'><div class='dot' style='background-color:rgba(180,216,231,1)'></div> 9am Stage 3</div>");
     $('#d20131012').append("<div class='cal-event'>9:30am Lecture</div>");
+    $('#d20131012').append("<div class='cal-deadline'><div class='dot' style='background-color:rgba(180,216,231,1)'></div> 5pm S3 Hardcopy</div>");
     $('#d20131014').append("<div class='cal-event'>9:30am Lecture</div>");
 
 
@@ -221,6 +225,8 @@ function initializeCalendar() {
     $('#d20130904').append("<div class='cal-event'>1pm Lab</div>");
     $('#d20130909').append("<div class='cal-event'>1pm Lab</div>");
     $('#d20130911').append("<div class='cal-event'>1pm Lab</div>");
+    $('#d20130914').append("<div class='cal-deadline'><div class='dot' style='background-color:rgba(180,216,231,1)'></div> 11pm Midterm prep</div>");
+    $('#d20130916').append("<div class='cal-deadline'><div class='dot' style='background-color:rgba(180,216,231,1)'></div> 9am S1 Resubmit</div>");
     $('#d20130916').append("<div class='cal-event'>1pm Lab</div>");
     $('#d20130918').append("<div class='cal-event'>1pm Lab</div>");
     $('#d20130923').append("<div class='cal-event'>1pm Lab</div>");

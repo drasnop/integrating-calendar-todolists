@@ -243,6 +243,8 @@ body{
     font-weight: bold;
     padding: 1px;
     border-bottom: 2px solid red;
+    position: relative;
+    padding-left: 15px;
 }
 
 #c1 table {
@@ -397,7 +399,7 @@ body{
     position: relative;
 }
 
-.deadline .dot{
+.deadline .dot {
     width: 10px;
     height: 10px;
     border-radius: 50%;
@@ -406,6 +408,17 @@ body{
     position: absolute;
     left: 4px;
     top: 7px;
+}
+
+.cal-deadline .dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    border: 1px solid #333333;
+
+    position: absolute;
+    left: 2px;
+    top: 2px;
 }
 
 .deadline .description{
