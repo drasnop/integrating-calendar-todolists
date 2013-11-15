@@ -252,16 +252,17 @@ App.RenderTodoListView = Ember.View.extend({
     }.property('content.color'),
 
     trashbinStyle: function() {
-	var res;
-	this.content.get('items').forEach(function(i) {
-	    if (i.checked)
-		res = "visibility: visible";
-	});
-	if (res) {
-	    return res;
+	var numItems = this.content.get('items').filterBy('checked').get('length');	var res;
+	if (numItems > 0) {
+	    return 'visibility: visible';
 	} else {
 	    return 'visibility: hidden';
 	}
+    }.property('content.items.@each.checked'),
+
+    trashbinTitle: function() {
+	var numItems = this.content.get('items').filterBy('checked').get('length');
+	return "Delete " + numItems + " items";
     }.property('content.items.@each.checked'),
 
     afterRenderEvent: function() {
@@ -336,10 +337,6 @@ App.RenderItemView = Ember.View.extend({
 		$(this).children('.square').css('display','none');
 		$(this).children('.checkmark').css('display','block');
 		$(this).children('.checkmark').css('visibility','visible');
-		
-		// trashbin
-		var count=countNumberOfItemsChecked($(this).parents('.todolist'));
-		$(this).parents('.todolist').children('.trashbin').css('visibility','visible').attr('title','Delete '+count+' items');
 	    }
 	    else{
 		$(this).data('checked',false);
@@ -351,11 +348,6 @@ App.RenderItemView = Ember.View.extend({
 		$(this).children('.square').css('display','inline-block');
 		$(this).children('.checkmark').css('visibility','visible');
 		$(this).children('.checkmark').css('display','none');
-		
-		// trashbin
-		if(countNumberOfItemsChecked($(this).parents('.todolist')) == 0){
-		    $(this).parents('.todolist').children('.trashbin').css('visibility','hidden');
-		}
 	    }
 	});
 

@@ -220,7 +220,7 @@
   {{view App.RenderItemView class='item text2' content=item}}
   {{/each}}
   <div class='newItem'>Add item...</div>
-  <img class='trashbin opacityButton' src='img/trashbin.png' title='Delete checked items' {{bindAttr style=view.trashbinStyle}}>
+  <img class='trashbin opacityButton' src='img/trashbin.png' {{bind-attr style=view.trashbinStyle}} {{bind-attr title=view.trashbinTitle}}>
 </script>
 
 <script type="text/x-handlebars" data-template-name="item">
