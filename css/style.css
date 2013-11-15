@@ -388,6 +388,7 @@ body{
 
     /* just to get the controls to display properly */
     position: relative;
+    overflow-y: hidden;
 } 
 
 .deadline{
