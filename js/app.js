@@ -278,6 +278,13 @@ App.RenderTodoListView = Ember.View.extend({
 	    cancel: '.listName,.hiddenIcon,.newItem,.description,.setDateTime,.trashbin',
 	    connectWith: '.sortable'});
 
+	list.mouseenter(function(){
+	    $(this).children('.hoverable').css('visibility','visible');
+	});
+	list.mouseleave(function(){
+	    $(this).find('.dialogueElement').css('visibility','hidden');
+	});
+
 	// Trashbin logic
 	list.children('.trashbin').click(function(){
 	    // foldUp the checked items and remove them
