@@ -1,6 +1,18 @@
 ////////////////////////////// CUSTOM EMBER //////////////////////////////
 
 // Based on:
+// http://mavilein.github.io/javascript/2013/08/01/Ember-JS-After-Render-Event/
+Ember.View.reopen({
+  didInsertElement : function(){
+    this._super();
+    Ember.run.scheduleOnce('afterRender', this, this.afterRenderEvent);
+  },
+  afterRenderEvent : function(){
+    // implement this hook in your own subclasses and run your jQuery logic there
+  }
+});
+
+// Based on:
 // https://github.com/KasperTidemann/ember-contenteditable-view/blob/master/ember-contenteditable-view.js
 Ember.ItemView = Em.View.extend({
     tagName: 'div',
@@ -68,6 +80,7 @@ var lightblue="180,216,231";
 var yellow="255,236,148";
 var pink="255,174,174";
 
+/// Legacy items, these should go eventually
 var items=[{
 	text: "call back Amy"
 },{
@@ -143,6 +156,10 @@ App.Item = DS.Model.extend({
     endDate:     DS.attr('date'),           // when event ends (left undefined for tasks)
     reminders:   DS.attr(),	            // list of dates
     description: DS.attr('string'),         // string
+
+    style: function() {
+	return "background-color: rgba(" + this.get('list.color') + ", 0.85)";
+    }.property('list.color')
 });
 
 App.Item.FIXTURES = [
@@ -220,8 +237,174 @@ App.ApplicationController = Ember.Controller.extend({
     }.property()
 });
 
-// App.TodoListView = Ember.View.extend({
-//     content: null,
-//     templateName: "todo-list",
-    
-// });
+
+App.RenderTodoListView = Ember.View.extend({
+    templateName: "todo-list",
+    attributeBindings: ['type', 'style', 'data-color'],
+    type: 'text2',
+
+    style: function() {
+	return this.content.get('style');
+    }.property('content.style'),
+
+    'data-color': function() {
+	return this.content.get('color');
+    }.property('content.color'),
+
+    trashbinStyle: function() {
+	var res;
+	this.content.get('items').forEach(function(i) {
+	    if (i.checked)
+		res = "visibility: visible";
+	});
+	if (res) {
+	    return res;
+	} else {
+	    return 'visibility: hidden';
+	}
+    }.property('content.items.@each.checked'),
+
+    afterRenderEvent: function() {
+	list = this.$();
+
+	// Trashbin logic
+	list.children('.trashbin').click(function(){
+	    // foldUp the checked items and remove them
+	    $(this).siblings('.item').filter(function() { 
+  		return $(this).children('.checkbox').data("checked") == true; 
+	    }).css('height',$(this).height()).css('min-height',0).slideUp(400, function(){
+		$(this).remove();
+	    });
+	});
+    }
+});
+
+App.RenderItemView = Ember.View.extend({
+    templateName: "item",
+    attributeBindings: ['style', 'data-activated', 'data-color'],
+    style: function() {
+	return this.content.get('style');
+    }.property('content.style'),
+    'data-activated': false,
+    'data-color': function() {
+	return this.content.get('list.color');
+    }.property('content.list.color'),
+
+    afterRenderEvent: function () {
+	var item = this.$();
+	item.data('activated', true);
+
+	// toggle items icons
+	item.mouseenter(function(){
+	    $(this).find('.hiddenIcon').css('visibility','visible');
+	});
+
+	item.mouseleave(function(){
+	    $(this).find('.hiddenIcon').css('visibility','hidden');
+	});
+
+	// keyboard events
+	item.children('.description').keydown(function(event){
+	    // up
+	    if(event.which==38){
+		$(this).parent('.item').prevAll('.item').first().find('.description').focus();
+	    }
+	    // down
+	    if(event.which==40){
+		$(this).parent('.item').nextAll('.item').first().find('.description').focus();
+	    }
+	});
+	item.children('.description').keypress(function(event){
+	    if(event.which==13){
+		insertItem(true,$(this).parent('.item'));   // Don't put "item" here!!
+	    }
+	});
+
+	// cross items out
+	item.children('.checkbox').click(function(){
+	    var color=$(this).parent('.item').data('color');
+	    var darkerColor=changeColor(color,-60);
+
+	    if(!$(this).data('checked'))
+	    {
+		$(this).data('checked',true);
+
+		// item, text and checkbox appearance
+		$(this).parent('.item').css('color','rgb('+colorToString(darkerColor)+')');
+		$(this).siblings('.description').css('text-decoration','line-through');
+		
+		$(this).children('.square').css('display','none');
+		$(this).children('.checkmark').css('display','block');
+		$(this).children('.checkmark').css('visibility','visible');
+		
+		// trashbin
+		var count=countNumberOfItemsChecked($(this).parents('.todolist'));
+		$(this).parents('.todolist').children('.trashbin').css('visibility','visible').attr('title','Delete '+count+' items');
+	    }
+	    else{
+		$(this).data('checked',false);
+
+		// item, text and checkbox appearance
+		$(this).parent('.item').css('color','#191919');
+		$(this).siblings('.description').css('text-decoration','none');
+		
+		$(this).children('.square').css('display','inline-block');
+		$(this).children('.checkmark').css('visibility','visible');
+		$(this).children('.checkmark').css('display','none');
+		
+		// trashbin
+		if(countNumberOfItemsChecked($(this).parents('.todolist')) == 0){
+		    $(this).parents('.todolist').children('.trashbin').css('visibility','hidden');
+		}
+	    }
+	});
+
+	// pin items
+	item.children('.pin').click(function(){
+	    if(!$(this).data('pinned'))
+	    {
+		$(this).data('pinned',true);
+
+		$(this).attr('src','img/pinned16.png');
+		$(this).attr('title',"Unpin item from main list");
+		$(this).removeClass('hiddenIcon');
+	    }
+	    else
+	    {
+		$(this).data('pinned',false);
+
+		$(this).attr('src','img/pin16.png');
+		$(this).attr('title',"Pin item to main list");
+		$(this).addClass('hiddenIcon');
+	    }
+	});
+
+	// toggle dialogue
+	item.children('.pin').mouseenter(function(){
+	    if(!$(this).data('dialogueExpanded')){
+		$(this).data('dialogueExpanded',true);
+
+		$(this).parent('.item').find('.dialogueElement').visible();
+		$(this).parent('.item').find('.opacityButton').css('z-index',10);
+	    }
+	});
+	item.children('.dialogue').mouseleave(function(event){
+	    if(!$(event.relatedTarget).hasClass('pin') || ($(event.relatedTarget).hasClass('pin') && !$(event.relatedTarget).data('dialogueExpanded')) ){
+		$(this).siblings('.pin').data('dialogueExpanded',false);
+		
+		$(this).parent('.item').find('.opacityButton').css('z-index',0);
+		$(this).parent('.item').find('.dialogueElement').invisible();
+	    }
+	});
+
+
+	// Set time/date
+	var field;
+	item.children('.setDateTime').click(function(){
+	    field=$(this);
+	    $(this).children('.hiddenIcon').hide();
+	    $(this).children('.contenteditable').show();
+	    $(this).children('.contenteditable').focus();
+	});
+    }
+});

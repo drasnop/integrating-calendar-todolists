@@ -158,11 +158,7 @@
 			<div id="todo-lists-area"><!--
 			--><div class="todo-lists-column" id="todo-lists-area-left">
 			  {{#each list in listColumn1 }}
-			  <div class="todolist sortable" type="text2" {{bind-attr style=list.style}}><div class='listName contenteditable' contenteditable>{{{ list.title }}}</div>
-			    {{#each item in list.items}}
-			    {{{item.description}}}
-			    {{/each}}
-			  </div>
+			  {{view App.RenderTodoListView class="todolist sortable" content=list}}
 			  {{/each}}
 				<div id="list-a0" class="todolist sortable" type="text2"><div class='listName contenteditable' contenteditable>Default</div>
 				  {{#each items}}
@@ -187,7 +183,7 @@
 			</div><!--
 		 --><div class="todo-lists-column" id="todo-lists-area-right">
 			  {{#each list in listColumn2 }}
-			  <div class="todolist sortable" type="text2" {{bind-attr style=list.style}}><div class='listName contenteditable' contenteditable>{{{ list.title }}}</div></div>
+			  {{view App.RenderTodoListView class="todolist sortable" content=list}}
 			  {{/each}}
 				<div id="list-b0" class="todolist sortable" type="text2"><div class='listName contenteditable' contenteditable>List B0</div></div>
 				<div id="list-b1" class="todolist sortable" type="text2"><div class='listName contenteditable' contenteditable>List B1</div></div>
@@ -206,6 +202,31 @@
 </div>
 </script>
 
+
+<script type="text/x-handlebars" data-template-name="todo-list">
+  <div class='listName contenteditable' contenteditable>{{{ list.title }}}</div>
+  {{#each item in view.content.items}}
+  {{view App.RenderItemView class='item text2' content=item}}
+  {{/each}}
+  <div class='newItem'>Add item...</div>
+  <img class='trashbin opacityButton' src='img/trashbin.png' title='Delete checked items' {{bindAttr style=view.trashbinStyle}}>
+</script>
+
+<script type="text/x-handlebars" data-template-name="item">
+  <div class='checkbox' data-checked='false'>
+    <div class='square hiddenIcon'></div><div class='checkmark'>✔</div>
+  </div>
+  {{view Ember.ItemView value=view.content.description contenteditable="true"}}
+  <div class='setDateTime'>
+    <div class='contenteditable' contenteditable></div>
+    <img class='hiddenIcon opacityButton' src='img/calendar16.png' title='Set date/time' />
+  </div>
+  <img class='pin hiddenIcon opacityButton' src='img/pin16.png' data-pinned='false' data-dialogueExpanded='false' title='Pin item to main list' />
+  <div class='dialogueElement dialogue'>
+    <div class='dialogueElement setImportance' title='Set importance level'>!</div>
+    <div class='dialogueElement createSubtask' title='Create subtask'>+</div>
+  </div>
+</script>
 
 
 
