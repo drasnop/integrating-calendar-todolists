@@ -435,8 +435,8 @@ App.RenderItemView = Ember.View.extend({
 	item.children('.setDateTime').click(function(){
 	    field=$(this);
 	    $(this).children('.hiddenIcon').hide();
-	    $(this).children('.contenteditable').show();
-	    $(this).children('.contenteditable').focus();
+	    $(this).children('.dateTimeField').show();
+	    $(this).children('.dateTimeField').focus();
 	});
     }
 });
