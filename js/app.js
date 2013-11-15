@@ -290,7 +290,8 @@ App.RenderTodoListView = Ember.View.extend({
     }.property('content.items.@each.checked'),
 
     afterRenderEvent: function() {
-	list = this.$();
+	var list = this.$();
+	var todoList = this.content;
 
 	list.sortable({
 	    cancel: '.listName,.hiddenIcon,.newItem,.description,.setDateTime,.trashbin',
@@ -304,20 +305,28 @@ App.RenderTodoListView = Ember.View.extend({
 	});
 
 	// Trashbin logic
-	list.children('.trashbin').click(function(){
+	list.children('.trashbin').click(function(){  //TODO: fix this, it only works the first time something is deleted.
 	    // foldUp the checked items and remove them
 	    $(this).siblings('.item').filter(function() { 
-  		return $(this).children('.checkbox').data("checked") == true; 
+		// Problem: on subsequent invocations, all items return 'false', even if their state is 'checked'. ???
+  		return $(this).data("checked") === "checked"; 
 	    }).css('height',$(this).height()).css('min-height',0).slideUp(400, function(){
-		$(this).remove();
+		todoList.get('items').filterProperty('checked').forEach(function(i) {
+		    i.deleteRecord();
+		});
 	    });
+	});
+
+	// Initialize newItems at the bottom
+	list.children('.newItem').click(function() {
+	    insertItem(false,$(this));
 	});
     }
 });
 
 App.RenderItemView = Ember.View.extend({
     templateName: "item",
-    attributeBindings: ['style', 'data-activated', 'data-color'],
+    attributeBindings: ['style', 'data-activated', 'data-color', 'data-checked'],
 
     style: function() {
 	return this.content.get('style');
@@ -328,6 +337,14 @@ App.RenderItemView = Ember.View.extend({
     'data-color': function() {
 	return this.content.get('list.color');
     }.property('content.list.color'),
+
+    'data-checked': function() {
+	if (this.content.get('checked')) {
+	    return "checked";
+	} else {
+	    return "false";
+	}
+    }.property('content.checked'),
 
     pinTitle: function() {
 	if (this.content.get('pinned')) {
@@ -376,6 +393,7 @@ App.RenderItemView = Ember.View.extend({
 	    $(this).find('.hiddenIcon').css('visibility','hidden');
 	});
 
+	// TODO: fix this, it breaks with new items, either at the middle or end of the list
 	// keyboard events
 	item.children('.description').keydown(function(event){
 	    // up
