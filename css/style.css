@@ -229,14 +229,13 @@ body{
 }
 
 .weekend {
-    background-color: rgba(225,225,225,.9);
+    background-color: rgba(225,225,225,.4);
 }
 
 .cal-event {
     background-color: rgba(180,216,231,.3);
     font-size: 12px;
-    font-weight: bold;
-    padding: 1px;
+   margin-top: 5px;
 }
 
 #c1 table {
@@ -684,6 +683,7 @@ in a newly created item */
     height: 24px;  /* will be animated to 24px */
     box-shadow: -1px 1px 5px -1px gray;
     font-weight: bold;
+    color: #555555; /* compensate for bold */
 }
 
 .opacityButton{
