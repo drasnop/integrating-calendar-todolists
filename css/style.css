@@ -394,6 +394,7 @@ body{
 
 .deadline .dateTimeField{
     right: 9px;
+    top: 4px;
 }
 
 #switch-ordering-button{
@@ -614,7 +615,6 @@ in a newly created item */
 .dateTimeField{
     position: absolute;
     right: 26px;
-    top: 4px;
 
     min-width: 16px;
     max-width: 100px;
