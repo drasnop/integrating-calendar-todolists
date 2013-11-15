@@ -232,7 +232,7 @@
     <div class='contenteditable' contenteditable></div>
     <img class='hiddenIcon opacityButton' src='img/calendar16.png' title='Set date/time' />
   </div>
-  <img class='pin hiddenIcon opacityButton' src='img/pin16.png' data-pinned='false' data-dialogueExpanded='false' title='Pin item to main list' />
+  <img {{bind-attr class=":pin :opacityButton view.pinClass"}} {{bind-attr src=view.pinSrc}} data-dialogueExpanded='false' {{bind-attr title=view.pinTitle}} {{action "pinSwitch" view.content}}/>
   <div class='dialogueElement dialogue'>
     <div class='dialogueElement setImportance' title='Set importance level'>!</div>
     <div class='dialogueElement createSubtask' title='Create subtask'>+</div>

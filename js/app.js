@@ -234,7 +234,13 @@ App.ApplicationController = Ember.Controller.extend({
 	return this.store.filter('todo-list', function(itm, index, enumerable) {
 	    return itm.get('column') === 2;
 	});
-    }.property()
+    }.property(),
+
+    actions: {
+	pinSwitch: function(item) {
+	    item.set('pinned', !item.get('pinned'));
+	}
+    }
 });
 
 
@@ -283,13 +289,36 @@ App.RenderTodoListView = Ember.View.extend({
 App.RenderItemView = Ember.View.extend({
     templateName: "item",
     attributeBindings: ['style', 'data-activated', 'data-color'],
+
     style: function() {
 	return this.content.get('style');
     }.property('content.style'),
+
     'data-activated': false,
+
     'data-color': function() {
 	return this.content.get('list.color');
     }.property('content.list.color'),
+
+    pinTitle: function() {
+	if (this.content.get('pinned')) {
+	    return "Unpin item from main list";
+	} else {
+	    return "Pin item to main list";
+	}
+    }.property('content.pinned'),
+
+    pinClass: function() {
+	if (!this.content.get('pinned'))
+	    return "hiddenIcon";
+    }.property('content.pinned'),
+
+    pinSrc: function() {
+	if (this.content.get('pinned'))
+	    return "img/pinned16.png";
+	else
+	    return "img/pin16.png";
+    }.property('content.pinned'),
 
     afterRenderEvent: function () {
 	var item = this.$();
@@ -348,26 +377,6 @@ App.RenderItemView = Ember.View.extend({
 		$(this).children('.square').css('display','inline-block');
 		$(this).children('.checkmark').css('visibility','visible');
 		$(this).children('.checkmark').css('display','none');
-	    }
-	});
-
-	// pin items
-	item.children('.pin').click(function(){
-	    if(!$(this).data('pinned'))
-	    {
-		$(this).data('pinned',true);
-
-		$(this).attr('src','img/pinned16.png');
-		$(this).attr('title',"Unpin item from main list");
-		$(this).removeClass('hiddenIcon');
-	    }
-	    else
-	    {
-		$(this).data('pinned',false);
-
-		$(this).attr('src','img/pin16.png');
-		$(this).attr('title',"Pin item to main list");
-		$(this).addClass('hiddenIcon');
 	    }
 	});
 
