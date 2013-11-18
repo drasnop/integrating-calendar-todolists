@@ -138,7 +138,7 @@ App.TodoList = DS.Model.extend({
     items:  DS.hasMany('item'),
 
     style: function() {
-	return "background-color: rgba(" + this.get('color') + ", 0.5)";
+	return "background-color: rgba(" + this.get('color') + ", 0.35)";
     }.property('color')
 });
 

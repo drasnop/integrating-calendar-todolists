@@ -130,18 +130,11 @@ body{
     font-size: 95%;
     
     color: #333333;
-/*  box-shadow: 1px 1px 5px 0px black;
-    background-color: rgba(231,174,92,.5);
-    color: #4C4C4C;
-    background-color: rgba(255,240,240,.3);
-    border: 1px solid rgba(20,0,0,.35); */
-
-    background-color: rgba(255,255,255,.9);
+    background-color: rgba(255,255,255,.8);
 }
 
 #search-box:hover{
     box-shadow: 1px 1px 5px 0px black;
-   /* background-color: rgba(231,174,92,.65);  */
 }
 
 #newlist-button{
@@ -162,24 +155,12 @@ body{
     background-color: rgba(250,240,240,.3);
     box-shadow:  1px 1px 8px -1px black;
     /*to get the shadow to display on calendar*/
-    position: relative;  
-}
-
-#options-content {
-    width: 344px;
-}
-
-#options-content div, #options-content span, #options-content input{
-    margin-left: 18px;
-    margin-bottom: 20px;
-}
-
-#options-content input{
-    margin-right: 10px;
+    position: relative; 
+    /*width: 292px; */
 }
 
 #options-calendar {
-    height: 250px;
+    height: 257px;
     overflow: hidden;
     font-size: 10px;
     text-align: center;
@@ -189,6 +170,31 @@ body{
     margin-left: 40px;
     margin-top: 32px;
 }
+
+#options-content {
+    width: 344px;
+}
+
+#options-content div, #options-content input{
+    margin-bottom: 20px;
+}
+
+#options-content input{
+    margin-left: 44px;
+}
+
+#options .section-header{
+    margin-left: 40px;
+    padding: 3px;
+    padding-left: 30px;
+    width: 218px;
+    background-color: rgba(255,255,255,.6);
+}
+
+#options-content input{
+    margin-right: 10px;
+}
+
 
 
 /*////////////////       calendar         /////////////*/
@@ -232,19 +238,21 @@ body{
     background-color: rgba(225,225,225,.4);
 }
 
+.cal-event, .cal-deadline {
+    font-size: 12px;
+    margin-bottom: 3px;
+}
+
 .cal-event {
     background-color: rgba(180,216,231,.3);
-    font-size: 12px;
-    margin-top: 5px;
-    padding-left: 15px;
+    padding: 2px;
+    padding-left: 3px;
 }
 
 .cal-deadline {
-    font-size: 12px;
-    margin-top: 3px;
-    border-bottom: 2px solid red;
+    /*border-bottom: 1px solid red;*/
     position: relative;
-    padding-left: 15px;
+    padding-left: 16px;
 }
 
 #c1 table {
@@ -254,6 +262,15 @@ body{
 
 #calendar-wrapper table tr {
     height: 113px;
+}
+
+#calendar-headers td {
+    padding: 5px;
+}
+
+.day{
+    margin:3px;
+    margin-bottom: 2px;
 }
 
 .day1 {
@@ -284,7 +301,6 @@ body{
 
 #c1 td {
     width: 118px;
-    padding: 5px;
     margin: 0px;
     vertical-align: top;
 }
@@ -332,7 +348,7 @@ body{
 }
 #agenda-wrapper {
     width: 104%;
-    height: 65%;
+    /*height: 65%;*/
     overflow-x: hidden;
     overflow-y: scroll;
 }
@@ -349,7 +365,7 @@ body{
     vertical-align: top;
     text-align: right;
     width: 45px;
-    height: 100%;
+    padding-top: 12px;
 }
 
 #agenda-wrapper table {
@@ -379,6 +395,20 @@ body{
 
     position: relative;
     z-index: 5;
+}
+
+#next-up-countdown{
+    display: inline-block;
+}
+
+#next-up .cal-event{
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 0;
+    margin-left: 20px;
+    padding: 0;
+    padding-right: 10px;
+    padding-left: 10px;
 }
 
 #contextual-list {
@@ -418,8 +448,10 @@ body{
     border: 1px solid #333333;
 
     position: absolute;
-    left: 0px;
-    top: 9px;
+   /* left: 0px;
+    top: 9px; */
+    left: 2px;
+    top: 2px;
 }
 
 .deadline .description{
@@ -492,7 +524,7 @@ body{
 
 #todo-lists-area-wrapper {
    height: 100%;
-   overflow-y: hidden;
+   /*overflow-y: hidden;  why??? */
    float: left;
    position: relative;
 }

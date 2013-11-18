@@ -25,10 +25,10 @@ function fill_calendar(rows) {
 	    if (day == 1)      row += "day1";
 	    else if (day <= 7) row += "week1";
 	    else               row += "regular";
-	    row += "'>";
+	    row += "'> <div class='day'>";
 	    if (day == 1) row += month_strings[month] + " ";
 	    row += day;
-	    row += "</td>"
+	    row += "</div> </td>"
 
 	    day += 1;
 	    if (day > month_lengths[month]) {

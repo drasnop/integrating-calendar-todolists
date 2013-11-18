@@ -61,11 +61,18 @@ $(function() {
 			case 0:
 				carousel.trigger("next");
 				nav_state++;
+				calb.animate({
+					'left':'292px'
+				},400);
 			break;
 
 			case 1:
 				carousel.trigger("prev");
 				nav_state--;
+				calb.animate({
+					'left':'344px'
+				},400);
+				//carousel.trigger("configuration", ["items.visible", 3, false]);
 			break;
 
 			case 2:
