@@ -6,7 +6,8 @@ function format_date(year, month, day) {
 
 
 function fill_calendar(rows) {
-    var month_strings = new Array("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec");
+    // var month_strings = new Array("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec");
+    var month_strings = new Array("January", "February", "March", "April", "May", "Juny", "July", "August", "Sep", "October", "November", "December");
     var month_lengths = new Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
     // Start, arbitrarily, on Sunday September 29, 2013
     var day = 29;
@@ -25,8 +26,13 @@ function fill_calendar(rows) {
 	    if (day == 1)      row += "day1";
 	    else if (day <= 7) row += "week1";
 	    else               row += "regular";
-	    row += "'> <div class='day'>";
-	    if (day == 1) row += month_strings[month] + " ";
+	    row += "'>";
+	    if (day == 1){
+	    	row += "<div class='day new-month'>"+month_strings[month] + " ";
+	    }
+	    else{
+	    	row += "<div class='day'>";
+	    }
 	    row += day;
 	    row += "</div> </td>"
 

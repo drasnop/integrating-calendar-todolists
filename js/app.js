@@ -294,7 +294,8 @@ App.RenderTodoListView = Ember.View.extend({
 	var todoList = this.content;
 
 	list.sortable({
-	    cancel: '.listName,.hiddenIcon,.newItem,.description,.setDateTime,.trashbin',
+        items: '.item',
+	   // cancel: '.listName,.hiddenIcon,.newItem,.description,.setDateTime,.trashbin',
 	    connectWith: '.sortable'});
 
 	list.mouseenter(function(){

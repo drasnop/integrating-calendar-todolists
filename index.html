@@ -16,8 +16,12 @@
 	<div id="controls">
 		<div id="left-button" class="toolbar-button">Options</div>
 		<div id="calendar-buttons">
+			<div id="year">2013</div>
 			<div id="week-button" class="toolbar-button">Week</div>	
 			<div id="month-button" class="toolbar-button">Month</div>
+			<div id="show-hide-calendar-events">
+				<input type='checkbox' checked='true'>Events
+			</div>
 			<div id="previous-period-button" class="toolbar-button" title="Previous period"> < </div>	
 			<div id="next-period-button" class="toolbar-button" title="Next period"> > </div>
 		</div>
@@ -123,7 +127,7 @@
 					</tr>
 				</table>
 				<div id="calendar-wrapper">
-					<table>
+					<table cellpadding="0" cellspacing="0">
 					</table>
 				</div>
 			</div>
@@ -138,30 +142,47 @@
 				<div class='cal-event'> 9:30am CS544 Lecture </div> 
 			</div>
 			<div id="contextual-list" title="Show more items">
-				<div class='deadline'> 
-						<div class='description'>Stage 1</div>
-					<div class='dot' style='background-color:rgba(180,216,231,1)'></div>
-					<div class='contenteditable dateTimeField' contenteditable>Th 3/09 9am</div> 
-				</div>
-				<div class='deadline'> 
-						<div class='description'>S1 Hardcopy</div>
-					<div class='dot' style='background-color:rgba(180,216,231,1)'></div>
-					<div class='contenteditable dateTimeField' contenteditable>Th 3/09 5pm</div> 
-				</div>
-				<div class='deadline'> 
-						<div class='description'>Midterm prep</div>
-					<div class='dot' style='background-color:rgba(180,216,231,1)'></div>
-					<div class='contenteditable dateTimeField' contenteditable>M 14/09 11pm</div> 
-				</div>
-				<div class='deadline'> 
-						<div class='description'>S1 Resubmit</div>
-					<div class='dot' style='background-color:rgba(180,216,231,1)'></div>
-					<div class='contenteditable dateTimeField' contenteditable>W 16/09 9am</div> 
-				</div>
-				<div class='deadline'> 
-						<div class='description'>Test</div>
-					<div class='dot' style='background-color:rgba(176,229,124,1)'></div>
-					<div class='contenteditable dateTimeField' contenteditable>F 11/15 3pm</div> 
+				<div id="contextual-list-inner-wrapper">
+					<div class='deadline'> 
+							<div class='description'>Stage 1</div>
+						<div class='dot' style='background-color:rgba(180,216,231,1)'></div>
+						<div class='contenteditable dateTimeField' contenteditable>Th 3/09 9am</div> 
+					</div>
+					<div class='deadline'> 
+							<div class='description'>S1 Hardcopy</div>
+						<div class='dot' style='background-color:rgba(180,216,231,1)'></div>
+						<div class='contenteditable dateTimeField' contenteditable>Th 3/09 5pm</div> 
+					</div>
+					<div class='deadline'> 
+							<div class='description'>Midterm prep</div>
+						<div class='dot' style='background-color:rgba(180,216,231,1)'></div>
+						<div class='contenteditable dateTimeField' contenteditable>M 14/09 11pm</div> 
+					</div>
+					<div class='deadline'> 
+							<div class='description'>S1 Resubmit</div>
+						<div class='dot' style='background-color:rgba(180,216,231,1)'></div>
+						<div class='contenteditable dateTimeField' contenteditable>W 16/09 9am</div> 
+					</div>
+					<div class='deadline'> 
+							<div class='description'>Test</div>
+						<div class='dot' style='background-color:rgba(176,229,124,1)'></div>
+						<div class='contenteditable dateTimeField' contenteditable>F 11/15 3pm</div> 
+					</div>
+					<div class='deadline'> 
+							<div class='description'>Test2</div>
+						<div class='dot' style='background-color:rgba(176,229,124,1)'></div>
+						<div class='contenteditable dateTimeField' contenteditable>F 11/15 3pm</div> 
+					</div>
+					<div class='deadline'> 
+							<div class='description'>Test2</div>
+						<div class='dot' style='background-color:rgba(176,229,124,1)'></div>
+						<div class='contenteditable dateTimeField' contenteditable>F 11/15 3pm</div> 
+					</div>
+					<div class='deadline'> 
+							<div class='description'>Test2</div>
+						<div class='dot' style='background-color:rgba(176,229,124,1)'></div>
+						<div class='contenteditable dateTimeField' contenteditable>F 11/15 3pm</div> 
+					</div>
 				</div>
 				<div id='switch-ordering-button' class='opacityButton' title='Order by priority'>!</div>
 				<div id='remaining-items' title='items not displayed'>+ 6 normal items</div>

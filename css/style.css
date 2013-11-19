@@ -5,6 +5,20 @@
  * localstorage
  */
 
+/*@font-face{
+    font-family: 'woodcut';
+    src: url('woodcut.ttf');
+}
+
+@font-face {
+    font-family: 'AWConquerorCarved-Regular';
+    src: url('AWConquerorCarved-Regular.otf');
+}
+
+@font-face {
+    font-family: 'AWConquerorSans-Light';
+    src: url('AWConquerorSans-Light.otf');
+}*/
 
 html{
    height: 100%;
@@ -68,6 +82,25 @@ body{
     width: 688px;
 }
 
+#year{
+    position: absolute;
+    top: 6px;
+    left: -107px;   /* -476  */
+
+    color: #333333;
+    font-weight: bold;
+    font-size: 116%;
+    /*font-family: 'AWConquerorCarved-Regular';*/
+
+    background-color: rgba(255,255,255,.85);
+    padding: 3px;
+    padding-left: 13px;
+    border-top: 8px solid rgba(255,0,0,.85);
+    padding-right: 13px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px 0px black;
+}
+
 #month-button, #week-button{
     text-align: center;
     width: 115px;
@@ -80,6 +113,24 @@ body{
 
 #month-button{
     left: 146px;
+}
+
+#show-hide-calendar-events{
+    position: absolute;
+    top: 13px;
+    left: 461px;   /* 320 342 */
+    padding: 4px 15px 3px 0px;
+    
+    color: #333333;
+    font-size: 95%;
+
+    border-radius: 30px;
+    background-color: rgba(255,255,255,.65); 
+}
+
+#show-hide-calendar-events input{
+    margin-left: 12px;
+    margin-right: 10px;
 }
 
 #previous-period-button, #next-period-button{
@@ -273,15 +324,20 @@ body{
     margin-bottom: 2px;
 }
 
+.new-month{
+    font-weight: bold;
+    color: #333333;
+}
+
 .day1 {
-    border-top: 2px solid black;
-    border-left: 2px solid black;
+    border-top: 2px solid #333333;
+    border-left: 2px solid #333333;
     border-right: 1px solid black;
     border-bottom: 1px solid black;
 }
 
 .week1 {
-    border-top: 2px solid black;
+    border-top: 2px solid #333333;
     border-left: 1px solid black;
     border-right: 1px solid black;
     border-bottom: 1px solid black;
@@ -418,8 +474,12 @@ body{
 
     /* just to get the controls to display properly */
     position: relative;
-    overflow-y: hidden;
 } 
+
+#contextual-list-inner-wrapper {
+    overflow-y: hidden;
+    height: 121px; 
+}
 
 .deadline{
     min-height: 23px;

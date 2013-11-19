@@ -269,14 +269,19 @@ $(document).ready(function(){
 		cancel: '.listName,.hiddenIcon,.newItem,.description,.setDateTime,.trashbin',
 		connectWith: '.sortable'});
 	var CLheight=150;
+	var CLIWheight=121;
 	$('#contextual-list').resizable({
 		containment:'#tasks-summary',
 		handles:'s',
+		alsoResize: '#contextual-list-inner-wrapper',
 		minHeight:CLheight,
 		maxHeight:CLheight*3,
 		stop: function(){
 			$('#contextual-list').animate({
 				'height':CLheight+'px'
+			},400);
+			$('#contextual-list-inner-wrapper').animate({
+				'height':CLIWheight+'px'
 			},400);
 		}
 	});
@@ -310,6 +315,14 @@ $(document).ready(function(){
 
     // dummy values for the calendar
     initializeCalendar();
+
+    // Initialize show-hide-calendar-events behavior
+    $('#show-hide-calendar-events input').change(function(){
+    	if($(this).prop('checked'))
+    		$('#c1 .cal-event').visible();
+    	else
+    		$('#c1 .cal-event').invisible();
+    })
 });
 
 
