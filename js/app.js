@@ -179,7 +179,7 @@ App.Item = DS.Model.extend({
 App.Item.FIXTURES = [
     // A0
     { id: 1,  parentId: null, list: 1, order: 1,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "call back Amy" },
-    { id: 2,  parentId: null, list: 1, order: 2,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "check emails" },
+    { id: 2,  parentId: null, list: 1, order: 2,  importance: 1, priority: 0, pinned: true, checked: false, startDate: null, endDate: null, reminders: [], description: "check emails" },
     { id: 3,  parentId: null, list: 1, order: 3,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "laundry" },
     { id: 4,  parentId: null, list: 1, order: 4,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "7pm restaurant" },
     { id: 5,  parentId: null, list: 1, order: 5,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "Tomorrow pay phone bill" },
@@ -238,8 +238,6 @@ App.Item.FIXTURES = [
 ];
 
 App.ApplicationController = Ember.Controller.extend({
-    items: [],
-
     listColumn1: function() {
 	return this.store.filter('todo-list', function(itm, index, enumerable) {
 	    return itm.get('column') === 1;
@@ -253,9 +251,10 @@ App.ApplicationController = Ember.Controller.extend({
     }.property(),
 
     pinnedItems: function() {
-	alert(this.get('items'));
-	return this.items.filterProperty('pinned');
-    }.property('items.@each.pinned', 'items.[]'),
+	return this.store.filter('item', function(itm, index, enumerable) {
+	    return itm.get('pinned');
+	});
+    }.property('App.Item.@each.pinned'),
 
     init: function() {
 	this._super();
@@ -456,4 +455,8 @@ App.RenderItemView = Ember.View.extend({
 	    $(this).children('.dateTimeField').focus();
 	});
     }
+});
+
+
+App.MainTodosController = Ember.ArrayController.extend({
 });

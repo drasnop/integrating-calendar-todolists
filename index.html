@@ -192,9 +192,11 @@
 			</div>
 			<div id="main-list-wrapper">
 				<div id="main-list" class="todolist sortable" color="0,0,0" type="text2"><div class='listName'>Main list</div>
-				  {{#each item in pinnedItems}}
-				  {{view App.RenderItemView class='item text2' content=item}}
-				  {{/each}}
+				{{#render "main-todos" pinnedItems}}
+				{{#each item in controller}}
+				{{view App.RenderItemView class='item text2' content=item}}
+				{{/each}}
+				{{/render}}
 				</div>
 			</div>
 		</div>
