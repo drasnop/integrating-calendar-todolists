@@ -46,6 +46,72 @@ function generateEmptyItem(color,type){
 	return generateItem("",color,type);
 }
 
+function generateCalendarEvent(description,color){
+	return "<div class='cal-item cal-event' style='background-color:rgba("+color+",.8)'>"+description+"	\
+				<img class='setReminder hiddenIcon opacityButton' src='img/bell16b.png' title='Set reminder'>	\
+			</div>";	
+}
+
+function generateCalendarDeadline(description,color){
+	return "<div class='cal-item cal-deadline'>"+description+"	\
+				<div class='dot' style='background-color:rgba("+color+",1)'></div>	\
+				<img class='setReminder hiddenIcon opacityButton' src='img/bell16b.png' title='Set reminder'>	\
+			</div>";	
+}
+
+var white="255,255,255";
+var green="176,229,124";
+var lightblue="180,216,231";
+var yellow="255,236,148";
+var pink="255,174,174";
+
+var googleDarkBlue="44,112,209";
+var googleLightBlue="164,189,252";
+var googleGreen="81,183,73";
+
+function initializeCalendar() {
+    $('#d20130901').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
+    $('#d20130903').append(generateCalendarDeadline("9am Stage 1",lightblue));
+    $('#d20130903').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
+    $('#d20130903').append(generateCalendarDeadline("5pm S1 Hardcopy",lightblue));
+    $('#d20130908').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
+    $('#d20130910').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
+    $('#d20130915').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
+    $('#d20130917').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
+    $('#d20130922').append(generateCalendarDeadline("9am Stage 2",lightblue));
+    $('#d20130922').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
+    $('#d20130922').append(generateCalendarDeadline("5pm S2 Hardcopy",lightblue));
+    $('#d20130924').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
+    $('#d20130929').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
+    $('#d20130931').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
+    $('#d20131005').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
+    $('#d20131007').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
+    $('#d20131012').append(generateCalendarDeadline("9am Stage 3",lightblue));
+    $('#d20131012').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
+    $('#d20131012').append(generateCalendarDeadline("5pm S3 Hardcopy",lightblue));
+    $('#d20131014').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
+
+
+
+    $('#d20130902').append(generateCalendarEvent("1pm Lab",googleGreen));
+    $('#d20130904').append(generateCalendarEvent("1pm Lab",googleGreen));
+    $('#d20130909').append(generateCalendarEvent("1pm Lab",googleGreen));
+    $('#d20130911').append(generateCalendarEvent("1pm Lab",googleGreen));
+    $('#d20130914').append(generateCalendarDeadline("11pm Midterm prep",lightblue));
+    $('#d20130916').append(generateCalendarDeadline("9am S1 Resubmit",lightblue));
+    $('#d20130916').append(generateCalendarEvent("1pm Lab",googleGreen));
+    $('#d20130918').append(generateCalendarEvent("1pm Lab",googleGreen));
+    $('#d20130923').append(generateCalendarEvent("1pm Lab",googleGreen));
+    $('#d20130925').append(generateCalendarEvent("1pm Lab",googleGreen));
+    $('#d20130930').append(generateCalendarEvent("1pm Lab",googleGreen));
+    $('#d20131001').append(generateCalendarEvent("1pm Lab",googleGreen));
+    $('#d20131006').append(generateCalendarEvent("1pm Lab",googleGreen));
+    $('#d20131008').append(generateCalendarEvent("1pm Lab",googleGreen));
+    $('#d20131013').append(generateCalendarEvent("1pm Lab",googleGreen));
+    $('#d20131015').append(generateCalendarEvent("1pm Lab",googleGreen));
+
+}
+
 // this can be either an item or the newItem button
 function insertItem(after,_this){
 	var color=_this.parent('.todolist').data('color');
@@ -197,48 +263,7 @@ function invisible(){
 }
 
 
-function initializeCalendar() {
-    $('#d20130901').append("<div class='cal-event'>9:30am Lecture</div>");
-    $('#d20130903').append("<div class='cal-deadline'><div class='dot' style='background-color:rgba(180,216,231,1)'></div> 9am Stage 1</div>");
-    $('#d20130903').append("<div class='cal-event'>9:30am Lecture</div>");
-    $('#d20130903').append("<div class='cal-deadline'><div class='dot' style='background-color:rgba(180,216,231,1)'></div> 5pm S1 Hardcopy</div>");
-    $('#d20130908').append("<div class='cal-event'>9:30am Lecture</div>");
-    $('#d20130910').append("<div class='cal-event'>9:30am Lecture</div>");
-    $('#d20130915').append("<div class='cal-event'>9:30am Lecture</div>");
-    $('#d20130917').append("<div class='cal-event'>9:30am Lecture</div>");
-    $('#d20130922').append("<div class='cal-deadline'><div class='dot' style='background-color:rgba(180,216,231,1)'></div> 9am Stage 2</div>");
-    $('#d20130922').append("<div class='cal-event'>9:30am Lecture</div>");
-    $('#d20130922').append("<div class='cal-deadline'><div class='dot' style='background-color:rgba(180,216,231,1)'></div> 5pm S2 Hardcopy</div>");
-    $('#d20130924').append("<div class='cal-event'>9:30am Lecture</div>");
-    $('#d20130929').append("<div class='cal-event'>9:30am Lecture</div>");
-    $('#d20130931').append("<div class='cal-event'>9:30am Lecture</div>");
-    $('#d20131005').append("<div class='cal-event'>9:30am Lecture</div>");
-    $('#d20131007').append("<div class='cal-event'>9:30am Lecture</div>");
-    $('#d20131012').append("<div class='cal-deadline'><div class='dot' style='background-color:rgba(180,216,231,1)'></div> 9am Stage 3</div>");
-    $('#d20131012').append("<div class='cal-event'>9:30am Lecture</div>");
-    $('#d20131012').append("<div class='cal-deadline'><div class='dot' style='background-color:rgba(180,216,231,1)'></div> 5pm S3 Hardcopy</div>");
-    $('#d20131014').append("<div class='cal-event'>9:30am Lecture</div>");
 
-
-
-    $('#d20130902').append("<div class='cal-event'>1pm Lab</div>");
-    $('#d20130904').append("<div class='cal-event'>1pm Lab</div>");
-    $('#d20130909').append("<div class='cal-event'>1pm Lab</div>");
-    $('#d20130911').append("<div class='cal-event'>1pm Lab</div>");
-    $('#d20130914').append("<div class='cal-deadline'><div class='dot' style='background-color:rgba(180,216,231,1)'></div> 11pm Midterm prep</div>");
-    $('#d20130916').append("<div class='cal-deadline'><div class='dot' style='background-color:rgba(180,216,231,1)'></div> 9am S1 Resubmit</div>");
-    $('#d20130916').append("<div class='cal-event'>1pm Lab</div>");
-    $('#d20130918').append("<div class='cal-event'>1pm Lab</div>");
-    $('#d20130923').append("<div class='cal-event'>1pm Lab</div>");
-    $('#d20130925').append("<div class='cal-event'>1pm Lab</div>");
-    $('#d20130930').append("<div class='cal-event'>1pm Lab</div>");
-    $('#d20131001').append("<div class='cal-event'>1pm Lab</div>");
-    $('#d20131006').append("<div class='cal-event'>1pm Lab</div>");
-    $('#d20131008').append("<div class='cal-event'>1pm Lab</div>");
-    $('#d20131013').append("<div class='cal-event'>1pm Lab</div>");
-    $('#d20131015').append("<div class='cal-event'>1pm Lab</div>");
-
-}
 
 
 $(document).ready(function(){
@@ -326,6 +351,24 @@ $(document).ready(function(){
     	else
     		$('#c1 .cal-event').invisible();
     })
+
+    // toggle setReminder icons in calendar
+    $('.cal-item').mouseenter(function(){
+    	$(this).find('.hiddenIcon').css('visibility','visible');
+    });
+    $('.cal-item').mouseleave(function(){
+    	$(this).find('.hiddenIcon').css('visibility','hidden');
+    });
+
+    $('.cal-item .setReminder').draggable({
+    	helper: 'clone',
+    	start: function(){
+    		console.log('start');
+    		// don't affect the clone
+    		$(this).removeClass('hiddenIcon');
+    		$(this).removeClass('opacityButton');
+    	}
+    });
 });
 
 

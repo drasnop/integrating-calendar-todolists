@@ -293,20 +293,29 @@ body{
     background-color: rgba(225,225,225,.4);
 }
 
-.cal-event, .cal-deadline {
+/* both .cal-event and .cal-deadline */
+.cal-item {
     font-size: 12px;
     margin-bottom: 3px;
+
+    /* just to get the reminder icon to display poperly */
+    position: relative;
+}
+
+.cal-item .setReminder{
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    z-index: 2;
 }
 
 .cal-event {
-    background-color: rgba(180,216,231,.3);
     padding: 2px;
     padding-left: 3px;
 }
 
 .cal-deadline {
     /*border-bottom: 1px solid red;*/
-    position: relative;
     padding-left: 16px;
 }
 
@@ -329,8 +338,9 @@ body{
 }
 
 .new-month{
-    font-weight: bold;
     color: #333333;
+    font-weight: bold;
+    height: 19px; /* otherwise bold -> too big */
 }
 
 .day1 {
@@ -537,7 +547,7 @@ body{
 #switch-ordering-button{
     position: absolute;
     bottom: 5px;
-    left: 5px;
+    right: 10px;
 
     width: 16px;
     text-align: center;
@@ -548,10 +558,12 @@ body{
     position: absolute;
     bottom: 8px;
     right: 8px;
-    text-align: right;
+
+    text-align: center;
+    width: 342px;
+
     font-size: 90%;
     font-style: italic;
-
     cursor: help;
 }
 
@@ -769,7 +781,7 @@ in a newly created item */
     display: none;
 }
 
-.item .hiddenIcon{
+.hiddenIcon{
     visibility: hidden;
 }
 
