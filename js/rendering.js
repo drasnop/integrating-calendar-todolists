@@ -266,7 +266,10 @@ $(document).ready(function(){
 	}*/
 
 	$('.sortable').sortable({
-		cancel: '.listName,.hiddenIcon,.newItem,.description,.setDateTime,.trashbin',
+		//cancel: '.listName,.hiddenIcon,.newItem,.description,.setDateTime,.trashbin',
+		items: '.item',
+		helper: "clone",
+		appendTo: 'body',
 		connectWith: '.sortable'});
 	var CLheight=150;
 	var CLIWheight=121;

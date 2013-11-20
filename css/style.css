@@ -37,7 +37,6 @@ body{
      overflow: hidden;
 }
 
-
  /*////////////////       toolbar         /////////////*/
 
 
@@ -84,21 +83,26 @@ body{
 
 #year{
     position: absolute;
-    top: 6px;
-    left: -107px;   /* -476  */
+    top: 9px;   /* 6 */
+    left: -103px;   /* -476 -107 */
 
     color: #333333;
     font-weight: bold;
-    font-size: 116%;
-    /*font-family: 'AWConquerorCarved-Regular';*/
+    /*font-size: 116%;
+    font-family: 'AWConquerorCarved-Regular';*/
 
-    background-color: rgba(255,255,255,.85);
-    padding: 3px;
+    padding-top: 2px;
+    padding-bottom: 1px;
     padding-left: 13px;
-    border-top: 8px solid rgba(255,0,0,.85);
     padding-right: 13px;
-    border-radius: 5px;
-    box-shadow: 1px 1px 5px 0px black;
+    /*border-radius: 5px;*/
+
+    background-color: rgba(255,255,255,.8);
+    border-top: 5px solid rgba(255,0,0,.8);
+
+    /*background-color: rgba(255,255,255,.85);
+    border-top: 8px solid rgba(255,0,0,.85);
+    box-shadow: 1px 1px 5px 0px black;*/
 }
 
 #month-button, #week-button{
@@ -622,10 +626,13 @@ body{
     padding-top: 9px;
     box-shadow:  1px 1px 8px -1px black;
 
-    font-size: 90%; 
-
     /* the only use of this is to get the trashbin to display correctly */
     position: relative;
+}
+
+#temporary-list-for-draggable-items{
+    font-size: 90%; 
+    text-align: left;
 }
 
 .todolist .trashbin{
@@ -647,6 +654,9 @@ body{
 .item{  
     cursor: pointer;
     min-height: 23px;
+
+    font-size: 90%;
+    text-align: left;
 
     /* the only use of this is to get the icons inside to display correctly */
     position: relative;
