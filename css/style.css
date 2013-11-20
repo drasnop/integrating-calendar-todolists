@@ -479,6 +479,9 @@ body{
     padding: 0;
     padding-right: 10px;
     padding-left: 10px;
+    font-size: 12px;
+
+    background-color: rgba(164,189,252,.8);
 }
 
 #contextual-list {
@@ -657,7 +660,8 @@ body{
 
 .todolist .listName{
     text-align: center;
-    font-size: 125%;
+    font-size: 114%;  /* 125% */
+    font-family: cursive;
     color: #333333;
 
     margin-bottom: 7px;
@@ -743,6 +747,7 @@ body{
 .newItem{
     color: #333333;
     font-style: italic;
+    font-size: 90%;
     padding: 3px;
     padding-left: 21px;
     padding-top: 4px;
