@@ -453,10 +453,6 @@ App.RenderItemView = Ember.View.extend({
     	// Set time/date
     	var field;
         var endDate=this.content.get('endDate');
-        if(endDate!=null){
-            console.log(endDate);
-            //item.css('background-color','red');
-        }
     	item.children('.setDateTime').click(function(){
     	    field=$(this);
     	    $(this).children('.hiddenIcon').hide();

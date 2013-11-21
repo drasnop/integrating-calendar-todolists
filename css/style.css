@@ -806,9 +806,9 @@ in a newly created item */
     font-style: italic;
 }
 
-.item .dateTimeField{
+/*.item .dateTimeField{
     display: none;
-}
+}*/
 
 .hiddenIcon{
     visibility: hidden;
