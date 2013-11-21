@@ -37,6 +37,12 @@ body{
      overflow: hidden;
 }
 
+#content-wrapper{
+    width:1366px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
  /*////////////////       toolbar         /////////////*/
 
 
