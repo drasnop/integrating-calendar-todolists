@@ -146,14 +146,14 @@ function initializeCalendar() {
     $('#d20131027').append(generateCalendarEvent("1pm Lab",googleGreen));
     $('#d20131029').append(generateCalendarEvent("1pm Lab",googleGreen));
 
-    $('#contextual-list-inner-wrapper').append(generateDeadline("Stage1","Th 10/3 9am",lightblue,2));
+/*    $('#contextual-list-inner-wrapper').append(generateDeadline("Stage1","Th 10/3 9am",lightblue,2));
     $('#contextual-list-inner-wrapper').append(generateDeadline("S1 Hardcopy","Th 10/3 5pm",lightblue,1));
     $('#contextual-list-inner-wrapper').append(generateDeadline("Biology essay","M 10/11 11pm",lightblue,2));
     $('#contextual-list-inner-wrapper').append(generateDeadline("Midterm prep","M 10/14 5pm",lightblue,1));
     $('#contextual-list-inner-wrapper').append(generateDeadline("Stage2","Th 10/14 9am",lightblue,2));
     $('#contextual-list-inner-wrapper').append(generateDeadline("Concert","M 10/14 10pm",pink,1));
     $('#contextual-list-inner-wrapper').append(generateDeadline("S1 Resubmit","W 10/16 9am",lightblue,1));
-    $('#contextual-list-inner-wrapper').append(generateDeadline("S2 Hardcopy","Th 10/14 5pm",lightblue,1));
+    $('#contextual-list-inner-wrapper').append(generateDeadline("S2 Hardcopy","Th 10/14 5pm",lightblue,1)); */
 }
 
 // this can be either an item or the newItem button
@@ -396,6 +396,9 @@ $(document).ready(function(){
     $('.cal-item .setReminder').draggable({
     	helper: 'clone'
     });
+
+    // Initialize ContextualList
+    updateContextualList();
 });
 
 

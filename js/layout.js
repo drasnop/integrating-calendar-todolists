@@ -159,41 +159,45 @@ $(function() {
 
 	$('#calendar-wrapper').scroll(function(){
 
-		$("#contextual-list-inner-wrapper").html("");
-
-		var count=0;
-		$('.cal-deadline').filter(function(){
-			return isScrolledIntoView($(this));
-		}).each(function(){
-			count++;
-			var $this=$(this);
-			var importance=$this.data('importance');
-
-			$("#contextual-list-inner-wrapper").append("<div id='insertHere'></div>");
-			if(importance==2 && count >5){
-				var current=count;
-				
-				while(current>5){
-					
-					switchElements($("#insertHere"),$("#insertHere").prev('.deadline'));
-
-					current--;
-				}			
-			}
-			$("#insertHere").after(generateDeadline($this.children('.description').html(),$this.data('date')+" "+$this.children('.time').html(),$this.data('color'),importance));
-			$("#insertHere").remove();
-		});
-
-		var remainingItems=count-5;
-		if(remainingItems>0)
-			$("#remaining-items").html("+ "+remainingItems+" items");
-		else
-			$("#remaining-items").html("");
+		updateContextualList();
 
 		return false;
 	});
 
 });
+
+function updateContextualList(){
+	$("#contextual-list-inner-wrapper").html("");
+
+	var count=0;
+	$('.cal-deadline').filter(function(){
+		return isScrolledIntoView($(this));
+	}).each(function(){
+		count++;
+		var $this=$(this);
+		var importance=$this.data('importance');
+
+		$("#contextual-list-inner-wrapper").append("<div id='insertHere'></div>");
+		if(importance==2 && count >5){
+			var current=count;
+			
+			while(current>5){
+				
+				switchElements($("#insertHere"),$("#insertHere").prev('.deadline'));
+
+				current--;
+			}			
+		}
+		$("#insertHere").after(generateDeadline($this.children('.description').html(),$this.data('date')+" "+$this.children('.time').html(),$this.data('color'),importance));
+		$("#insertHere").remove();
+	});
+
+	var remainingItems=count-5;
+	if(remainingItems>0)
+		$("#remaining-items").html("+ "+remainingItems+" items");
+	else
+		$("#remaining-items").html("");
+}
 
 function isScrolledIntoView(elem)
 {
