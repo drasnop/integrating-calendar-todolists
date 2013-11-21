@@ -337,6 +337,13 @@ body{
 
 .cal-deadline .time, .cal-deadline .description{
     display: inline-block;
+    vertical-align: top;
+}
+
+.cal-deadline .description{
+    width: 84px;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 #c1 table {
