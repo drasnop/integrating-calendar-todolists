@@ -162,12 +162,20 @@ $(function() {
 		console.log("scroll");
 		$("#contextual-list-inner-wrapper").html("");
 
+		var numberDeadlinesInCL=0;
 		$('.cal-deadline').filter(function(){
 			return isScrolledIntoView($(this));
 		}).each(function(){
 			var $this=$(this);
 			$("#contextual-list-inner-wrapper").append(generateDeadline($this.children('.description').html(),$this.data('date')+" "+$this.children('.time').html(),$this.data('color'),$this.data('importance')));
+			numberDeadlinesInCL++;
 		});
+
+		var remainingItems=numberDeadlinesInCL-5;
+		if(remainingItems>0)
+			$("#remaining-items").html("+ "+remainingItems+" items");
+		else
+			$("#remaining-items").html("");
 
 		return false;
 	});

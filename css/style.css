@@ -312,6 +312,7 @@ body{
     right: 1px;
     top: 1px;
     z-index: 2;
+    cursor: pointer;
 }
 
 .cal-event .setReminder{

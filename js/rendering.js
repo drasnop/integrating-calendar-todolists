@@ -42,7 +42,7 @@ function generateEmptyItem(color,type){
 
 function generateCalendarEvent(description,color){
 	return "<div class='cal-item cal-event' style='background-color:rgba("+color+",.8)'>"+description+"	\
-				<img class='setReminder hiddenIcon opacityButton' src='img/bell16b.png' title='Set reminder'>	\
+				<img class='setReminder hiddenIcon opacityButton' src='img/bell16b.png' title='Drag-and-drop to set reminder'>	\
 			</div>";	
 }
 
@@ -52,14 +52,14 @@ function generateCalendarDeadline(description,date,time,color,importance){
 					<div class='time'>"+time+"</div>   \
 					<div class='description'>"+description+"</div>   \
 					<div class='dot' style='background-color:rgba("+color+",1)'></div>	\
-					<img class='setReminder hiddenIcon opacityButton' src='img/bell16b.png' title='Set reminder'>	\
+					<img class='setReminder hiddenIcon opacityButton' src='img/bell16b.png' title='Drag-and-drop to set reminder'>	\
 				</div>";
 	else
 		return "<div class='cal-item cal-deadline' data-date='"+date+"' data-color="+color+" data-importance=1>		\
 					<div class='time'>"+time+"</div>   \
 					<div class='description'>"+description+"</div>   \
 					<div class='dot' style='background-color:rgba("+color+",1)'></div>	\
-					<img class='setReminder hiddenIcon opacityButton' src='img/bell16b.png' title='Set reminder'>	\
+					<img class='setReminder hiddenIcon opacityButton' src='img/bell16b.png' title='Drag-and-drop to set reminder'>	\
 				</div>";
 }
 
