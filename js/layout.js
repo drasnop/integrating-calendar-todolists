@@ -173,8 +173,10 @@ $(function() {
 			if(importance==2 && count >5){
 				var current=count;
 				
-				while(current>5){				
+				while(current>5){
+					
 					switchElements($("#insertHere"),$("#insertHere").prev('.deadline'));
+
 					current--;
 				}			
 			}
@@ -207,9 +209,7 @@ function isScrolledIntoView(elem)
 function switchElements(first,second){
 	if(second.data('importance')==2){
 		switchElements(second,second.prev('.deadline'));	
-		console.log('ii');	
-		first.insertAfter(second);				
+		console.log('ii');					
 	}
-	else
-		first.insertBefore(second);
+	first.insertBefore(second);
 }
