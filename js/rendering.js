@@ -82,6 +82,8 @@ function initializeCalendar() {
     $('#d20130922').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
     $('#d20130922').append(generateCalendarDeadline("5pm S2 Hardcopy",lightblue));
     $('#d20130924').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
+    $('#d20130928').append(generateCalendarEvent("9:30am Seminar",googleGreen));
+    $('#d20130928').append(generateCalendarEvent("1:30pm Seminar",googleGreen));
     $('#d20130929').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
     $('#d20130931').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
     $('#d20131005').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
@@ -97,7 +99,8 @@ function initializeCalendar() {
     $('#d20130904').append(generateCalendarEvent("1pm Lab",googleGreen));
     $('#d20130909').append(generateCalendarEvent("1pm Lab",googleGreen));
     $('#d20130911').append(generateCalendarEvent("1pm Lab",googleGreen));
-    $('#d20130914').append(generateCalendarDeadline("11pm Midterm prep",lightblue));
+    $('#d20130914').append(generateCalendarDeadline("10pm Midterm prep",lightblue));
+    $('#d20130914').append(generateCalendarDeadline("11:30pm discuss",green));
     $('#d20130916').append(generateCalendarDeadline("9am S1 Resubmit",lightblue));
     $('#d20130916').append(generateCalendarEvent("1pm Lab",googleGreen));
     $('#d20130918').append(generateCalendarEvent("1pm Lab",googleGreen));
