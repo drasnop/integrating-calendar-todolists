@@ -159,19 +159,32 @@ $(function() {
 
 	$('#calendar-wrapper').scroll(function(){
 
-		console.log("scroll");
 		$("#contextual-list-inner-wrapper").html("");
 
-		var numberDeadlinesInCL=0;
+		var count=0;
 		$('.cal-deadline').filter(function(){
 			return isScrolledIntoView($(this));
 		}).each(function(){
+			count++;
 			var $this=$(this);
-			$("#contextual-list-inner-wrapper").append(generateDeadline($this.children('.description').html(),$this.data('date')+" "+$this.children('.time').html(),$this.data('color'),$this.data('importance')));
-			numberDeadlinesInCL++;
+			var importance=$this.data('importance');
+
+			$("#contextual-list-inner-wrapper").append("<div id='insertHere'></div>");
+			if(importance==2 && count >5){
+				var current=count;
+				
+				while(current>5){
+					
+					switchElements($("#insertHere"),$("#insertHere").prev('.deadline'));
+
+					current--;
+				}			
+			}
+			$("#insertHere").after(generateDeadline($this.children('.description').html(),$this.data('date')+" "+$this.children('.time').html(),$this.data('color'),importance));
+			$("#insertHere").remove();
 		});
 
-		var remainingItems=numberDeadlinesInCL-5;
+		var remainingItems=count-5;
 		if(remainingItems>0)
 			$("#remaining-items").html("+ "+remainingItems+" items");
 		else
@@ -191,4 +204,12 @@ function isScrolledIntoView(elem)
     var elemBottom = elemTop + $(elem).height();
 
     return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop + 80));
+}
+
+function switchElements(first,second){
+	if(second.data('importance')==2){
+		switchElements(second,second.prev('.deadline'));	
+		console.log('ii');					
+	}
+	first.insertBefore(second);
 }

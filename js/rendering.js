@@ -380,15 +380,15 @@ $(document).ready(function(){
     })
 
     // toggle setReminder icons in calendar
-    $('.cal-item').mouseenter(function(){
+    $('#calendar').on('mouseenter','.cal-item',function(){
     	$(this).find('.hiddenIcon').css('visibility','visible');
     });
-    $('.cal-item').mouseleave(function(){
+    $('#calendar').on('mouseleave','.cal-item',function(){
     	$(this).find('.hiddenIcon').css('visibility','hidden');
     });
 
     // Set reminders in calendar
-    $('.cal-item .setReminder').mousedown(function(){
+    $('#calendar').on('mousedown','.cal-item .setReminder',function(){
 	    // This is necessary before we start dragging
     	$(this).removeClass('hiddenIcon');
     	$(this).removeClass('opacityButton');
