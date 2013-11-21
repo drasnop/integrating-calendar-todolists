@@ -277,6 +277,9 @@ App.ApplicationController = Ember.Controller.extend({
 	addDeadlineMockup: function() {
 	    $('#d20131017').append(generateCalendarDeadline("Read data format","Su 10/17","10pm",lightblue,1));
 	    $('#calendar-wrapper').scroll();
+        $('#d20131017').find('.setReminder').draggable({
+        helper: 'clone'
+    });
 	}
     }
 });
