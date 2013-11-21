@@ -48,7 +48,7 @@ $(function() {
 		nav_state--;
 		lnav.html("Options");
 		lnav.css('border-radius','5px');
-		rnav.html("Task lists");
+		rnav.html("Todo lists");
 		rnav.css('border-radius','5px 15px 15px 5px');
 		carousel.trigger("configuration", ["items.visible", 2, false]);
 	}

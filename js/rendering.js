@@ -110,7 +110,7 @@ function initializeCalendar() {
     $('#d20131012').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
     $('#d20131012').append(generateCalendarDeadline("S3 Hardcopy","Tu 11/12","5pm",lightblue,1));
     $('#d20131014').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
-    $('#d20131018').append(generateCalendarDeadline("RA meeting","M 11/18","3pm",lightblue,1));
+    $('#d20131018').append(generateCalendarDeadline("RA meeting","M 11/18","3pm",green,1));
     $('#d20131019').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
     $('#d20131021').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
     $('#d20131025').append(generateCalendarEvent("9:30am Seminar",googleGreen));
