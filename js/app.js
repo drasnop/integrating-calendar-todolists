@@ -454,8 +454,8 @@ App.RenderItemView = Ember.View.extend({
     	var field;
         var endDate=this.content.get('endDate');
         if(endDate!=null){
-            console.log(endDate)
-            item.css('background-color','red');
+            console.log(endDate);
+            //item.css('background-color','red');
         }
     	item.children('.setDateTime').click(function(){
     	    field=$(this);

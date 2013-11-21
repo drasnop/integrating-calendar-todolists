@@ -166,7 +166,7 @@ $(function() {
 			return isScrolledIntoView($(this));
 		}).each(function(){
 			var $this=$(this);
-			$("#contextual-list-inner-wrapper").append(generateDeadline($this.children('.description').html(),$this.children('.time').html(),lightblue,1));
+			$("#contextual-list-inner-wrapper").append(generateDeadline($this.children('.description').html(),$this.data('date')+" "+$this.children('.time').html(),$this.data('color'),$this.data('importance')));
 		});
 
 		return false;
