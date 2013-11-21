@@ -24,7 +24,7 @@ Ember.ItemView = Em.View.extend({
     isUserTyping: false,
     plaintext: false,
 
-    // Properties:
+    // Properties
     contenteditable: (function() {
         var editable = this.get('editable');
 
@@ -144,10 +144,10 @@ App.TodoList = DS.Model.extend({
 
 App.TodoList.FIXTURES = [
     { id: 1, column: 1, title: 'Default', color: white,     items: [1,2,3,4,5,6,7]},
-    { id: 2, column: 1, title: 'List A1', color: lightblue, items: [8,9,10,11,12,13,14,15,16,17,18,19,20,21]},
-    { id: 3, column: 2, title: 'List B0', color: green,     items: [22,23,24,25,26,27,28,29,30,31,32,33,34,35]},
-    { id: 4, column: 2, title: 'List B1', color: yellow,    items: [36,37,38,39,40,41,42]},
-    { id: 5, column: 2, title: 'List B2', color: pink,      items: [43,44,45,46,47,48,49]}
+    { id: 2, column: 1, title: 'Academic', color: lightblue, items: [8,9,10,11,12,13,14,15,16,17,18,19,20,21]},
+    { id: 3, column: 2, title: 'Groceries', color: yellow,     items: [22,23,24,25,26,27,28,29,30,31,32,33,34,35]},
+    { id: 4, column: 2, title: 'Research', color: green,    items: [36,37,38,39,40,41,42]},
+    { id: 5, column: 2, title: 'For later', color: pink,      items: [43,44,45,46,47,48,49]}
 ];
 
 
@@ -181,23 +181,23 @@ App.Item.FIXTURES = [
     { id: 1,  parentId: null, list: 1, order: 1,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "call back Amy" },
     { id: 2,  parentId: null, list: 1, order: 2,  importance: 1, priority: 0, pinned: true, checked: false, startDate: null, endDate: null, reminders: [], description: "check emails" },
     { id: 3,  parentId: null, list: 1, order: 3,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "laundry" },
-    { id: 4,  parentId: null, list: 1, order: 4,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "7pm restaurant" },
+    { id: 4,  parentId: null, list: 1, order: 4,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "restaurant" },
     { id: 5,  parentId: null, list: 1, order: 5,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "Tomorrow pay phone bill" },
     { id: 6,  parentId: null, list: 1, order: 6,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "Apply for Fair Pharmacare" },
     { id: 7,  parentId: null, list: 1, order: 7,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "Kick-Ass 2" },
 
     // A1
-    { id: 8,  parentId: null, list: 2, order: 1,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "call back Amy" },
-    { id: 9,  parentId: null, list: 2, order: 2,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "check emails" },
-    { id: 10, parentId: null, list: 2, order: 3,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "laundry" },
-    { id: 11, parentId: null, list: 2, order: 4,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "7pm restaurant" },
-    { id: 12, parentId: null, list: 2, order: 5,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "Tomorrow pay phone bill" },
-    { id: 13, parentId: null, list: 2, order: 6,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "Apply for Fair Pharmacare" },
+    { id: 12, parentId: null, list: 2, order: 1,  importance: 1, priority: 0, pinned: true, checked: false, startDate: null, endDate: null, reminders: [], description: "Study Stats" },
+    { id: 13, parentId: null, list: 2, order: 2,  importance: 1, priority: 0, pinned: true, checked: false, startDate: null, endDate: null, reminders: [], description: "AI read paper" },
+    { id: 8,  parentId: null, list: 2, order: 3,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "call back Amy" },
+    { id: 9,  parentId: null, list: 2, order: 4,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "Read paper on bioinformatics"},
+    { id: 10, parentId: null, list: 2, order: 5,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "laundry" },
+    { id: 11, parentId: null, list: 2, order: 6,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "restaurant" },
     { id: 14, parentId: null, list: 2, order: 7,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "Kick-Ass 2" },
     { id: 15, parentId: null, list: 2, order: 8,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "call back Amy" },
     { id: 16, parentId: null, list: 2, order: 9,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "check emails" },
     { id: 17, parentId: null, list: 2, order: 10, importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "laundry" },
-    { id: 18, parentId: null, list: 2, order: 11, importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "7pm restaurant" },
+    { id: 18, parentId: null, list: 2, order: 11, importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "restaurant" },
     { id: 19, parentId: null, list: 2, order: 12, importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "Tomorrow pay phone bill" },
     { id: 20, parentId: null, list: 2, order: 13, importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "Apply for Fair Pharmacare" },
     { id: 21, parentId: null, list: 2, order: 14, importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "Kick-Ass 2" },
@@ -205,15 +205,15 @@ App.Item.FIXTURES = [
     // B0
     { id: 22, parentId: null, list: 3, order: 1,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "call back Amy" },
     { id: 23, parentId: null, list: 3, order: 2,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "check emails" },
-    { id: 24, parentId: null, list: 3, order: 3,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "laundry" },
-    { id: 25, parentId: null, list: 3, order: 4,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "7pm restaurant" },
+    { id: 24, parentId: null, list: 3, order: 3,  importance: 1, priority: 0, pinned: true, checked: false, startDate: null, endDate: null, reminders: [], description: "laundry" },
+    { id: 25, parentId: null, list: 3, order: 4,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "restaurant" },
     { id: 26, parentId: null, list: 3, order: 5,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "Tomorrow pay phone bill" },
     { id: 27, parentId: null, list: 3, order: 6,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "Apply for Fair Pharmacare" },
     { id: 28, parentId: null, list: 3, order: 7,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "Kick-Ass 2" },
     { id: 29, parentId: null, list: 3, order: 8,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "call back Amy" },
     { id: 30, parentId: null, list: 3, order: 9,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "check emails" },
     { id: 31, parentId: null, list: 3, order: 10, importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "laundry" },
-    { id: 32, parentId: null, list: 3, order: 11, importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "7pm restaurant" },
+    { id: 32, parentId: null, list: 3, order: 11, importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "restaurant" },
     { id: 33, parentId: null, list: 3, order: 12, importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "Tomorrow pay phone bill" },
     { id: 34, parentId: null, list: 3, order: 13, importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "Apply for Fair Pharmacare" },
     { id: 35, parentId: null, list: 3, order: 14, importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "Kick-Ass 2" },
@@ -222,19 +222,19 @@ App.Item.FIXTURES = [
     { id: 36, parentId: null, list: 4, order: 1,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "call back Amy" },
     { id: 37, parentId: null, list: 4, order: 2,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "check emails" },
     { id: 38, parentId: null, list: 4, order: 3,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "laundry" },
-    { id: 39, parentId: null, list: 4, order: 4,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "7pm restaurant" },
-    { id: 40, parentId: null, list: 4, order: 5,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "Tomorrow pay phone bill" },
-    { id: 41, parentId: null, list: 4, order: 6,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "Apply for Fair Pharmacare" },
-    { id: 42, parentId: null, list: 4, order: 7,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "Kick-Ass 2" },
+    { id: 39, parentId: null, list: 4, order: 5,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: "Mo 11/18 3pm", reminders: [], description: "RA meeting" },
+    { id: 40, parentId: null, list: 4, order: 6,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "- redesign lab webpage" },
+    { id: 41, parentId: null, list: 4, order: 7,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "- review python regexp reference" },
+    { id: 42, parentId: null, list: 4, order: 4,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "- write data parser" },
 
     // B2
     { id: 43, parentId: null, list: 5, order: 1,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "call back Amy" },
     { id: 44, parentId: null, list: 5, order: 2,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "check emails" },
     { id: 45, parentId: null, list: 5, order: 3,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "laundry" },
-    { id: 46, parentId: null, list: 5, order: 4,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "7pm restaurant" },
+    { id: 46, parentId: null, list: 5, order: 4,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "restaurant" },
     { id: 47, parentId: null, list: 5, order: 5,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "Tomorrow pay phone bill" },
-    { id: 48, parentId: null, list: 5, order: 6,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "Apply for Fair Pharmacare" },
-    { id: 49, parentId: null, list: 5, order: 7,  importance: 1, priority: 0, pinned: true, checked: false, startDate: null, endDate: null, reminders: [], description: "Kick-Ass 2" }
+    { id: 48, parentId: null, list: 5, order: 6,  importance: 1, priority: 0, pinned: true, checked: false, startDate: null, endDate: null, reminders: [], description: "Apply for Fair Pharmacare" },
+    { id: 49, parentId: null, list: 5, order: 7,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "Kick-Ass 2" }
 ];
 
 App.ApplicationController = Ember.Controller.extend({
@@ -310,7 +310,7 @@ App.RenderTodoListView = Ember.View.extend({
 
 	list.sortable({
         items: '.item',
-	   // cancel: '.listName,.hiddenIcon,.newItem,.description,.setDateTime,.trashbin',
+	    cancel: '.listName,.hiddenIcon,.newItem,.description,.setDateTime,.trashbin',
 	    connectWith: '.sortable'});
 
 	list.mouseenter(function(){
@@ -345,115 +345,124 @@ App.RenderItemView = Ember.View.extend({
     attributeBindings: ['style', 'data-activated', 'data-color', 'data-checked'],
 
     style: function() {
-	return this.content.get('style');
+	   return this.content.get('style');
     }.property('content.style'),
 
     'data-activated': false,
 
     'data-color': function() {
-	return this.content.get('list.color');
+	   return this.content.get('list.color');
     }.property('content.list.color'),
 
     'data-checked': function() {
-	if (this.content.get('checked')) {
-	    return "checked";
-	} else {
-	    return "false";
-	}
+	   if (this.content.get('checked')) {
+	       return "checked";
+	   } else {
+	       return "false";
+	   }
     }.property('content.checked'),
 
     pinTitle: function() {
-	if (this.content.get('pinned')) {
-	    return "Unpin item from main list";
-	} else {
-	    return "Pin item to main list";
-	}
+    	if (this.content.get('pinned')) {
+    	    return "Unpin item from main list";
+    	} else {
+    	    return "Pin item to main list";
+    	}
     }.property('content.pinned'),
 
     pinClass: function() {
-	if (!this.content.get('pinned'))
-	    return "hiddenIcon";
+    	if (!this.content.get('pinned'))
+    	    return "hiddenIcon";
     }.property('content.pinned'),
 
     pinSrc: function() {
-	if (this.content.get('pinned'))
-	    return "img/pinned16.png";
-	else
-	    return "img/pin16.png";
+    	if (this.content.get('pinned'))
+    	    return "img/pinned16.png";
+    	else
+    	    return "img/pin16.png";
     }.property('content.pinned'),
 
     squareStyle: function() {
-	if (this.content.get('checked'))
-	    return "display: none";
-	else
-	    return "display: inline-block";
+    	if (this.content.get('checked'))
+    	    return "display: none";
+    	else
+    	    return "display: inline-block";
     }.property('content.checked'),
 
     checkmarkStyle: function() {
-	if (this.content.get('checked'))
-	    return "display: block; visibility: visible"
-	else
-	    return "visibility: visible; display: none"
+    	if (this.content.get('checked'))
+    	    return "display: block; visibility: visible"
+    	else
+    	    return "visibility: visible; display: none"
     }.property('content.checked'),
 
+   /* dateTimeField: function() {
+        return this.content.get('endDate');
+    }.property('content.endDate'),*/
+
     afterRenderEvent: function () {
-	var item = this.$();
-	item.data('activated', true);
+    	var item = this.$();
+    	item.data('activated', true);
 
-	// toggle items icons
-	item.mouseenter(function(){
-	    $(this).find('.hiddenIcon').css('visibility','visible');
-	});
+    	// toggle items icons
+    	item.mouseenter(function(){
+    	    $(this).find('.hiddenIcon').css('visibility','visible');
+    	});
 
-	item.mouseleave(function(){
-	    $(this).find('.hiddenIcon').css('visibility','hidden');
-	});
+    	item.mouseleave(function(){
+    	    $(this).find('.hiddenIcon').css('visibility','hidden');
+    	});
 
-	// TODO: fix this, it breaks with new items, either at the middle or end of the list
-	// keyboard events
-	item.children('.description').keydown(function(event){
-	    // up
-	    if(event.which==38){
-		$(this).parent('.item').prevAll('.item').first().find('.description').focus();
-	    }
-	    // down
-	    if(event.which==40){
-		$(this).parent('.item').nextAll('.item').first().find('.description').focus();
-	    }
-	});
-	item.children('.description').keypress(function(event){
-	    if(event.which==13){
-		insertItem(true,$(this).parent('.item'));   // Don't put "item" here!!
-	    }
-	});
+    	// TODO: fix this, it breaks with new items, either at the middle or end of the list
+    	// keyboard events
+    	item.children('.description').keydown(function(event){
+    	    // up
+    	    if(event.which==38){
+    		$(this).parent('.item').prevAll('.item').first().find('.description').focus();
+    	    }
+    	    // down
+    	    if(event.which==40){
+    		$(this).parent('.item').nextAll('.item').first().find('.description').focus();
+    	    }
+    	});
+    	item.children('.description').keypress(function(event){
+    	    if(event.which==13){
+    		insertItem(true,$(this).parent('.item'));   // Don't put "item" here!!
+    	    }
+    	});
 
-	// toggle dialogue
-	item.children('.pin').mouseenter(function(){
-	    if(!$(this).data('dialogueExpanded')){
-		$(this).data('dialogueExpanded',true);
+    	// toggle dialogue
+    	item.children('.pin').mouseenter(function(){
+    	    if(!$(this).data('dialogueExpanded')){
+    		$(this).data('dialogueExpanded',true);
 
-		$(this).parent('.item').find('.dialogueElement').visible();
-		$(this).parent('.item').find('.opacityButton').css('z-index',10);
-	    }
-	});
-	item.children('.dialogue').mouseleave(function(event){
-	    if(!$(event.relatedTarget).hasClass('pin') || ($(event.relatedTarget).hasClass('pin') && !$(event.relatedTarget).data('dialogueExpanded')) ){
-		$(this).siblings('.pin').data('dialogueExpanded',false);
-		
-		$(this).parent('.item').find('.opacityButton').css('z-index',0);
-		$(this).parent('.item').find('.dialogueElement').invisible();
-	    }
-	});
+    		$(this).parent('.item').find('.dialogueElement').visible();
+    		$(this).parent('.item').find('.opacityButton').css('z-index',10);
+    	    }
+    	});
+    	item.children('.dialogue').mouseleave(function(event){
+    	    if(!$(event.relatedTarget).hasClass('pin') || ($(event.relatedTarget).hasClass('pin') && !$(event.relatedTarget).data('dialogueExpanded')) ){
+    		$(this).siblings('.pin').data('dialogueExpanded',false);
+    		
+    		$(this).parent('.item').find('.opacityButton').css('z-index',0);
+    		$(this).parent('.item').find('.dialogueElement').invisible();
+    	    }
+    	});
 
 
-	// Set time/date
-	var field;
-	item.children('.setDateTime').click(function(){
-	    field=$(this);
-	    $(this).children('.hiddenIcon').hide();
-	    $(this).children('.dateTimeField').show();
-	    $(this).children('.dateTimeField').focus();
-	});
+    	// Set time/date
+    	var field;
+        var endDate=this.content.get('endDate');
+        if(endDate!=null){
+            console.log(endDate)
+            item.css('background-color','red');
+        }
+    	item.children('.setDateTime').click(function(){
+    	    field=$(this);
+    	    $(this).children('.hiddenIcon').hide();
+    	    $(this).children('.dateTimeField').show();
+    	    $(this).children('.dateTimeField').focus();
+    	});
     }
 });
 

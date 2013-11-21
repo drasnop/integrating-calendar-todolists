@@ -246,7 +246,8 @@
   </div>
   {{view Ember.ItemView value=view.content.description content=view.content contenteditable="true"}}
   <div class='setDateTime'>
-    <div class='contenteditable dateTimeField' contenteditable></div>
+    <div class='contenteditable dateTimeField' contenteditable>
+    </div>
     <img class='hiddenIcon opacityButton' src='img/calendar16.png' title='Set date/time' />
   </div>
   <img {{bind-attr class=":pin :opacityButton view.pinClass"}} {{bind-attr src=view.pinSrc}} data-dialogueExpanded='false' {{bind-attr title=view.pinTitle}} {{action "pinSwitch" view.content}}/>

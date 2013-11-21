@@ -320,7 +320,7 @@ body{
 }
 
 .cal-deadline .setReminder{
-    top: -1px;
+    top: -2px;
 }
 
 .cal-event {
@@ -568,6 +568,8 @@ body{
     bottom: 5px;
     right: 10px;
 
+    z-index: 2;
+
     width: 16px;
     text-align: center;
     font-weight: bold;
@@ -791,9 +793,12 @@ in a newly created item */
 .dateTimeField{
     position: absolute;
     right: 0px;
+    top: 0px;
 
     min-width: 16px;
     max-width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
 
     font-style: italic;
 }
