@@ -157,4 +157,17 @@ $(function() {
 		return false;
 	});
 
+	$('#calendar-wrapper').scroll(function(){
+
+/*		// Contextual-list mockup
+		$(".cal-deadline").bind('inview', function(event, isInView, vX, vY) {
+			if(isInView) {
+				console.log("Lookatme! " + vX + vY);
+			}
+			$(this).css('background-color','red');    	
+		});*/
+
+		return false;
+	});
+
 });

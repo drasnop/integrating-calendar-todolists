@@ -286,7 +286,6 @@ body{
 }
 
 #calendar-wrapper {
-    width: 104%;
     height: 100%;
     overflow-x: hidden;
     overflow-y: scroll;

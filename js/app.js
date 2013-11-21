@@ -144,7 +144,7 @@ App.TodoList = DS.Model.extend({
 
 App.TodoList.FIXTURES = [
     { id: 1, column: 1, title: 'Default', color: white,     items: [1,2,3,4,5,6,7]},
-    { id: 2, column: 1, title: 'Academic', color: lightblue, items: [8,9,10,11,12,13,14,15,16,17,18,19,20,21]},
+    { id: 2, column: 1, title: 'Courses', color: lightblue, items: [8,9,10,11,12,13,14,15,16,17,18,19,20,21]},
     { id: 3, column: 2, title: 'Groceries', color: yellow,     items: [22,23,24,25,26,27,28,29,30,31,32,33,34,35]},
     { id: 4, column: 2, title: 'Research', color: green,    items: [36,37,38,39,40,41,42]},
     { id: 5, column: 2, title: 'For later', color: pink,      items: [43,44,45,46,47,48,49]}
@@ -187,12 +187,12 @@ App.Item.FIXTURES = [
     { id: 7,  parentId: null, list: 1, order: 7,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "Kick-Ass 2" },
 
     // A1
-    { id: 12, parentId: null, list: 2, order: 1,  importance: 1, priority: 0, pinned: true, checked: false, startDate: null, endDate: null, reminders: [], description: "Study Stats" },
-    { id: 13, parentId: null, list: 2, order: 2,  importance: 1, priority: 0, pinned: true, checked: false, startDate: null, endDate: null, reminders: [], description: "AI read paper" },
-    { id: 8,  parentId: null, list: 2, order: 3,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "call back Amy" },
-    { id: 9,  parentId: null, list: 2, order: 4,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "Read paper on bioinformatics"},
-    { id: 10, parentId: null, list: 2, order: 5,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "laundry" },
-    { id: 11, parentId: null, list: 2, order: 6,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "restaurant" },
+    { id: 8, parentId: null, list: 2, order: 1,  importance: 1, priority: 0, pinned: true, checked: false, startDate: null, endDate: null, reminders: [], description: "Study Stats" },
+    { id: 9, parentId: null, list: 2, order: 2,  importance: 1, priority: 0, pinned: true, checked: false, startDate: null, endDate: null, reminders: [], description: "AI read paper" },
+    { id: 10, parentId: null, list: 2, order: 3,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: "F 10/11 11pm", reminders: [], description: "Biology essay" },
+    { id: 11, parentId: null, list: 2, order: 4,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "- Analyze cells growth"},
+    { id: 12, parentId: null, list: 2, order: 5,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "- Read paper on bioinformatics" },
+    { id: 13, parentId: null, list: 2, order: 6,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "- Discuss draft with Amy" },
     { id: 14, parentId: null, list: 2, order: 7,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "Kick-Ass 2" },
     { id: 15, parentId: null, list: 2, order: 8,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "call back Amy" },
     { id: 16, parentId: null, list: 2, order: 9,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "check emails" },
@@ -223,7 +223,7 @@ App.Item.FIXTURES = [
     { id: 37, parentId: null, list: 4, order: 2,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "check emails" },
     { id: 38, parentId: null, list: 4, order: 3,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "laundry" },
     { id: 39, parentId: null, list: 4, order: 5,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: "Mo 11/18 3pm", reminders: [], description: "RA meeting" },
-    { id: 40, parentId: null, list: 4, order: 6,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "- redesign lab webpage" },
+    { id: 40, parentId: null, list: 4, order: 6,  importance: 1, priority: 0, pinned: true, checked: false, startDate: null, endDate: null, reminders: [], description: "- redesign lab webpage" },
     { id: 41, parentId: null, list: 4, order: 7,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "- review python regexp reference" },
     { id: 42, parentId: null, list: 4, order: 4,  importance: 1, priority: 0, pinned: false, checked: false, startDate: null, endDate: null, reminders: [], description: "- write data parser" },
 

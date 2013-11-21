@@ -52,11 +52,17 @@ function generateCalendarEvent(description,color){
 			</div>";	
 }
 
-function generateCalendarDeadline(description,color){
-	return "<div class='cal-item cal-deadline'>"+description+"	\
-				<div class='dot' style='background-color:rgba("+color+",1)'></div>	\
-				<img class='setReminder hiddenIcon opacityButton' src='img/bell16b.png' title='Set reminder'>	\
-			</div>";	
+function generateCalendarDeadline(description,color,importance){
+	if(importance==2)
+		return "<div class='cal-item cal-deadline' style='font-weight:bold'>"+description+"	\
+					<div class='dot' style='background-color:rgba("+color+",1)'></div>	\
+					<img class='setReminder hiddenIcon opacityButton' src='img/bell16b.png' title='Set reminder'>	\
+				</div>";
+	else
+		return "<div class='cal-item cal-deadline'>"+description+"	\
+					<div class='dot' style='background-color:rgba("+color+",1)'></div>	\
+					<img class='setReminder hiddenIcon opacityButton' src='img/bell16b.png' title='Set reminder'>	\
+				</div>";
 }
 
 var white="255,255,255";
@@ -71,16 +77,16 @@ var googleGreen="81,183,73";
 
 function initializeCalendar() {
     $('#d20130901').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
-    $('#d20130903').append(generateCalendarDeadline("9am Stage 1",lightblue));
+    $('#d20130903').append(generateCalendarDeadline("9am Stage 1",lightblue,2));
     $('#d20130903').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
-    $('#d20130903').append(generateCalendarDeadline("5pm S1 Hardcopy",lightblue));
+    $('#d20130903').append(generateCalendarDeadline("5pm S1 Hardcopy",lightblue,1));
     $('#d20130908').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
     $('#d20130910').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
     $('#d20130915').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
     $('#d20130917').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
-    $('#d20130922').append(generateCalendarDeadline("9am Stage 2",lightblue));
+    $('#d20130922').append(generateCalendarDeadline("9am Stage 2",lightblue,2));
     $('#d20130922').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
-    $('#d20130922').append(generateCalendarDeadline("5pm S2 Hardcopy",lightblue));
+    $('#d20130922').append(generateCalendarDeadline("5pm S2 Hardcopy",lightblue,1));
     $('#d20130924').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
     $('#d20130928').append(generateCalendarEvent("9:30am Seminar",googleGreen));
     $('#d20130928').append(generateCalendarEvent("1:30pm Seminar",googleGreen));
@@ -88,10 +94,20 @@ function initializeCalendar() {
     $('#d20130931').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
     $('#d20131005').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
     $('#d20131007').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
-    $('#d20131012').append(generateCalendarDeadline("9am Stage 3",lightblue));
+    $('#d20131012').append(generateCalendarDeadline("9am Stage 3",lightblue,2));
     $('#d20131012').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
-    $('#d20131012').append(generateCalendarDeadline("5pm S3 Hardcopy",lightblue));
+    $('#d20131012').append(generateCalendarDeadline("5pm S3 Hardcopy",lightblue,1));
     $('#d20131014').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
+    $('#d20131018').append(generateCalendarDeadline("3pm RA meeting",lightblue,1));
+    $('#d20131019').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
+    $('#d20131021').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
+    $('#d20131025').append(generateCalendarEvent("9:30am Seminar",googleGreen));
+    $('#d20131025').append(generateCalendarEvent("1:30pm Seminar",googleGreen));
+    //$('#d20131026').append(generateCalendarDeadline("9am Stage 4",lightblue,1));
+    $('#d20131026').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
+    //$('#d20131026').append(generateCalendarDeadline("5pm Stage 4 Hardcopy",lightblue,1));
+    $('#d20131028').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
+    $('#d20131029').append(generateCalendarDeadline("5pm Presentation",lightblue,1));
 
 
 
@@ -99,9 +115,10 @@ function initializeCalendar() {
     $('#d20130904').append(generateCalendarEvent("1pm Lab",googleGreen));
     $('#d20130909').append(generateCalendarEvent("1pm Lab",googleGreen));
     $('#d20130911').append(generateCalendarEvent("1pm Lab",googleGreen));
-    $('#d20130914').append(generateCalendarDeadline("10pm Midterm prep",lightblue));
-    $('#d20130914').append(generateCalendarDeadline("11:30pm discuss",green));
-    $('#d20130916').append(generateCalendarDeadline("9am S1 Resubmit",lightblue));
+    $('#d20130911').append(generateCalendarDeadline("11pm Biology essay",lightblue,2));
+    $('#d20130914').append(generateCalendarDeadline("5pm Midterm prep",lightblue,1));
+    $('#d20130914').append(generateCalendarDeadline("10pm Concert",pink,1));
+    $('#d20130916').append(generateCalendarDeadline("9am S1 Resubmit",lightblue,1));
     $('#d20130916').append(generateCalendarEvent("1pm Lab",googleGreen));
     $('#d20130918').append(generateCalendarEvent("1pm Lab",googleGreen));
     $('#d20130923').append(generateCalendarEvent("1pm Lab",googleGreen));
@@ -112,6 +129,10 @@ function initializeCalendar() {
     $('#d20131008').append(generateCalendarEvent("1pm Lab",googleGreen));
     $('#d20131013').append(generateCalendarEvent("1pm Lab",googleGreen));
     $('#d20131015').append(generateCalendarEvent("1pm Lab",googleGreen));
+    $('#d20131020').append(generateCalendarEvent("1pm Lab",googleGreen));
+    $('#d20131022').append(generateCalendarEvent("1pm Lab",googleGreen));
+    $('#d20131027').append(generateCalendarEvent("1pm Lab",googleGreen));
+    $('#d20131029').append(generateCalendarEvent("1pm Lab",googleGreen));
 
 }
 
@@ -350,14 +371,22 @@ $(document).ready(function(){
     	$(this).find('.hiddenIcon').css('visibility','hidden');
     });
 
+    // Set reminders in calendar
+    $('.cal-item .setReminder').mousedown(function(){
+	    // This is necessary before we start dragging
+    	$(this).removeClass('hiddenIcon');
+    	$(this).removeClass('opacityButton');
+    });
     $('.cal-item .setReminder').draggable({
-    	helper: 'clone',
-    	start: function(){
-    		console.log('start');
-    		// don't affect the clone
-    		$(this).removeClass('hiddenIcon');
-    		$(this).removeClass('opacityButton');
+    	helper: 'clone'
+    });
+
+    // Contextual-list mockup
+    $(".cal-deadline").bind('inview', function(event, isInView, vX, vY) {
+    	if(isInView) {
+    		console.log("Lookatme! " + vX + vY);
     	}
+    	$(this).css('background-color','red');    	
     });
 });
 
