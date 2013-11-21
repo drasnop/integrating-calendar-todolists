@@ -159,15 +159,28 @@ $(function() {
 
 	$('#calendar-wrapper').scroll(function(){
 
-/*		// Contextual-list mockup
-		$(".cal-deadline").bind('inview', function(event, isInView, vX, vY) {
-			if(isInView) {
-				console.log("Lookatme! " + vX + vY);
-			}
-			$(this).css('background-color','red');    	
-		});*/
+		console.log("scroll");
+		$("#contextual-list-inner-wrapper").html("");
+
+		$('.cal-deadline').filter(function(){
+			return isScrolledIntoView($(this));
+		}).each(function(){
+			var $this=$(this);
+			$("#contextual-list-inner-wrapper").append(generateDeadline($this.children('.description').html(),$this.children('.time').html(),lightblue,1));
+		});
 
 		return false;
 	});
 
 });
+
+function isScrolledIntoView(elem)
+{
+    var docViewTop = $(window).scrollTop();
+    var docViewBottom = docViewTop + $(window).height();
+
+    var elemTop = $(elem).offset().top;
+    var elemBottom = elemTop + $(elem).height();
+
+    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop + 80));
+}

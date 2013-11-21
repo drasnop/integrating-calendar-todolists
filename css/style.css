@@ -334,6 +334,10 @@ body{
     margin-bottom: 3px;
 }
 
+.cal-deadline .time, .cal-deadline .description{
+    display: inline-block;
+}
+
 #c1 table {
     width: 1022px;
     border-collapse: collapse;
