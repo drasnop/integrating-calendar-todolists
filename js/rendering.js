@@ -46,16 +46,16 @@ function generateCalendarEvent(description,color){
 			</div>";	
 }
 
-function generateCalendarDeadline(description,time,color,importance){
+function generateCalendarDeadline(description,date,time,color,importance){
 	if(importance==2)
-		return "<div class='cal-item cal-deadline' style='font-weight:bold'>		\
+		return "<div class='cal-item cal-deadline' style='font-weight:bold' data-date='"+date+"' data-color="+color+" data-importance=2>		\
 					<div class='time'>"+time+"</div>   \
 					<div class='description'>"+description+"</div>   \
 					<div class='dot' style='background-color:rgba("+color+",1)'></div>	\
 					<img class='setReminder hiddenIcon opacityButton' src='img/bell16b.png' title='Set reminder'>	\
 				</div>";
 	else
-		return "<div class='cal-item cal-deadline'>		\
+		return "<div class='cal-item cal-deadline' data-date='"+date+"' data-color="+color+" data-importance=1>		\
 					<div class='time'>"+time+"</div>   \
 					<div class='description'>"+description+"</div>   \
 					<div class='dot' style='background-color:rgba("+color+",1)'></div>	\
@@ -89,16 +89,16 @@ var googleGreen="81,183,73";
 
 function initializeCalendar() {
     $('#d20130901').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
-    $('#d20130903').append(generateCalendarDeadline("Stage 1","9am",lightblue,2));
+    $('#d20130903').append(generateCalendarDeadline("Stage 1","Th 10/3","9am",lightblue,2));
     $('#d20130903').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
-    $('#d20130903').append(generateCalendarDeadline("S1 Hardcopy","5pm",lightblue,1));
+    $('#d20130903').append(generateCalendarDeadline("S1 Hardcopy","Th 10/3","5pm",lightblue,1));
     $('#d20130908').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
     $('#d20130910').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
     $('#d20130915').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
     $('#d20130917').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
-    $('#d20130922').append(generateCalendarDeadline("Stage 2","9am",lightblue,2));
+    $('#d20130922').append(generateCalendarDeadline("Stage 2","Tu 10/22","9am",lightblue,2));
     $('#d20130922').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
-    $('#d20130922').append(generateCalendarDeadline("S2 Hardcopy","5pm",lightblue,1));
+    $('#d20130922').append(generateCalendarDeadline("S2 Hardcopy","Tu 10/22","5pm",lightblue,1));
     $('#d20130924').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
     $('#d20130928').append(generateCalendarEvent("9:30am Seminar",googleGreen));
     $('#d20130928').append(generateCalendarEvent("1:30pm Seminar",googleGreen));
@@ -106,11 +106,11 @@ function initializeCalendar() {
     $('#d20130931').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
     $('#d20131005').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
     $('#d20131007').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
-    $('#d20131012').append(generateCalendarDeadline("Stage 3","9am",lightblue,2));
+    $('#d20131012').append(generateCalendarDeadline("Stage 3","Tu 11/12","9am",lightblue,2));
     $('#d20131012').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
-    $('#d20131012').append(generateCalendarDeadline("S3 Hardcopy","5pm",lightblue,1));
+    $('#d20131012').append(generateCalendarDeadline("S3 Hardcopy","Tu 11/12","5pm",lightblue,1));
     $('#d20131014').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
-    $('#d20131018').append(generateCalendarDeadline("RA meeting","3pm",lightblue,1));
+    $('#d20131018').append(generateCalendarDeadline("RA meeting","M 11/18","3pm",lightblue,1));
     $('#d20131019').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
     $('#d20131021').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
     $('#d20131025').append(generateCalendarEvent("9:30am Seminar",googleGreen));
@@ -119,7 +119,7 @@ function initializeCalendar() {
     $('#d20131026').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
     //$('#d20131026').append(generateCalendarDeadline("5pm Stage 4 Hardcopy",lightblue,1));
     $('#d20131028').append(generateCalendarEvent("9:30am Lecture",googleLightBlue));
-    $('#d20131029').append(generateCalendarDeadline("Presentation","5pm",lightblue,1));
+    $('#d20131029').append(generateCalendarDeadline("Presentation","F 11/29","5pm",green,1));
 
 
 
@@ -127,10 +127,10 @@ function initializeCalendar() {
     $('#d20130904').append(generateCalendarEvent("1pm Lab",googleGreen));
     $('#d20130909').append(generateCalendarEvent("1pm Lab",googleGreen));
     $('#d20130911').append(generateCalendarEvent("1pm Lab",googleGreen));
-    $('#d20130911').append(generateCalendarDeadline("Biology essay","11pm",lightblue,2));
-    $('#d20130914').append(generateCalendarDeadline("Midterm prep","5pm",lightblue,1));
-    $('#d20130914').append(generateCalendarDeadline("Concert","10pm",pink,1));
-    $('#d20130916').append(generateCalendarDeadline("S1 Resubmit","9am",lightblue,1));
+    $('#d20130911').append(generateCalendarDeadline("Biology essay","M 10/11","11pm",lightblue,2));
+    $('#d20130914').append(generateCalendarDeadline("Midterm prep","M 10/14","5pm",lightblue,1));
+    $('#d20130914').append(generateCalendarDeadline("Concert","M 10/14","10pm",pink,1));
+    $('#d20130916').append(generateCalendarDeadline("S1 Resubmit","W 10/16","9am",lightblue,1));
     $('#d20130916').append(generateCalendarEvent("1pm Lab",googleGreen));
     $('#d20130918').append(generateCalendarEvent("1pm Lab",googleGreen));
     $('#d20130923').append(generateCalendarEvent("1pm Lab",googleGreen));
@@ -395,17 +395,6 @@ $(document).ready(function(){
     });
     $('.cal-item .setReminder').draggable({
     	helper: 'clone'
-    });
-
-    // Contextual-list mockup
-    $(".cal-deadline").on('appear', function(event, $all_appeared_elements) {
-    	console.log("appear");
-    	$(this).css('background-color','red');    	
-    });
-
-    $(".cal-deadline").on('disappear', function(event, $all_appeared_elements) {
-    	console.log("disappear");
-    	$(this).css('background-color','black');    	
     });
 });
 
